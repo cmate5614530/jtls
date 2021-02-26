@@ -1,0 +1,147 @@
+.select2-results {
+    max-height: 250px;
+    overflow-y: scroll;
+}
+#bannerimg{
+    border-radius: 15px 0;
+}
+.promotion h4{
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-size: 42px;
+}
+p.top-right {
+    position: absolute;
+    top: 7px;
+    left: 71px;
+    color: white;
+    font-weight: bold;
+    line-height: 20px;
+}
+.payopt{
+    margin-bottom: 17px;
+    padding: 0px;
+    margin-top: 6px;
+}
+.footerpay{
+    width: 63px;
+    margin-right: 10px !important;
+}
+.footerhead{
+    text-transform: uppercase;
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+}
+.footerclass{
+    margin-left: auto;
+    margin-right: auto;
+}
+.quicklinks{
+    padding-left: 8px;
+    padding-top: 3px;
+}
+/*.footer-classic-darken {*/
+/*    background: #64b000;*/
+/*}*/
+p.rights {
+
+    color: white;
+}
+.footerlogo{
+    text-transform: uppercase;
+    font-size: 40px;
+    font-weight: bold;
+    color: white;
+}
+#betslipModal{
+    opacity:0;
+    display: block;
+}
+#betslipModal.show-betslip{
+    opacity:1;
+}
+.divider {
+    border-bottom: 1px solid black;
+}
+.player-props-table{
+    padding-left:34px;
+    overflow-y: auto;
+    height: 350px;
+    display: none;
+}
+.bet-button{
+    margin: 0 2px;
+    border-radius: 4px;
+    background-color: #eaecee;
+    color:#151515;
+    border-style: solid;
+    border-width: 1px;
+    cursor: pointer;
+}
+.bet-button:hover, .bet-button:active{
+    border-color: #64b000;
+    color: white;
+    background-color: #64b000;
+}
+.twobox{
+    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+    position: relative;
+    height: 100%;
+    padding: 0px 1px;
+}
+.threebox{
+    grid-template-columns: repeat(3, 1fr);
+    display: grid;
+    position: relative;
+    height: 100%;
+    padding: 0px 1px;
+}
+.sport-table-tr{
+    padding-right:20px;
+}
+.isotope-filters-list-link{
+    border:none;
+    cursor: pointer;
+    width:100%;
+}
+
+.bet-amount::before{
+    content:'$   ';
+}
+#amount{
+    width:70px;
+}
+.bet-item{
+    border-bottom: 1px solid #f7d700;
+    background-color: #fbe870;
+    color:#222;
+}
+.mod-KambiBC-betslip-outcome__stake-container{
+    max-width:20px;
+}
+.mod-KambiBC-betslip-outcome__odds-container{
+    float: right;
+}
+.mod-KambiBC-betslip-outcome__stake-input-container{
+    float: right;
+}
+[data-wager-count='-']{
+    display: none;
+}
+[data-clicked='1']{
+    border-color: #64b000;
+    color: white;
+    background-color: #64b000;
+}
+[data-clicked='0']{
+    background-color: #eaecee;
+    color: #151515;
+}
+.place-link:active{
+    border-color: #64b000;
+    color: white;
+    background-color: #64b000;
+}

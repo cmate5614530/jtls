@@ -1,0 +1,3747 @@
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-outcome__close-btn-text,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__header-btn-txt {
+	border: 0;
+	clip: rect(0 0 0 0);
+	height: 1px;
+	margin: -1px;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 1px
+}
+
+#mod-KambiBC-betslip-container .KambiBC-paginator__next-btn,
+#mod-KambiBC-betslip-container .KambiBC-paginator__prev-btn,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-button,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-mobile-keyboard__button,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-receipt__print-button,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-touch-keyboard__button,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__validation-error__close-btn {
+	border: 0;
+	background: transparent;
+	margin: 0;
+	padding: 0
+}
+
+#mod-KambiBC-betslip-container.mod-KambiBC-betslip-container {
+	z-index: 3001;
+	position: relative
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-container_prevent-input {
+	position: absolute;
+	top: 1px;
+	left: 1px;
+	width: 100%;
+	height: 100%;
+	background: transparent;
+	z-index: 9999
+}
+
+#mod-KambiBC-betslip-container.mod-KambiBC-betslip-container--pinned {
+	width: 282px;
+	flex: 0 0 auto;
+	position: relative;
+	background-color: inherit;
+	z-index: 2
+}
+
+#mod-KambiBC-betslip-container[data-eq-state~=layoutExtraWide]:after,
+[data-eq-state~=layoutExtraWide] #mod-KambiBC-betslip-container:after {
+	content: "LAYOUT_BETSLIP_CAN_BE_PINNED";
+	visibility: hidden;
+	position: absolute;
+	font-size: 0
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip {
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background: #222;
+	overflow-y: auto;
+	-webkit-overflow-scrolling: touch;
+	padding: 0;
+	margin: 0;
+	z-index: 200;
+	max-height: 100vh;
+	height: auto;
+	font-family: Roboto, Helvetica Neue, sans-serif;
+	font-size: 16px;
+	line-height: normal;
+	will-change: transform;
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+	-webkit-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip.mod-KambiBC-betslip--legacy-transitions {
+	height: 0
+}
+
+#mod-KambiBC-betslip-container .KambiBC-util-mobilesafari .mod-KambiBC-betslip {
+	overflow-y: touch
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__tabs {
+	margin-bottom: -14px;
+	padding-bottom: 14px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__outer-wrapper {
+	position: fixed;
+	bottom: 0
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__wrapper {
+	transform: translateZ(0);
+	overflow: hidden;
+	background: #222
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__scrollable-content {
+	height: 100%
+}
+
+@media screen and (min-width:31.25em) {
+	#mod-KambiBC-betslip-container .mod-KambiBC-betslip,
+	#mod-KambiBC-betslip-container .mod-KambiBC-betslip__outer-wrapper {
+		width: 23.4375em;
+		margin: auto;
+		left: auto;
+		right: .8125em
+	}
+	#mod-KambiBC-betslip-container .mod-KambiBC-betslip {
+		box-shadow: 0 0 15px 0 rgba(0, 0, 0, .6)
+	}
+	#mod-KambiBC-betslip-container.mod-KambiBC-betslip-container--hidden .mod-KambiBC-betslip:not(.mod-KambiBC-betslip--legacy-transitions) {
+		box-shadow: none
+	}
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__retail-barcode {
+	display: none
+}
+
+#mod-KambiBC-betslip-container.mod-KambiBC-betslip-container--pinned .mod-KambiBC-betslip,
+#mod-KambiBC-betslip-container.mod-KambiBC-betslip-container--pinned .mod-KambiBC-betslip__outer-wrapper {
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	max-height: none;
+	z-index: auto;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	margin: 0
+}
+
+#mod-KambiBC-betslip-container.mod-KambiBC-betslip-container--pinned .mod-KambiBC-betslip {
+	overflow: hidden
+}
+
+#mod-KambiBC-betslip-container.mod-KambiBC-betslip-container--pinned .mod-KambiBC-betslip__content,
+#mod-KambiBC-betslip-container.mod-KambiBC-betslip-container--pinned .mod-KambiBC-betslip__wrapper {
+	height: 100%;
+	display: flex;
+	flex-direction: column
+}
+
+#mod-KambiBC-betslip-container.mod-KambiBC-betslip-container--pinned .mod-KambiBC-betslip__scrollable-content {
+	overflow-y: auto
+}
+
+#mod-KambiBC-betslip-container.mod-KambiBC-betslip-container--pinned.mod-KambiBC-betslip-container--placing-bet .mod-KambiBC-betslip__content {
+	display: none
+}
+
+#mod-KambiBC-betslip-container.mod-KambiBC-betslip-container--minimized .mod-KambiBC-betslip {
+	overflow: hidden
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip--animating {
+	overflow: hidden;
+	transition: transform .2s cubic-bezier(.4, 0, .2, 1)
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip--offscreen {
+	opacity: 0
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__wrapper--has-barcode .mod-KambiBC-betslip__place-bet-button-wrapper,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__wrapper--has-overlay .mod-KambiBC-betslip__content {
+	display: none
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__wrapper--has-barcode .mod-KambiBC-betslip__retail-barcode {
+	display: flex;
+	justify-content: center
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__no-selections-info {
+	padding: 20px 10px;
+	margin: 6px 0 20px;
+	background: #444;
+	color: #aaa;
+	font-size: 12px;
+	text-align: center
+}
+
+#mod-KambiBC-betslip-container:not(.mod-KambiBC-betslip-container--pinned)[data-eq-state~=layoutExtraWide] .mod-KambiBC-betslip,
+#mod-KambiBC-betslip-container:not(.mod-KambiBC-betslip-container--pinned)[data-eq-state~=layoutExtraWide] .mod-KambiBC-betslip__outer-wrapper {
+	right: 2.1875em
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__clear-btn-wrapper {
+	display: flex;
+	align-items: flex-end;
+	flex-direction: column
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__links-wrapper {
+	padding: 6px 6px 4px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__system-package-stake-input-list,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__system-stake-input-list {
+	margin: 0;
+	padding: 0
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__outcome-list {
+	margin: 0;
+	padding: 0;
+	counter-reset: li
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__bet-builder-outcome-list {
+	display: flex;
+	width: 100%
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__bet-builder-outcome-list ul {
+	margin-bottom: 0;
+	margin-top: 0;
+	padding-left: 0;
+	flex: 1
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__bet-builder-odds {
+	background-color: #fbe870;
+	color: #222;
+	border-left: 1px solid #f7d700;
+	border-bottom: 1px solid #f7d700;
+	width: 63px;
+	font-size: 14px;
+	font-weight: 700;
+	display: flex;
+	align-items: center
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__bet-builder-odds div {
+	margin: 0 auto
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__teaser-container {
+	display: none
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-to-win-input__container {
+	display: flex;
+	width: 100%;
+	position: relative
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-to-win-input__container .mod-KambiBC-stake-input__container {
+	position: relative;
+	flex: 1
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-to-win-input__container .mod-KambiBC-stake-input {
+	box-sizing: border-box;
+	padding-top: 16px;
+	height: 45px;
+	width: 100%;
+	text-align: left;
+	text-indent: 8px;
+	padding-left: 0;
+	border-radius: 0
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-to-win-input__container .mod-KambiBC-stake-input__title {
+	left: 8px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip .KambiBC-widgets-layout.KambiBC-has-widgets {
+	display: block
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip .KambiBC-widget__iframe.KambiBC-transition-all {
+	transition: all .3s ease-out
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip .KambiBC-widget__iframe {
+	display: block;
+	border: 0;
+	margin: 0 auto;
+	padding: 0;
+	width: 1px;
+	min-width: 100%
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip .KambiBC-widget {
+	overflow: hidden;
+	display: block
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__tabs .KambiBC-tabs {
+	background-color: #010101;
+	height: 40px;
+	min-height: 40px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__tabs .KambiBC-tabs .KambiBC-tabs__tabs {
+	width: 100%
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__tabs .KambiBC-tabs .KambiBC-tabs__tab {
+	color: #b3b3b3;
+	line-height: 40px;
+	font-size: 13px;
+	display: flex;
+	flex-grow: 1;
+	align-items: center;
+	justify-content: center;
+	margin: 0;
+	font-weight: 400;
+	transition: color .2s ease-out
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__tabs .KambiBC-tabs .KambiBC-tabs__tab--selected,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__tabs .KambiBC-tabs .KambiBC-tabs__tab.KambiBC-touch-feedback,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__tabs .KambiBC-tabs .KambiBC-tabs__tab.KambiBC-touch-feedback:hover:active,
+.KambiBC-util-no-touchevents#mod-KambiBC-betslip-container .mod-KambiBC-betslip__tabs .KambiBC-tabs .KambiBC-tabs__tab--selected:hover,
+.KambiBC-util-no-touchevents #mod-KambiBC-betslip-container .mod-KambiBC-betslip__tabs .KambiBC-tabs .KambiBC-tabs__tab.KambiBC-touch-feedback:hover,
+.KambiBC-util-no-touchevents#mod-KambiBC-betslip-container .mod-KambiBC-betslip__tabs .KambiBC-tabs .KambiBC-tabs__tab:hover {
+	color: #fff
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__tabs .KambiBC-tabs .KambiBC-tabs__tab--disabled,
+.KambiBC-util-no-touchevents#mod-KambiBC-betslip-container .mod-KambiBC-betslip__tabs .KambiBC-tabs .KambiBC-tabs__tab--disabled:hover {
+	color: #4d4d4d
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__tabs .KambiBC-tabs .KambiBC-tabs__tab:focus {
+	outline: none
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__wrapper--has-overlay .mod-KambiBC-betslip__overlay {
+	background-color: #000;
+	overflow-y: auto;
+	height: 100%
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__wrapper--has-overlay .mod-KambiBC-betslip__overlay--information {
+	border-top: 4px solid #fa6201
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__wrapper--has-overlay .mod-KambiBC-betslip__overlay--error,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__wrapper--has-overlay .mod-KambiBC-betslip__overlay--pba {
+	border-top: 4px solid #dc0000
+}
+
+#mod-KambiBC-betslip-container .KambiBC-bet-system-details {
+	padding: 14px 0;
+	font-size: 12px
+}
+
+#mod-KambiBC-betslip-container .KambiBC-bet-system-details .KambiBC-table {
+	margin: 0;
+	padding: 0;
+	width: 100%
+}
+
+#mod-KambiBC-betslip-container .KambiBC-bet-system-details .KambiBC-table th {
+	font-weight: 700;
+	padding-bottom: 9px;
+	padding-left: 16px
+}
+
+#mod-KambiBC-betslip-container .KambiBC-bet-system-details .KambiBC-table td {
+	line-height: 24px;
+	padding-left: 16px;
+	padding-bottom: 1px
+}
+
+#mod-KambiBC-betslip-container .KambiBC-bet-system-details .KambiBC-table td:last-child,
+#mod-KambiBC-betslip-container .KambiBC-bet-system-details .KambiBC-table th:last-child {
+	text-align: right;
+	padding-right: 16px;
+	padding-left: 5px
+}
+
+#mod-KambiBC-betslip-container .KambiBC-bet-system-details .KambiBC-table td:last-child {
+	font-size: 14px
+}
+
+#mod-KambiBC-betslip-container .KambiBC-rewards__transitions-enter {
+	opacity: .01
+}
+
+#mod-KambiBC-betslip-container .KambiBC-rewards__transitions-enter.KambiBC-rewards__transitions-enter-active {
+	opacity: 1;
+	transition: opacity .5s ease-in
+}
+
+#mod-KambiBC-betslip-container .KambiBC-rewards__transitions-exit {
+	opacity: 1
+}
+
+#mod-KambiBC-betslip-container .KambiBC-rewards__transitions-exit.KambiBC-rewards__transitions-exit-active {
+	opacity: .01;
+	transition: opacity .5s ease-in
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__rewards-list {
+	margin: 0;
+	padding: 0;
+	list-style: none
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__rewards-container {
+	border-top: 1px solid hsla(0, 0%, 100%, .12);
+	border-bottom: 1px solid hsla(0, 0%, 100%, .12);
+	margin-top: 17px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__rewards-container:empty {
+	display: none
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__rewards-container .KambiBC-react-collapsable-container__header__title {
+	margin-right: 20px;
+	flex: 1 100%;
+	line-height: 16px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__rewards-container .KambiBC-react-collapsable-container__header__extra {
+	margin-right: 20px;
+	color: #fff;
+	position: relative;
+	font-size: 12px;
+	line-height: 12px;
+	padding-bottom: 2px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__rewards-container .KambiBC-react-collapsable-container,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__rewards-container .KambiBC-react-collapsable-container__header {
+	background-color: #222;
+	border: none;
+	box-shadow: none;
+	height: inherit;
+	margin-bottom: 0
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__rewards-container .KambiBC-react-collapsable-container__header {
+	color: #fa6201;
+	font-size: 14px;
+	position: relative;
+	height: 48px;
+	line-height: 48px;
+	padding: 0 16px 0 10px;
+	display: flex;
+	flex-wrap: wrap;
+	align-content: center
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__rewards-container .KambiBC-react-collapsable-container__header:after {
+	content: "";
+	display: inline-block;
+	position: absolute;
+	width: 9px;
+	box-sizing: border-box;
+	height: 9px;
+	top: 50%;
+	border: solid #fa6201;
+	border-width: 2px 2px 0 0;
+	right: 0;
+	margin-top: -3.5px;
+	transform: translateZ(0) rotate(-45deg);
+	right: 17px
+}
+
+.KambiBC-util-no-touchevents#mod-KambiBC-betslip-container .mod-KambiBC-betslip__rewards-container .KambiBC-react-collapsable-container__header:hover {
+	background-color: hsla(0, 0%, 100%, .06)
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__rewards-container .KambiBC-react-collapsable-container--collapsed .KambiBC-react-collapsable-container__header:after {
+	content: "";
+	display: inline-block;
+	position: absolute;
+	width: 9px;
+	margin-top: -7px;
+	box-sizing: border-box;
+	height: 9px;
+	top: 50%;
+	border: solid #fa6201;
+	border-width: 2px 2px 0 0;
+	right: 0;
+	transform: translateZ(0) rotate(135deg);
+	right: 17px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__rewards-container .KambiBC-react-collapsable-container:not(.KambiBC-react-collapsable-container--collapsed) {
+	margin-bottom: 16px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__rewards-container .KambiBC-react-collapsable-container__content {
+	border: none
+}
+
+#mod-KambiBC-betslip-container.mod-KambiBC-betslip-container--compressed .mod-KambiBC-betslip__rewards-container {
+	margin-top: 0
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-pba {
+	color: #fff
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-pba__title {
+	font-size: 16px;
+	margin: 16px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-pba__description {
+	font-size: 14px;
+	margin: 16px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-pba__currency,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-pba__punter-profiles-container .KambiBC-react-collapsable-container__header {
+	color: #fa6201
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-pba__options {
+	border-top: 1px solid hsla(0, 0%, 100%, .12);
+	border-bottom: 1px solid hsla(0, 0%, 100%, .12);
+	list-style: none;
+	padding: 0;
+	font-size: 14px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-pba__options-item {
+	display: flex;
+	align-items: center;
+	padding: 13px 18px 13px 13px
+}
+
+#mod-KambiBC-betslip-container .KambiBC-radio-button__wrapper {
+	flex: 0 0 auto;
+	margin-right: 18px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-pba__footer-text,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-pba__footnote {
+	font-size: 12px;
+	margin: 0 16px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-pba__button-wrapper {
+	margin: 30px 10px 22px 0;
+	text-align: right
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-pba__options-label {
+	cursor: pointer
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-pba__punter-profiles-options-label {
+	font-weight: 700
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-pba__punter-profiles-container {
+	border-bottom: 1px solid hsla(0, 0%, 100%, .12);
+	margin-top: -16px;
+	margin-bottom: 15px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-pba__punter-profiles-container:empty {
+	display: none
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-pba__punter-profiles-container .mod-KambiBC-betslip-pba__options {
+	border: none
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-pba__punter-profiles-container .KambiBC-react-collapsable-container__header__title {
+	margin-right: 20px;
+	flex: 1 100%;
+	line-height: 16px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-pba__punter-profiles-container .KambiBC-react-collapsable-container,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-pba__punter-profiles-container .KambiBC-react-collapsable-container__header {
+	background-color: #000;
+	border: none;
+	box-shadow: none;
+	height: inherit;
+	margin-bottom: 0
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-pba__punter-profiles-container .KambiBC-react-collapsable-container__header {
+	color: #fa6201;
+	font-size: 14px;
+	position: relative;
+	height: 48px;
+	line-height: 48px;
+	padding: 0 16px;
+	display: flex;
+	flex-wrap: wrap;
+	align-content: center
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-pba__punter-profiles-container .KambiBC-react-collapsable-container__header:after {
+	content: "";
+	display: inline-block;
+	position: absolute;
+	width: 9px;
+	box-sizing: border-box;
+	height: 9px;
+	top: 50%;
+	border: solid #fa6201;
+	border-width: 2px 2px 0 0;
+	right: 0;
+	margin-top: -3.5px;
+	transform: translateZ(0) rotate(-45deg);
+	right: 17px
+}
+
+.KambiBC-util-no-touchevents#mod-KambiBC-betslip-container .mod-KambiBC-betslip-pba__punter-profiles-container .KambiBC-react-collapsable-container__header:hover {
+	background-color: hsla(0, 0%, 100%, .06)
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-pba__punter-profiles-container .KambiBC-react-collapsable-container--collapsed .KambiBC-react-collapsable-container__header:after {
+	content: "";
+	display: inline-block;
+	position: absolute;
+	width: 9px;
+	margin-top: -7px;
+	box-sizing: border-box;
+	height: 9px;
+	top: 50%;
+	border: solid #fa6201;
+	border-width: 2px 2px 0 0;
+	right: 0;
+	transform: translateZ(0) rotate(135deg);
+	right: 17px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-pba__punter-profiles-container .KambiBC-react-collapsable-container:not(.KambiBC-react-collapsable-container--collapsed) {
+	margin-bottom: 16px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-pba__punter-profiles-container .KambiBC-react-collapsable-container__content {
+	border: none
+}
+
+#mod-KambiBC-betslip-container .KambiBC-radio-button__wrapper {
+	position: relative;
+	width: 20px;
+	height: 20px
+}
+
+#mod-KambiBC-betslip-container .KambiBC-radio-button {
+	border: 2px solid #fff;
+	box-sizing: border-box;
+	background-color: initial;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	position: absolute;
+	outline: none;
+	cursor: pointer;
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none
+}
+
+#mod-KambiBC-betslip-container .KambiBC-radio-button:checked {
+	border-color: #fa6201
+}
+
+#mod-KambiBC-betslip-container .KambiBC-radio-button:checked+.KambiBC-radio-button__dot {
+	transform: scale(.5);
+	box-sizing: border-box;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+	background-color: #fa6201
+}
+
+#mod-KambiBC-betslip-container .KambiBC-modularized-event-path {
+	color: #333;
+	font-size: 12px;
+	font-weight: 400;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	margin: 0;
+	display: flex;
+	justify-content: flex-start
+}
+
+#mod-KambiBC-betslip-container a.KambiBC-modularized-event-path__fragment {
+	text-decoration: none;
+	color: #333;
+	font-size: 12px;
+	font-weight: 400;
+	cursor: pointer
+}
+
+#mod-KambiBC-betslip-container .KambiBC-modularized-event-path__fragment {
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap
+}
+
+#mod-KambiBC-betslip-container .KambiBC-modularized-event-path__fragmentcontainer {
+	display: flex;
+	vertical-align: top;
+	min-width: 20px;
+	color: #898989;
+	flex: 0 214748 auto;
+	max-width: none
+}
+
+#mod-KambiBC-betslip-container .KambiBC-modularized-event-path__fragmentcontainer:first-of-type {
+	flex: 0 0 auto
+}
+
+#mod-KambiBC-betslip-container .KambiBC-modularized-event-path__fragmentcontainer:last-of-type {
+	flex: 0 1 auto
+}
+
+#mod-KambiBC-betslip-container .KambiBC-modularized-event-path__fragmentcontainer:after {
+	content: "/";
+	padding: 0 5px
+}
+
+#mod-KambiBC-betslip-container .KambiBC-modularized-event-path__fragmentcontainer:last-child:after {
+	content: ""
+}
+
+#mod-KambiBC-betslip-container .KambiBC-modularized-event-path__back {
+	right: 0;
+	padding-right: 10px;
+	transition: color .2s ease-out;
+	color: #919191;
+	cursor: pointer
+}
+
+#mod-KambiBC-betslip-container .KambiBC-modularized-event-path__back:before {
+	font-family: FontAwesome;
+	font-weight: 400;
+	font-style: normal;
+	content: "î¤…";
+	speak: none;
+	text-transform: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	display: inline-block;
+	font-size: 20px;
+	line-height: 48px;
+	vertical-align: top
+}
+
+.KambiBC-util-no-touchevents #mod-KambiBC-betslip-container .KambiBC-modularized-event-path__back:hover {
+	color: #fff
+}
+
+#mod-KambiBC-betslip-container .KambiBC-modularized-event-path__back.KambiBC-touch-feedback,
+#mod-KambiBC-betslip-container .KambiBC-modularized-event-path__back.KambiBC-touch-feedback:hover:active,
+.KambiBC-util-no-touchevents #mod-KambiBC-betslip-container .KambiBC-modularized-event-path__back.KambiBC-touch-feedback:hover {
+	color: #898989
+}
+
+#mod-KambiBC-betslip-container .KambiBC-breadcrumb--heading {
+	line-height: 48px;
+	padding-left: 24px
+}
+
+#mod-KambiBC-betslip-container .KambiBC-breadcrumb--heading .KambiBC-modularized-event-path__fragment {
+	padding-top: 1px;
+	font-size: 13px;
+	outline: none;
+	transition: color .2s ease-out;
+	color: #898989
+}
+
+.KambiBC-util-no-touchevents #mod-KambiBC-betslip-container .KambiBC-breadcrumb--heading a.KambiBC-modularized-event-path__fragment:hover {
+	color: #fff
+}
+
+#mod-KambiBC-betslip-container .KambiBC-breadcrumb--heading .KambiBC-modularized-event-path__divider,
+#mod-KambiBC-betslip-container .KambiBC-breadcrumb--heading a.KambiBC-modularized-event-path__fragment.KambiBC-touch-feedback,
+#mod-KambiBC-betslip-container .KambiBC-breadcrumb--heading a.KambiBC-modularized-event-path__fragment.KambiBC-touch-feedback:hover:active,
+.KambiBC-util-no-touchevents #mod-KambiBC-betslip-container .KambiBC-breadcrumb--heading a.KambiBC-modularized-event-path__fragment.KambiBC-touch-feedback:hover {
+	color: #898989
+}
+
+#mod-KambiBC-betslip-container .KambiBC-checkbox__checkbox {
+	display: none
+}
+
+#mod-KambiBC-betslip-container .KambiBC-checkbox {
+	box-sizing: border-box;
+	width: 20px;
+	height: 20px;
+	margin-right: 16px;
+	margin-left: 2px;
+	background-color: #222;
+	border: 2px solid #d6d6d6;
+	border-radius: 2px
+}
+
+#mod-KambiBC-betslip-container .KambiBC-checkbox__checkbox:checked+.KambiBC-checkbox {
+	background-color: #fa6201;
+	border: 2px solid #fa6201;
+	color: #222;
+	position: relative
+}
+
+#mod-KambiBC-betslip-container .KambiBC-checkbox__checkbox:checked+.KambiBC-checkbox:after {
+	box-sizing: border-box;
+	position: absolute;
+	left: 5px;
+	width: 6px;
+	height: 13px;
+	border: 2px solid;
+	border-top: 0;
+	border-left: 0;
+	content: "";
+	transform: rotate(45deg)
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__header-outcome-odds-container,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__header-tab-title {
+	font-size: 16px;
+	font-weight: 700
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__header {
+	display: flex;
+	flex: 0 0 auto;
+	align-items: center;
+	color: #fff;
+	background-color: #010101;
+	box-sizing: border-box;
+	border-top: 4px solid #fa6201;
+	cursor: pointer;
+	padding: 0 15px;
+	width: 100%;
+	height: 52px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__header-outcome-odds-container {
+	white-space: nowrap;
+	flex: 1 0 auto;
+	display: inline-flex
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__header-outcome-odds-at {
+	font-weight: 400
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__header-tab-title {
+	color: #fff;
+	min-width: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	margin: 0
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__header-buttons {
+	padding: 0 0 0 10px;
+	display: inline-flex;
+	flex: 0 0 auto;
+	align-items: center
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__header-btn {
+	color: #fff;
+	font-size: 24px;
+	line-height: 24px;
+	-webkit-appearance: inherit;
+	-moz-appearance: inherit;
+	appearance: inherit;
+	background: none;
+	border: none;
+	outline: none;
+	padding: 0;
+	cursor: pointer
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__header-pin-btn {
+	margin-left: 8px;
+	display: none
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__header-pin-btn:before {
+	font-family: FontAwesome;
+	font-weight: 400;
+	font-style: normal;
+	content: "î¤‰";
+	speak: none;
+	text-transform: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__header-toggle-betslip-btn {
+	box-sizing: border-box;
+	width: 9px;
+	height: 9px;
+	min-height: 0;
+	border: solid #fff;
+	border-width: 2px 2px 0 0;
+	transform: translateY(calc(-50% + 2px)) rotate(135deg);
+	transition: transform .3s linear
+}
+
+#mod-KambiBC-betslip-container.mod-KambiBC-betslip-container--minimized .mod-KambiBC-betslip__header-toggle-betslip-btn {
+	transform: translateY(2px) rotate(-45deg)
+}
+
+#mod-KambiBC-betslip-container.mod-KambiBC-betslip-container--pinned .mod-KambiBC-betslip__header {
+	cursor: default
+}
+
+#mod-KambiBC-betslip-container.mod-KambiBC-betslip-container--pinned .mod-KambiBC-betslip__header-toggle-betslip-btn {
+	display: none
+}
+
+#mod-KambiBC-betslip-container.mod-KambiBC-betslip-container--pinned.mod-KambiBC-betslip-container--pinnable .mod-KambiBC-betslip__header-pin-btn {
+	display: inline-block;
+	color: #fa6201;
+	transform: rotate(-45deg)
+}
+
+.mod-KambiBC-betslip-container--pinnable#mod-KambiBC-betslip-container[data-eq-state~=layoutExtraWide] .mod-KambiBC-betslip__header-pin-btn {
+	display: inline-block
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__header--placing-bet {
+	cursor: default
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__header--placing-bet .mod-KambiBC-betslip__header-outcome-odds-container {
+	visibility: hidden
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__header--placing-bet .mod-KambiBC-betslip__header-buttons {
+	display: none
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__header--placing-bet .mod-KambiBC-betslip__header-spinner-container {
+	width: 25px;
+	height: 25px;
+	flex: 0 0 auto
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__header--placing-bet .mod-KambiBC-betslip__header-spinner-container .mod-KambiBC-betslip__header-spinner-spinner {
+	margin: 0 auto
+}
+
+#mod-KambiBC-betslip-container.mod-KambiBC-betslip-container--pinned.mod-KambiBC-betslip-container--placing-bet .mod-KambiBC-betslip__header {
+	background-color: #222
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__wrapper--has-overlay .mod-KambiBC-betslip__header {
+	display: none
+}
+
+#mod-KambiBC-betslip-container.mod-KambiBC-betslip-container--minimized:not(.mod-KambiBC-betslip-container--hidden) .mod-KambiBC-betslip--blink .mod-KambiBC-betslip__header {
+	color: #ccc
+}
+
+#mod-KambiBC-betslip-container.mod-KambiBC-betslip-container--minimized:not(.mod-KambiBC-betslip-container--hidden) .mod-KambiBC-betslip__outer-wrapper:after {
+	content: " ";
+	display: block;
+	position: fixed;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	height: 10px;
+	width: 100%;
+	background-color: #010101;
+	pointer-events: none
+}
+
+@media screen and (min-width:31.25em) {
+	#mod-KambiBC-betslip-container.mod-KambiBC-betslip-container--minimized:not(.mod-KambiBC-betslip-container--hidden) .mod-KambiBC-betslip__outer-wrapper:after {
+		position: absolute;
+		left: auto;
+		right: auto
+	}
+}
+
+#mod-KambiBC-betslip-container.mod-KambiBC-betslip-container--minimized:not(.mod-KambiBC-betslip-container--hidden) .mod-KambiBC-betslip {
+	box-shadow: none
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-button {
+	margin-right: 5px;
+	padding: 8px 10px;
+	border-radius: 2px;
+	font-size: 14px;
+	background: transparent;
+	color: #fff
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-button:disabled {
+	color: hsla(0, 0%, 100%, .3)
+}
+
+.KambiBC-util-no-touchevents#mod-KambiBC-betslip-container .mod-KambiBC-betslip-button:disabled:hover {
+	background-color: transparent
+}
+
+.KambiBC-util-no-touchevents#mod-KambiBC-betslip-container .mod-KambiBC-betslip-button:hover {
+	background-color: #1f1f1f
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-button.KambiBC-touch-feedback,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-button.KambiBC-touch-feedback:hover:active,
+.KambiBC-util-no-touchevents #mod-KambiBC-betslip-container .mod-KambiBC-betslip-button.KambiBC-touch-feedback:hover {
+	background-color: #444
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-button--highlighted {
+	color: #fa6201
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__clear-btn--hidden {
+	display: none
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__clear-btn {
+	padding: 0 10px 5px 0;
+	line-height: 28px;
+	cursor: pointer;
+	background: none;
+	border: none;
+	color: #999;
+	font-size: 11px;
+	transition: color .2s ease-out
+}
+
+.KambiBC-util-no-touchevents#mod-KambiBC-betslip-container .mod-KambiBC-betslip__clear-btn:hover {
+	text-decoration: underline
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__clear-btn.KambiBC-touch-feedback,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__clear-btn.KambiBC-touch-feedback:hover:active,
+.KambiBC-util-no-touchevents #mod-KambiBC-betslip-container .mod-KambiBC-betslip__clear-btn.KambiBC-touch-feedback:hover {
+	color: #fff
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__clear-btn:not(.mod-KambiBC-betslip__clear-btn--hidden) {
+	display: inline-block
+}
+
+#mod-KambiBC-betslip-container .KambiBC-pages-wrapper--next-page .KambiBC-page--enter.KambiBC-page--enter-active,
+#mod-KambiBC-betslip-container .KambiBC-pages-wrapper--next-page .KambiBC-page--exit,
+#mod-KambiBC-betslip-container .KambiBC-pages-wrapper--previous-page .KambiBC-page--enter.KambiBC-page--enter-active,
+#mod-KambiBC-betslip-container .KambiBC-pages-wrapper--previous-page .KambiBC-page--exit {
+	transform: translateZ(0);
+	transition: transform .25s ease-in-out
+}
+
+#mod-KambiBC-betslip-container .KambiBC-pages-wrapper--next-page .KambiBC-page--exit.KambiBC-page--exit-active,
+#mod-KambiBC-betslip-container .KambiBC-pages-wrapper--previous-page .KambiBC-page--enter {
+	transform: translate3d(-100%, 0, 0)
+}
+
+#mod-KambiBC-betslip-container .KambiBC-pages-wrapper--next-page .KambiBC-page--enter,
+#mod-KambiBC-betslip-container .KambiBC-pages-wrapper--previous-page .KambiBC-page--exit.KambiBC-page--exit-active {
+	transform: translate3d(100%, 0, 0)
+}
+
+#mod-KambiBC-betslip-container .KambiBC-page {
+	box-sizing: border-box;
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	text-align: left
+}
+
+#mod-KambiBC-betslip-container .KambiBC-paginator {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 13px 13px 0
+}
+
+#mod-KambiBC-betslip-container .KambiBC-paginator[data-page-count="1"] .KambiBC-paginator__btn {
+	visibility: hidden
+}
+
+#mod-KambiBC-betslip-container .KambiBC-paginator__btn {
+	cursor: pointer;
+	opacity: .8;
+	color: #fff;
+	transition: opacity .2s ease-out
+}
+
+.KambiBC-util-no-touchevents#mod-KambiBC-betslip-container .KambiBC-paginator__btn:hover {
+	opacity: 1
+}
+
+#mod-KambiBC-betslip-container .KambiBC-paginator__btn.KambiBC-touch-feedback,
+#mod-KambiBC-betslip-container .KambiBC-paginator__btn.KambiBC-touch-feedback:hover:active,
+.KambiBC-util-no-touchevents #mod-KambiBC-betslip-container .KambiBC-paginator__btn.KambiBC-touch-feedback:hover {
+	opacity: .5
+}
+
+#mod-KambiBC-betslip-container .KambiBC-paginator__prev-btn:before {
+	content: "î˜"
+}
+
+#mod-KambiBC-betslip-container .KambiBC-paginator__next-btn:before,
+#mod-KambiBC-betslip-container .KambiBC-paginator__prev-btn:before {
+	font-family: FontAwesome;
+	font-weight: 400;
+	font-style: normal;
+	speak: none;
+	text-transform: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-size: 18px
+}
+
+#mod-KambiBC-betslip-container .KambiBC-paginator__next-btn:before {
+	content: "î˜Ž"
+}
+
+#mod-KambiBC-betslip-container .KambiBC-paging {
+	overflow: hidden
+}
+
+#mod-KambiBC-betslip-container .KambiBC-pages-wrapper {
+	width: 100%;
+	height: 100%;
+	position: relative;
+	margin: 0;
+	padding: 0;
+	list-style: none
+}
+
+#mod-KambiBC-betslip-container .KambiBC-react-reward-container {
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	padding: 10px 18px 10px 16px;
+	min-height: 58px;
+	color: #fff;
+	box-sizing: border-box
+}
+
+#mod-KambiBC-betslip-container .KambiBC-react-reward-container__content {
+	flex: 0 0 auto
+}
+
+#mod-KambiBC-betslip-container .KambiBC-react-reward-container__label {
+	font-size: 14px
+}
+
+#mod-KambiBC-betslip-container .KambiBC-react-reward-container__header {
+	font-weight: 700;
+	line-height: 15px
+}
+
+#mod-KambiBC-betslip-container .KambiBC-react-reward-container__info {
+	margin: 0;
+	padding: 0;
+	font-size: 12px
+}
+
+#mod-KambiBC-betslip-container .KambiBC-react-reward-container__info:empty {
+	display: none
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-feedback__title {
+	font-size: 16px;
+	font-weight: 700;
+	margin: 16px;
+	color: #fff
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-feedback__paragraph {
+	font-size: 14px;
+	color: #fff;
+	margin: 9px 16px 0
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-feedback__paragraph:first-of-type {
+	margin-top: 16px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-feedback__button-wrapper {
+	margin: 22px 6px 16px;
+	text-align: right;
+	color: #fff
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-feedback__currency,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-feedback__odds {
+	color: #fa6201
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-feedback__error-list {
+	color: #fff;
+	padding: 0 0 0 16px;
+	margin: 0;
+	font-size: 14px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-feedback__error-list__item {
+	margin: 9px 16px 0
+}
+
+#mod-KambiBC-betslip-container .KambiBC-outcome-odds-changed {
+	font-size: 14px;
+	padding: 12px 16px;
+	color: #fff
+}
+
+#mod-KambiBC-betslip-container .KambiBC-outcome-odds-changed__live-label {
+	display: none;
+	background: #d0021b;
+	color: #fff;
+	padding: 2px 3px;
+	border-radius: 2px;
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 12px;
+	letter-spacing: .5px
+}
+
+#mod-KambiBC-betslip-container .KambiBC-outcome-odds-changed__live-label--visible {
+	display: inline-block;
+	margin-right: 3px
+}
+
+#mod-KambiBC-betslip-container .KambiBC-outcome-odds-changed__event-name {
+	font-size: 14px;
+	display: inline-block;
+	margin: 0
+}
+
+#mod-KambiBC-betslip-container .KambiBC-outcome-odds-changed__criteria {
+	margin-top: 4px;
+	margin-bottom: 4px
+}
+
+#mod-KambiBC-betslip-container .KambiBC-outcome-odds-changed__outcome-label {
+	flex: 1 1 auto;
+	margin: 0;
+	color: hsla(0, 0%, 100%, .7)
+}
+
+#mod-KambiBC-betslip-container .KambiBC-outcome-odds-changed__odds-container {
+	display: flex;
+	align-items: center
+}
+
+#mod-KambiBC-betslip-container .KambiBC-outcome-odds-changed__approved-odds,
+#mod-KambiBC-betslip-container .KambiBC-outcome-odds-changed__odds {
+	margin-left: 14px
+}
+
+#mod-KambiBC-betslip-container .KambiBC-outcome-odds-changed__odds {
+	color: #fa6201
+}
+
+#mod-KambiBC-betslip-container .KambiBC-outcome-odds-changed__approved-odds {
+	color: hsla(0, 0%, 100%, .7);
+	text-decoration: line-through
+}
+
+#mod-KambiBC-betslip-container .KambiBC-react-collapsable-container {
+	margin-bottom: 16px;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .12)
+}
+
+#mod-KambiBC-betslip-container .KambiBC-react-collapsable-container__header {
+	color: #fff;
+	background-color: #222;
+	border-top: 1px solid #444;
+	border-bottom: 1px solid #111;
+	line-height: 40px;
+	cursor: pointer;
+	padding: 0 12px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	display: flex;
+	justify-content: space-between;
+	transition: background-color .15s ease-out
+}
+
+#mod-KambiBC-betslip-container .KambiBC-react-collapsable-container__header.KambiBC-touch-feedback,
+#mod-KambiBC-betslip-container .KambiBC-react-collapsable-container__header.KambiBC-touch-feedback:hover:active,
+.KambiBC-util-no-touchevents #mod-KambiBC-betslip-container .KambiBC-react-collapsable-container__header.KambiBC-touch-feedback:hover,
+.KambiBC-util-no-touchevents #mod-KambiBC-betslip-container .KambiBC-react-collapsable-container__header:hover {
+	background-color: #151515
+}
+
+#mod-KambiBC-betslip-container .KambiBC-react-collapsable-container__header__extra,
+#mod-KambiBC-betslip-container .KambiBC-react-collapsable-container__header__title {
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-size: 14px
+}
+
+#mod-KambiBC-betslip-container .KambiBC-react-collapsable-container__header__title[data-title-prefix]:before {
+	content: attr(data-title-prefix)
+}
+
+#mod-KambiBC-betslip-container .KambiBC-react-collapsable-container__header__title[data-title-suffix]:after {
+	content: attr(data-title-suffix)
+}
+
+#mod-KambiBC-betslip-container .KambiBC-react-collapsable-container__header__extra {
+	flex: 0 0 auto
+}
+
+#mod-KambiBC-betslip-container .KambiBC-react-collapsable-container__content {
+	opacity: 1;
+	overflow: hidden;
+	transition: opacity .3s ease-out 0s
+}
+
+#mod-KambiBC-betslip-container .KambiBC-react-collapsable-container__content--collapsed {
+	opacity: 0;
+	height: 0;
+	transition: none
+}
+
+#mod-KambiBC-betslip-container .KambiBC-react-collapsable-container__show-more {
+	display: block;
+	padding: 10px;
+	text-align: center;
+	background: #fcfcfc;
+	font-size: 12px;
+	color: #333;
+	text-decoration: none
+}
+
+#mod-KambiBC-betslip-container .KambiBC-react-collapsable-container__show-more.KambiBC-react-collapsable-container__show-more-outrights {
+	margin-top: 12px
+}
+
+#mod-KambiBC-betslip-container .KambiBC-react-collapsable-container--hidden {
+	display: none
+}
+
+#mod-KambiBC-betslip-container .KambiBC-spinner-container {
+	width: 24px;
+	height: 24px;
+	margin: 8px auto;
+	left: 0;
+	right: 0
+}
+
+@keyframes KambiBC-spinner-inner {
+	0% {
+		transform: rotate(0turn)
+	}
+	to {
+		transform: rotate(1turn)
+	}
+}
+
+#mod-KambiBC-betslip-container .KambiBC-spinner-inner {
+	width: 24px;
+	height: 24px;
+	border-radius: 100%;
+	border-color: #fa6201 transparent;
+	border-style: solid;
+	border-width: 2px;
+	animation: KambiBC-spinner-inner 1s linear infinite
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-approval-description,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-receipt-header__event-time,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-receipt-header__receipt-id {
+	font-size: 12px;
+	line-height: 17px;
+	color: hsla(0, 0%, 100%, .7);
+	margin: 0
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-receipt-approval,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-receipt__aams {
+	background-color: #333;
+	padding: 16px;
+	margin-top: 10px;
+	text-align: center;
+	display: block
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-receipt-approval-value,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-receipt__aams-pending {
+	color: #f5a623;
+	font-size: 14px;
+	font-weight: 700;
+	margin: 0
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__receipt {
+	background-color: #222;
+	height: 100%
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-receipt-betslip_header {
+	color: #fff;
+	background-color: #010101;
+	box-sizing: border-box;
+	padding: 0 15px;
+	width: 100%;
+	display: none
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-receipt-betslip_header__title {
+	font-size: 16px;
+	line-height: 48px;
+	font-weight: 700;
+	margin: 0
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-receipt-header {
+	border-bottom: 1px solid hsla(0, 0%, 100%, .12);
+	padding: 16px;
+	line-height: 19px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-receipt-header__title {
+	font-size: 16px;
+	font-weight: 700;
+	color: #fff;
+	margin: 0 0 9px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-approval-description {
+	margin-top: 8px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-approval-description:empty {
+	display: none
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-receipt-outcome-list {
+	margin: 0;
+	padding: 0;
+	list-style: none
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-receipt__print-button-wrapper {
+	border-bottom: 1px solid hsla(0, 0%, 100%, .12);
+	text-align: center;
+	padding: 10px 0
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-receipt__print-button {
+	text-decoration: none;
+	outline: 0;
+	color: #fff;
+	transition: color .2s ease-out
+}
+
+.KambiBC-util-no-touchevents#mod-KambiBC-betslip-container .mod-KambiBC-betslip-receipt__print-button:hover {
+	color: #b3b3b3
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-receipt__print-button.KambiBC-touch-feedback,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-receipt__print-button.KambiBC-touch-feedback:hover:active,
+.KambiBC-util-no-touchevents #mod-KambiBC-betslip-container .mod-KambiBC-betslip-receipt__print-button.KambiBC-touch-feedback:hover {
+	color: #d9d9d9
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-receipt__print-button:before {
+	font-family: FontAwesome;
+	font-weight: 400;
+	font-style: normal;
+	content: "î¤‚";
+	speak: none;
+	text-transform: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-receipt__retain-selection-wrapper {
+	text-align: center;
+	margin-top: 16px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-receipt__retain-selection {
+	display: inline-flex;
+	align-items: center;
+	cursor: pointer
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-receipt__retain-selection .KambiBC-checkbox {
+	margin-right: 4px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-receipt__retain-selection-label {
+	color: hsla(0, 0%, 100%, .7);
+	font-size: 12px;
+	line-height: 20px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-receipt__close-button-wrapper {
+	padding: 16px 10px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-receipt__close-button {
+	border: none;
+	cursor: pointer;
+	padding: 14px 0 16px;
+	width: 100%;
+	border-radius: 2px;
+	background-color: #00953a;
+	color: #fff;
+	font-size: 16px;
+	font-weight: 700;
+	transition: background .2s ease-out
+}
+
+.KambiBC-util-no-touchevents#mod-KambiBC-betslip-container .mod-KambiBC-betslip-receipt__close-button:hover {
+	background-color: #00af44
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-receipt__close-button.KambiBC-touch-feedback,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-receipt__close-button.KambiBC-touch-feedback:hover:active,
+.KambiBC-util-no-touchevents #mod-KambiBC-betslip-container .mod-KambiBC-betslip-receipt__close-button.KambiBC-touch-feedback:hover {
+	background-color: #00d252
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-print-receipt-outcome-item__event-link,
+#mod-KambiBC-betslip-container .mod-KambiBC-receipt-outcome-item__betpayout,
+#mod-KambiBC-betslip-container .mod-KambiBC-receipt-outcome-item__betstake {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-receipt-outcome-item__betpayout,
+#mod-KambiBC-betslip-container .mod-KambiBC-receipt-outcome-item__betstake,
+#mod-KambiBC-betslip-container .mod-KambiBC-receipt-outcome-item__criteria,
+#mod-KambiBC-betslip-container .mod-KambiBC-receipt-outcome-item__event-group .KambiBC-modularized-event-path__fragmentcontainer,
+#mod-KambiBC-betslip-container .mod-KambiBC-receipt-outcome-item__extra-info,
+#mod-KambiBC-betslip-container .mod-KambiBC-receipt-outcome-item__header p,
+#mod-KambiBC-betslip-container .mod-KambiBC-receipt-outcome-item__odds,
+#mod-KambiBC-betslip-container .mod-KambiBC-receipt-outcome-item__outcome-label {
+	margin: 0;
+	font-size: 12px;
+	color: hsla(0, 0%, 100%, .7)
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-receipt__outcome {
+	padding: 13px 16px;
+	border-bottom: 1px solid hsla(0, 0%, 100%, .12)
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-receipt__betbuilder-outcome {
+	padding: 0;
+	display: flex;
+	flex-direction: row
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-receipt__betbuilder-outcome ol {
+	border-right: 1px solid hsla(0, 0%, 100%, .12);
+	flex: 1 auto
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-receipt__betbuilder-outcome li:last-child {
+	border-bottom: 0
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-receipt__betbuilder-outcome p.mod-KambiBC-receipt-outcome-item__odds-wrapper {
+	align-items: center;
+	padding: 16px;
+	width: 90px;
+	max-width: 90px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-receipt__betbuilder-outcome p.mod-KambiBC-receipt-outcome-item__odds-wrapper span.KambiBC-outcome-odds-bet-confirmation__odds {
+	color: #fff;
+	font-size: 14px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-receipt-outcome-item__header {
+	font-size: 0
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-receipt-outcome-item__title-wrapper {
+	display: flex;
+	align-items: center
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-receipt-outcome-item__event-live {
+	flex: 0 0 auto;
+	margin-right: 3px;
+	padding: 2px 3px;
+	background: #d0021b;
+	border-radius: 2px;
+	font-size: 10px;
+	line-height: 10px;
+	letter-spacing: .5px;
+	font-weight: 700;
+	color: #fff
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-receipt-outcome-item__neutral-venue {
+	text-transform: capitalize
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-print-receipt-outcome-item__event-link {
+	display: inline-block;
+	max-width: 100%;
+	margin: 0;
+	color: #fff;
+	font-size: 14px;
+	text-decoration: none
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-receipt-outcome-item__bottom-wrapper p,
+#mod-KambiBC-betslip-container p.mod-KambiBC-receipt-outcome-item__event-extra-info {
+	color: #fff
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-receipt-outcome-item__details {
+	margin-top: 10px;
+	overflow: hidden
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-receipt-outcome-item__bottom-wrapper {
+	display: flex
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-receipt-outcome-item__betstake__stake {
+	color: #fff
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-receipt-outcome-item__betstake--rejected {
+	text-decoration: line-through
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-receipt-outcome-item__betpayout__value {
+	color: #fff
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-receipt-outcome-item__outcome-label-wrapper {
+	flex: 1 1 auto;
+	display: flex;
+	align-items: center;
+	margin-right: 6px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-receipt-outcome-item__bog {
+	display: initial;
+	flex: 0 0 auto;
+	line-height: 12px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-receipt-outcome-item__bog:before {
+	font-family: FontAwesome;
+	font-weight: 400;
+	font-style: normal;
+	content: "î¤Œ";
+	speak: none;
+	text-transform: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	font-size: 12px;
+	opacity: .8;
+	color: #fff;
+	margin-right: 2px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-receipt-outcome-item__outcome-label {
+	flex: 1 1 auto
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-receipt-outcome-item__odds-wrapper {
+	display: flex;
+	justify-content: flex-end;
+	flex: 1 0 auto
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-receipt-outcome-item__odds {
+	flex: 0 0 auto;
+	margin: 0;
+	font-size: 14px;
+	line-height: 16px;
+	color: #fff
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-receipt-outcome-item__odds--outdated {
+	text-decoration: line-through
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-receipt-outcome-item__boosted-odds {
+	font-size: 14px;
+	color: #fa6201
+}
+
+#mod-KambiBC-betslip-container .KambiBC-live {
+	color: #e7501e;
+	font-style: italic;
+	font-weight: 700;
+	letter-spacing: 0;
+	vertical-align: top
+}
+
+#mod-KambiBC-betslip-container .KambiBC-live:before {
+	content: " "
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-js-betslip-receipt__summmary {
+	padding: 13px 16px;
+	border-bottom: 1px solid hsla(0, 0%, 100%, .12)
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-receipt__wrapper {
+	margin: 0;
+	padding: 0
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-receipt__row {
+	display: flex;
+	align-items: center
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-receipt__label {
+	flex: 1 1 auto;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	margin-right: 3px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-receipt__label:after {
+	content: ""
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-receipt__label.mod-KambiBC-betslip-receipt__label_small {
+	color: #ccc;
+	font-size: 9px;
+	font-weight: 500
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-receipt-summary__title,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-receipt__label,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-receipt__value {
+	display: inline;
+	margin: 0;
+	font-size: 12px;
+	color: #fff;
+	vertical-align: top;
+	line-height: 1.25
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-receipt__value {
+	flex: 0 0 auto;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	max-width: calc(100% - 30px);
+	font-size: 16px;
+	font-weight: 700
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-receipt__date {
+	display: none
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-receipt__free-bet-label,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-receipt__profit-boost-payout-label {
+	font-size: 12px;
+	font-weight: 700;
+	color: #fa6201
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-receipt__boosted-odds {
+	color: #fa6201
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-receipt__obsolete-odds {
+	text-decoration: line-through
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-receipt-summary__title,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-receipt__label,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-receipt__value {
+	line-height: 24px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-receipt-summary__title {
+	font-weight: 700
+}
+
+#mod-KambiBC-betslip-container .KambiBC-betslip-receipt__teaser {
+	height: 16px;
+	margin-left: 4px;
+	vertical-align: middle
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__place-bet-btn {
+	align-items: center;
+	padding: 16px 10px;
+	line-height: 18px;
+	cursor: pointer;
+	background: #90bd0a;
+	border: none;
+	color: #fff;
+	font-size: 16px;
+	width: 100%;
+	font-weight: 700;
+	border-radius: 3px;
+	transition: background .2s ease-out
+}
+
+.KambiBC-util-no-touchevents#mod-KambiBC-betslip-container .mod-KambiBC-betslip__place-bet-btn:hover {
+	background: #a2d50b
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__place-bet-btn.KambiBC-touch-feedback,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__place-bet-btn.KambiBC-touch-feedback:hover:active,
+.KambiBC-util-no-touchevents #mod-KambiBC-betslip-container .mod-KambiBC-betslip__place-bet-btn.KambiBC-touch-feedback:hover {
+	background: #baf212
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__place-bet-btn.KambiBC-disabled {
+	background: #3c3c3c;
+	color: hsla(0, 0%, 100%, .3);
+	cursor: default
+}
+
+.KambiBC-util-no-touchevents#mod-KambiBC-betslip-container .mod-KambiBC-betslip__place-bet-btn.KambiBC-disabled:hover {
+	background: #3c3c3c
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__approve-odds-btn {
+	background: #c93d79;
+	color: #fff
+}
+
+.KambiBC-util-no-touchevents#mod-KambiBC-betslip-container .mod-KambiBC-betslip__approve-odds-btn:hover {
+	background: #cf5187
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__approve-odds-btn.KambiBC-touch-feedback,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__approve-odds-btn.KambiBC-touch-feedback:hover:active,
+.KambiBC-util-no-touchevents #mod-KambiBC-betslip-container .mod-KambiBC-betslip__approve-odds-btn.KambiBC-touch-feedback:hover {
+	background: #d66d9a
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-outcome--has-mobile-keyboard .mod-KambiBC-stake-input,
+#mod-KambiBC-betslip-container .mod-KambiBC-stake-input:focus {
+	border: 2px solid #fa6201;
+	padding-left: 3px;
+	padding-right: 3px;
+	outline: 0
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-stake-input {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	font-size: 14px;
+	font-weight: 700;
+	width: 66px;
+	height: 30px;
+	color: #222;
+	border: 1px solid #f7d700;
+	border-radius: 2px;
+	padding-left: 4px;
+	padding-right: 4px;
+	text-align: right
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-stake-input:focus::placeholder {
+	color: transparent
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-stake-input::-ms-clear {
+	display: none
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-stake-input::placeholder {
+	color: #222
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-stake-input--display-currency {
+	width: 92px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-stake-input__currency {
+	position: absolute;
+	display: block;
+	transform: translateY(-50%);
+	top: 50%;
+	pointer-events: none;
+	width: 14px;
+	text-align: center;
+	font-style: normal;
+	font-size: 14px;
+	font-weight: 700;
+	color: #222
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-to-win-input__container .mod-KambiBC-stake-input--display-currency {
+	text-indent: 10px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-to-win-input__container .mod-KambiBC-stake-input__currency {
+	padding-top: 12px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-stake-input__title {
+	position: absolute;
+	top: 0;
+	right: 4px;
+	font-size: 12px;
+	line-height: 24px;
+	color: #222;
+	pointer-events: none
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-stake-input__container {
+	position: relative
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-outcome--has-mobile-keyboard .mod-KambiBC-stake-input::placeholder {
+	color: transparent
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__system-stake-input--has-mobile-keyboard .mod-KambiBC-betslip-system-stake-input .mod-KambiBC-stake-input:focus:-moz-read-only {
+	border: 2px solid #fa6201;
+	padding-left: 3px;
+	padding-right: 3px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-system-stake-input .mod-KambiBC-stake-input:focus,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__system-stake-input--has-mobile-keyboard .mod-KambiBC-betslip-system-stake-input .mod-KambiBC-stake-input,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__system-stake-input--has-mobile-keyboard .mod-KambiBC-betslip-system-stake-input .mod-KambiBC-stake-input:focus:read-only {
+	border: 2px solid #fa6201;
+	padding-left: 3px;
+	padding-right: 3px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__system-stake-input {
+	padding: 0 0 5px;
+	display: block
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__system-package-stake-input-list--has-free-bet.mod-KambiBC-betslip__system-package-stake-input-list--has-each-way .mod-KambiBC-betslip-system-stake-combination-count,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__system-package-stake-input-list--has-free-bet.mod-KambiBC-betslip__system-package-stake-input-list--has-each-way .mod-KambiBC-betslip-system-stake-input,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__system-package-stake-input-list--has-free-bet.mod-KambiBC-betslip__system-package-stake-input-list--has-each-way .mod-KambiBC-betslip__system-stake-input:not(.mod-KambiBC-betslip__system-stake-input--populated-by-free-bet),
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__system-package-stake-input-list--has-free-bet:not(.mod-KambiBC-betslip__system-package-stake-input-list--has-each-way) .mod-KambiBC-betslip__system-stake-input,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__system-stake-input-list--has-free-bet.mod-KambiBC-betslip__system-stake-input-list--has-each-way .mod-KambiBC-betslip-system-stake-combination-count,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__system-stake-input-list--has-free-bet.mod-KambiBC-betslip__system-stake-input-list--has-each-way .mod-KambiBC-betslip-system-stake-input,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__system-stake-input-list--has-free-bet.mod-KambiBC-betslip__system-stake-input-list--has-each-way .mod-KambiBC-betslip__system-stake-input:not(:only-of-type),
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__system-stake-input-list--has-free-bet:not(.mod-KambiBC-betslip__system-stake-input-list--has-each-way) .mod-KambiBC-betslip__system-stake-input {
+	display: none
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-system-stake-wrapper {
+	display: flex;
+	align-items: center;
+	flex-flow: row wrap;
+	padding: 0 10px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-system-stake-wrapper .KambiBC-checkbox--disabled {
+	opacity: .5
+}
+
+#mod-KambiBC-betslip-container.mod-KambiBC-betslip-container--compressed .mod-KambiBC-betslip-system-stake-wrapper {
+	padding: 0 8px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__system-stake-input:only-of-type {
+	padding: 12px 0;
+	border-top: none;
+	border-bottom: 1px solid hsla(0, 0%, 100%, .12)
+}
+
+#mod-KambiBC-betslip-container.mod-KambiBC-betslip-container--compressed .mod-KambiBC-betslip__system-stake-input:only-of-type {
+	border-bottom: none
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__system-stake-input:first-of-type {
+	padding-top: 12px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-system-stake-label {
+	flex: 1 1 auto;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	margin-right: 2px;
+	font-family: Roboto, Helvetica Neue, sans-serif;
+	font-size: 14px;
+	font-weight: 400;
+	color: #fa6201;
+	order: 1
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-system-stake-label--system {
+	cursor: pointer
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-system-stake-combination-count {
+	flex: 0 0 auto;
+	font-family: Roboto, Helvetica Neue, sans-serif;
+	font-size: 14px;
+	color: #fff;
+	margin-right: 10px;
+	margin-left: 5px;
+	order: 2
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-system-stake-input {
+	flex: 0 0 auto;
+	order: 3
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-system-stake-input .mod-KambiBC-stake-input {
+	border: 1px solid #bcbcbc;
+	padding-left: 5px;
+	padding-right: 5px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-system-stake-input .mod-KambiBC-stake-input:focus:-moz-read-only {
+	border: 1px solid #bcbcbc;
+	padding-left: 5px;
+	padding-right: 5px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-system-stake-input .mod-KambiBC-stake-input:focus:read-only {
+	border: 1px solid #bcbcbc;
+	padding-left: 5px;
+	padding-right: 5px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-system-stake-input .mod-KambiBC-stake-input:disabled {
+	background-color: #555;
+	color: hsla(0, 0%, 100%, .3);
+	border: 1px solid #555;
+	opacity: 1;
+	-webkit-text-fill-color: hsla(0, 0%, 100%, .3)
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__system-stake-input--has-mobile-keyboard .mod-KambiBC-betslip-system-mobile-keyboard .mod-KambiBC-betslip-mobile-keyboard {
+	margin-top: 10px;
+	margin-bottom: 4px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-system-details {
+	flex: 1 100%;
+	order: 4
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-system-details .KambiBC-bet-system-details {
+	margin-top: 5px;
+	color: #fff;
+	background-color: #333;
+	border-top: 1px solid #030303;
+	border-bottom: 1px solid #444
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-system-details .KambiBC-table td {
+	border-top: 1px solid hsla(0, 0%, 100%, .12)
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-system-details .KambiBC-paginator__page-count,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-system-details .KambiBC-table th {
+	color: hsla(0, 0%, 100%, .7)
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-each-way {
+	order: 5
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__system-package-stake-input:first-of-type {
+	border-top: 1px solid hsla(0, 0%, 100%, .12);
+	padding-top: 9px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__system-package-stake-input:last-of-type {
+	border-bottom: 1px solid hsla(0, 0%, 100%, .12);
+	padding-bottom: 5px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__system-package-stake-input-list--has-free-bet.mod-KambiBC-betslip__system-package-stake-input-list--has-each-way .mod-KambiBC-betslip__system-stake-input--populated-by-free-bet {
+	padding: 12px 0;
+	border-top: none;
+	border-bottom: 1px solid hsla(0, 0%, 100%, .12)
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__system-stake-input--has-mobile-keyboard .mod-KambiBC-betslip-system-package-mobile-keyboard .mod-KambiBC-betslip-mobile-keyboard {
+	margin-top: 10px;
+	margin-bottom: 4px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__outcome {
+	background-color: #fbe870;
+	color: #222;
+	position: relative;
+	list-style-type: none
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__outcome__content-wrapper {
+	display: flex;
+	border-bottom: 1px solid #f7d700
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__outcome--suspended {
+	background-color: #333;
+	color: #ddd
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__outcome--suspended .mod-KambiBC-betslip__outcome__content-wrapper {
+	border-bottom: 1px solid #666
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__outcome--suspended .mod-KambiBC-betslip-outcome__odds {
+	font-size: 12px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__outcome--suspended .mod-KambiBC-betslip-outcome__odds:before {
+	display: none
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__outcome--suspended .mod-KambiBC-stake-input {
+	background-color: #fff;
+	color: red;
+	opacity: .3;
+	pointer-events: none;
+	border-color: #222
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__outcome--suspended .mod-KambiBC-stake-input__title {
+	color: #000
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__outcome--closed {
+	background-color: #f8aab3;
+	color: #222
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__outcome--closed .mod-KambiBC-betslip__outcome__content-wrapper {
+	border-bottom: 1px solid #ce8c94
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__outcome--closed .mod-KambiBC-betslip-outcome__criteria,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__outcome--closed .mod-KambiBC-betslip-outcome__event-link {
+	color: rgba(34, 34, 34, .35)
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__outcome--closed .mod-KambiBC-betslip-outcome__odds {
+	font-size: 12px;
+	color: rgba(34, 34, 34, .35)
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__outcome--closed .mod-KambiBC-betslip-outcome__odds:before,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__outcome--closed .mod-KambiBC-stake-input {
+	display: none
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__outcome--closed .mod-KambiBC-betslip-outcome__stake-input {
+	margin-bottom: 0
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__outcome--details-open {
+	margin-right: 30px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__outcome--details-open:after {
+	content: counter(li);
+	counter-increment: li;
+	position: absolute;
+	top: calc(50% - 7px);
+	right: -30px;
+	width: 30px;
+	font-size: 14px;
+	text-align: center;
+	font-weight: 700;
+	color: #fff
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__outcome--details-open .mod-KambiBC-betslip-outcome__content:before {
+	right: -30px;
+	width: 30px;
+	box-sizing: border-box;
+	content: "";
+	position: absolute;
+	top: 0;
+	height: 100%;
+	line-height: 100%;
+	background: #fa6201;
+	border-bottom: 1px solid #df5701
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__outcome--free-bet .mod-KambiBC-betslip-outcome__stake-input {
+	display: none
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-outcome__content {
+	display: flex;
+	flex: 1 1 auto;
+	flex-wrap: wrap;
+	padding: 8px 10px;
+	font-size: 12px;
+	line-height: 14px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-outcome__description {
+	flex: 1 0 0%
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-outcome__outcome-info {
+	margin: 8px 0
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-outcome__outcome-info:first-of-type {
+	margin-top: 4px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-outcome__stake-container {
+	flex: 0 0 auto;
+	margin-top: -1px;
+	margin-left: 4px;
+	text-align: right
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-outcome__stake-input-container {
+	display: none
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__outcome--has-stake-input:not(.mod-KambiBC-betslip__outcome--free-bet):not(.mod-KambiBC-betslip__outcome--closed) .mod-KambiBC-betslip-outcome__stake-input-container {
+	display: flex;
+	flex-direction: row
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__outcome--has-stake-input:not(.mod-KambiBC-betslip__outcome--free-bet) .mod-KambiBC-betslip-outcome__stake-label {
+	margin-right: 4px;
+	line-height: 30px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__outcome--has-stake-input:not(.mod-KambiBC-betslip__outcome--free-bet) .mod-KambiBC-betslip-outcome__stake-input {
+	margin-bottom: 8px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-outcome__bog:before {
+	font-family: FontAwesome;
+	font-weight: 400;
+	font-style: normal;
+	content: "î¤Œ";
+	speak: none;
+	text-transform: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	vertical-align: middle;
+	font-size: 15px;
+	opacity: .7;
+	margin-right: -2px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-outcome__live-label-container {
+	display: inline-flex
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-outcome__live-label {
+	display: inline-block;
+	display: inline-flex;
+	align-items: center;
+	min-height: 14px;
+	background: #d0021b;
+	color: #fff;
+	padding: 2px 3px;
+	border-radius: 2px;
+	font-size: 10px;
+	font-weight: 700;
+	line-height: 10px;
+	letter-spacing: .5px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-outcome__outcome-label {
+	font-weight: 700
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-outcome__event-link {
+	display: inline;
+	color: inherit;
+	text-decoration: none
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-outcome__criteria,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-outcome__event-link,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-outcome__extrainfo {
+	margin: 0
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-outcome__criteria {
+	display: inline-block;
+	white-space: pre-line
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-outcome__additional-information {
+	flex: 0 0 100%;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: flex-end
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-outcome__each-way,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-outcome__extrainfo {
+	flex: 1 1 auto
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-outcome__close-btn {
+	-webkit-appearance: inherit;
+	-moz-appearance: inherit;
+	appearance: inherit;
+	background: none;
+	outline: none;
+	cursor: pointer;
+	padding: 0;
+	border-radius: 0;
+	flex: 0 0 36px;
+	border: none;
+	border-right: 1px solid rgba(0, 0, 0, .15)
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-outcome__close-btn:before {
+	font-family: FontAwesome;
+	font-weight: 400;
+	font-style: normal;
+	content: "\f00d";
+	speak: none;
+	text-transform: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	opacity: .16;
+	font-size: 23px;
+	color: #000;
+	transition: opacity .2s ease-out
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-outcome__close-btn:hover:before {
+	opacity: .26
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-outcome__close-btn.KambiBC-touch-feedback:before,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-outcome__close-btn.KambiBC-touch-feedback:hover:active:before,
+.KambiBC-util-no-touchevents #mod-KambiBC-betslip-container .mod-KambiBC-betslip-outcome__close-btn.KambiBC-touch-feedback:hover:before {
+	opacity: .36
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__outcome--suspended .mod-KambiBC-betslip-outcome__close-btn {
+	border-right: 1px solid hsla(0, 0%, 100%, .25)
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__outcome--suspended .mod-KambiBC-betslip-outcome__close-btn:before {
+	color: #fff;
+	opacity: .3
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__outcome--suspended .mod-KambiBC-betslip-outcome__close-btn:hover:before {
+	opacity: .5
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__outcome--closed .mod-KambiBC-betslip-outcome__close-btn {
+	border-right: 1px solid rgba(0, 0, 0, .15)
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__outcome--closed .mod-KambiBC-betslip-outcome__close-btn:before {
+	color: #000;
+	opacity: .16
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__outcome--closed .mod-KambiBC-betslip-outcome__close-btn:hover:before {
+	opacity: .26
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-outcome__boosted-odds,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-outcome__odds {
+	font-size: 14px;
+	font-weight: 700;
+	line-height: 16px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-outcome__odds:before {
+	height: 7px;
+	width: 10px;
+	margin-right: 3px;
+	content: ""
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-outcome__odds-container {
+	display: inline-block;
+	position: relative;
+	margin-right: 4px;
+	margin-bottom: 5px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-outcome__boosted-odds {
+	color: #00953a
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__outcome:not(.mod-KambiBC-betslip__outcome--closed):not(.mod-KambiBC-betslip__outcome--suspended).mod-KambiBC-betslip__outcome--profit-boost .mod-KambiBC-betslip-outcome__odds {
+	text-decoration: line-through;
+	color: rgba(34, 34, 34, .3)
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__outcome:not(.mod-KambiBC-betslip__outcome--closed):not(.mod-KambiBC-betslip__outcome--suspended).mod-KambiBC-betslip__outcome--profit-boost .mod-KambiBC-betslip-outcome__boosted-odds {
+	margin-left: 4px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__outcome.mod-KambiBC-betslip__outcome--closed .mod-KambiBC-betslip-outcome__boosted-odds,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__outcome.mod-KambiBC-betslip__outcome--suspended .mod-KambiBC-betslip-outcome__boosted-odds {
+	display: none
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-outcome__odds--changing {
+	background: #c93d79;
+	color: #fff;
+	margin-right: -4px;
+	padding: 0 4px;
+	border-radius: 2px;
+	display: flex;
+	align-items: center
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-outcome__odds--increasing:before {
+	display: inline-block;
+	background: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 10 7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 0l5 7H0' fill='%2300953a' fill-rule='evenodd'/%3E%3C/svg%3E")
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-outcome__odds--decreasing:before {
+	display: inline-block;
+	background: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 10 7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 7L0 0h10' fill='%23ed1c34' fill-rule='evenodd'/%3E%3C/svg%3E")
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-outcome__odds--changing.mod-KambiBC-betslip-outcome__odds--increasing:before {
+	display: inline-block;
+	background: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 10 7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 0l5 7H0' fill='%23fff' fill-rule='evenodd'/%3E%3C/svg%3E")
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-outcome__odds--changing.mod-KambiBC-betslip-outcome__odds--decreasing:before {
+	display: inline-block;
+	background: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 10 7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 7L0 0h10' fill='%23fff' fill-rule='evenodd'/%3E%3C/svg%3E")
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-outcome__actions-dialouge-container {
+	display: none;
+	position: absolute;
+	right: calc(100% + 10px);
+	width: 200px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__outcome--has-stake-input .mod-KambiBC-betslip-outcome__actions-dialouge-container {
+	top: auto
+}
+
+#mod-KambiBC-betslip-container.mod-KambiBC-betslip-container--pinned .mod-KambiBC-betslip-outcome__actions-dialouge-container {
+	width: 150px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-outcome-item__actions-dialogue {
+	display: none;
+	float: right;
+	z-index: 2;
+	min-height: 27px;
+	font-weight: 700;
+	text-align: left;
+	color: #fff;
+	background: #33aa61;
+	cursor: pointer;
+	border-radius: 2px;
+	padding: 7px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-outcome-item__actions-dialogue.KambiBC-touch-feedback,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-outcome-item__actions-dialogue.KambiBC-touch-feedback:hover:active,
+.KambiBC-util-no-touchevents #mod-KambiBC-betslip-container .mod-KambiBC-betslip-outcome-item__actions-dialogue.KambiBC-touch-feedback:hover,
+.KambiBC-util-no-touchevents#mod-KambiBC-betslip-container .mod-KambiBC-betslip-outcome-item__actions-dialogue:hover {
+	background: #2d9656
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-outcome-item__actions-dialogue__progress {
+	position: absolute;
+	right: 0;
+	top: 0;
+	width: 0;
+	height: 100%;
+	background: hsla(0, 0%, 100%, .2);
+	animation-duration: 1s
+}
+
+@keyframes KambiBC-dialogue-progress {
+	0% {
+		width: 100%
+	}
+	to {
+		width: 0
+	}
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__outcome--dialog-visible .mod-KambiBC-betslip-outcome-item__actions-dialogue,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__outcome--dialog-visible .mod-KambiBC-betslip-outcome__actions-dialouge-container {
+	display: block
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__outcome--dialog-visible .mod-KambiBC-betslip-outcome-item__actions-dialogue__progress {
+	animation-name: KambiBC-dialogue-progress
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__outcome--dialog-visible .mod-KambiBC-betslip-outcome__criteria,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__outcome--dialog-visible .mod-KambiBC-betslip-outcome__event-link,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__outcome--dialog-visible .mod-KambiBC-betslip-outcome__extrainfo,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__outcome--dialog-visible .mod-KambiBC-betslip-outcome__odds {
+	color: rgba(34, 34, 34, .5)
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-feedback__odds-changed-coupon-row-list {
+	list-style: none;
+	padding: 0
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-feedback__odds-changed-outcome-list {
+	list-style: none;
+	padding: 0;
+	margin: 16px 0 0
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-feedback__odds-changed-outcome-list__item {
+	border-bottom: 1px solid hsla(0, 0%, 100%, .12)
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-feedback__odds-changed-outcome-list__item:first-of-type {
+	border-top: 1px solid hsla(0, 0%, 100%, .12)
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-feedback__odds-changed-coupon-row-odds {
+	display: flex;
+	justify-content: flex-end;
+	padding: 0 16px 12px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-system-stake-wrapper .mod-KambiBC-betslip-each-way-container {
+	margin-left: 8px;
+	margin-top: 0
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-system-stake-wrapper .mod-KambiBC-betslip-each-way-container .mod-KambiBC-betslip-outcome__each-way-text {
+	color: #fff;
+	font-size: 12px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-system-stake-wrapper .mod-KambiBC-betslip-each-way-container[data-disabled=true] .mod-KambiBC-betslip-outcome__each-way-text {
+	color: hsla(0, 0%, 100%, .3)
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-system-stake-wrapper .mod-KambiBC-betslip-each-way-container[data-disabled=true] .KambiBC-checkbox__checkbox:checked+.KambiBC-checkbox {
+	background: #555;
+	border-color: #555
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-system-stake-wrapper .mod-KambiBC-betslip-each-way-container .KambiBC-checkbox {
+	margin-right: 0;
+	margin-left: 7px;
+	border-color: #fff
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-system-stake-wrapper .mod-KambiBC-betslip-each-way-container .KambiBC-checkbox__checkbox:checked+.KambiBC-checkbox {
+	color: #000;
+	border: 2px solid #fa6201
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-outcome__each-way .mod-KambiBC-betslip-each-way-container[data-disabled=true] .mod-KambiBC-betslip-outcome__each-way-text {
+	color: #ddd
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-outcome__each-way .mod-KambiBC-betslip-each-way-container[data-disabled=true] .KambiBC-checkbox__checkbox:checked+.KambiBC-checkbox {
+	background: transparent;
+	border-color: #ddd;
+	color: #ddd
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-outcome__each-way .mod-KambiBC-betslip-each-way-container[data-disabled=true] .KambiBC-checkbox__checkbox+.KambiBC-checkbox {
+	border-color: #ddd
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__outcome--closed .mod-KambiBC-betslip-outcome__each-way .mod-KambiBC-betslip-each-way-container[data-disabled=true] .mod-KambiBC-betslip-outcome__each-way-text {
+	color: rgba(34, 34, 34, .35)
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__outcome--closed .mod-KambiBC-betslip-outcome__each-way .mod-KambiBC-betslip-each-way-container[data-disabled=true] .KambiBC-checkbox__checkbox:checked+.KambiBC-checkbox {
+	border-color: rgba(34, 34, 34, .35);
+	color: rgba(34, 34, 34, .35)
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__outcome--closed .mod-KambiBC-betslip-outcome__each-way .mod-KambiBC-betslip-each-way-container[data-disabled=true] .KambiBC-checkbox__checkbox+.KambiBC-checkbox {
+	border-color: rgba(34, 34, 34, .35)
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-each-way-container {
+	display: inline-flex
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-each-way-container .KambiBC-checkbox {
+	margin-right: 7px;
+	margin-left: 7px;
+	border-color: #555;
+	background-color: inherit
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-each-way-container .KambiBC-checkbox__checkbox:checked+.KambiBC-checkbox {
+	color: #fbe870
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-outcome__each-way-text {
+	align-self: center;
+	color: #222
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__summary {
+	padding: 5px 10px
+}
+
+#mod-KambiBC-betslip-container.mod-KambiBC-betslip-container--compressed .mod-KambiBC-betslip__summary {
+	padding: 8px
+}
+
+#mod-KambiBC-betslip-container.mod-KambiBC-betslip-container--compressed .mod-KambiBC-betslip__summary .mod-KambiBC-betslip-summary__row {
+	margin-bottom: 0
+}
+
+#mod-KambiBC-betslip-container.mod-KambiBC-betslip-container--compressed .mod-KambiBC-betslip__summary .mod-KambiBC-betslip-summary__place-bet-content {
+	margin-top: 4px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+	align-items: flex-end
+}
+
+#mod-KambiBC-betslip-container.mod-KambiBC-betslip-container--compressed .mod-KambiBC-betslip__summary .mod-KambiBC-betslip-summary__info {
+	margin-right: 5px;
+	flex: 1 1 0%
+}
+
+#mod-KambiBC-betslip-container.mod-KambiBC-betslip-container--compressed .mod-KambiBC-betslip__summary .mod-KambiBC-betslip__place-bet-button-wrapper {
+	margin-left: 5px;
+	flex: 1 1 0%;
+	padding: 0
+}
+
+#mod-KambiBC-betslip-container.mod-KambiBC-betslip-container--compressed .mod-KambiBC-betslip__summary .mod-KambiBC-betslip-summary__row.mod-KambiBC-betslip-summary__payout {
+	flex-direction: column;
+	align-items: flex-start;
+	line-height: 22px
+}
+
+#mod-KambiBC-betslip-container.mod-KambiBC-betslip-container--compressed .mod-KambiBC-betslip__summary .mod-KambiBC-betslip__place-bet-btn {
+	height: 56px;
+	text-align: center;
+	padding-top: 0;
+	padding-bottom: 0
+}
+
+#mod-KambiBC-betslip-container.mod-KambiBC-betslip-container--compressed .mod-KambiBC-betslip__summary .mod-KambiBC-betslip-summary__total-odds--changing {
+	margin-right: 0
+}
+
+#mod-KambiBC-betslip-container.mod-KambiBC-betslip-container--compressed .mod-KambiBC-betslip__summary .mod-KambiBC-betslip-summary__cash-out-label {
+	line-height: 9px;
+	padding: 2px
+}
+
+#mod-KambiBC-betslip-container.mod-KambiBC-betslip-container--compressed .mod-KambiBC-betslip__summary .mod-KambiBC-betslip-summary__cash-out-container {
+	margin-bottom: 8px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__place-bet-button-wrapper {
+	padding: 10px 0
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-summary__row {
+	display: flex;
+	align-items: center;
+	margin-bottom: 3px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-summary__row--hidden {
+	display: none
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-summary__label {
+	flex: 1 1 auto;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	margin-right: 2px;
+	font-family: Roboto, Helvetica Neue, sans-serif;
+	font-size: 12px;
+	font-weight: 400;
+	color: #888
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-summary__tax-content {
+	display: flex;
+	align-items: center;
+	margin: 16px 0 0;
+	border-top: 1px solid hsla(0, 0%, 100%, .12)
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-summary__tax-content .mod-KambiBC-betslip-summary__label-payout-tax {
+	color: #888;
+	font-size: 12px;
+	width: 100%;
+	text-align: center;
+	line-height: 16px;
+	padding: 8px 22px 16px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-summary__value {
+	flex: 0 0 auto;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	max-width: calc(100% - 30px);
+	font-family: Roboto, Helvetica Neue, sans-serif;
+	font-size: 16px;
+	color: #fff
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-summary--cash-out-available {
+	padding-top: 15px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-summary__cash-out-container {
+	font-size: 0
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-summary__cash-out-label {
+	background-color: #00953a;
+	border-radius: 2px;
+	color: #fff;
+	font-size: 10px;
+	line-height: 10px;
+	padding: 3px;
+	margin-bottom: 2px;
+	display: inline-block
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-summary__cash-out-label--suspended {
+	background-color: #444;
+	color: #666
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-summary__boosted-odds-payout-label,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-summary__free-bet-label {
+	font-size: 12px;
+	font-weight: 700;
+	color: #fa6201
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__summary .mod-KambiBC-betslip-summary__boosted-odds-payout-label,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__summary .mod-KambiBC-betslip-summary__obsolete-odds {
+	display: none
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__summary--boosted-odds .mod-KambiBC-betslip-summary__boosted-odds-payout-label,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__summary--boosted-odds .mod-KambiBC-betslip-summary__obsolete-odds {
+	display: inline
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__summary--boosted-odds .mod-KambiBC-betslip-summary__obsolete-odds {
+	text-decoration: line-through
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__summary--boosted-odds .mod-KambiBC-betslip-summary__total-odds-value {
+	color: #fa6201
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__summary--boosted-odds .mod-KambiBC-betslip-summary__total-odds--changing .mod-KambiBC-betslip-summary__obsolete-odds,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__summary--boosted-odds .mod-KambiBC-betslip-summary__total-odds--changing .mod-KambiBC-betslip-summary__total-odds-value {
+	color: #fff
+}
+
+#mod-KambiBC-betslip-container .KambiBC-betslip-summary__spinner {
+	width: 22px;
+	height: 22px;
+	margin: 0
+}
+
+#mod-KambiBC-betslip-container .KambiBC-betslip-summary__spinner>.KambiBC-spinner-inner {
+	width: 22px;
+	height: 22px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-summary__total-odds--changing {
+	background: #c93d79;
+	margin-right: -4px;
+	padding: 0 4px;
+	border-radius: 2px;
+	display: flex;
+	align-items: center
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-summary__total-odds--changing .mod-KambiBC-betslip-summary__total-odds-value {
+	color: #fff
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-summary__total-odds--changing:before {
+	height: 7px;
+	width: 10px;
+	margin-right: 3px;
+	content: "";
+	display: none
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-summary__total-odds--decreasing:before {
+	display: inline-block;
+	background: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 10 7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 7L0 0h10' fill='%23fff' fill-rule='evenodd'/%3E%3C/svg%3E")
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-summary__total-odds--increasing:before {
+	display: inline-block;
+	background: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 10 7' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5 0l5 7H0' fill='%23fff' fill-rule='evenodd'/%3E%3C/svg%3E")
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-summary__total-odds-value {
+	display: inline-block
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-mobile-keyboard {
+	background-color: #333;
+	padding: 12px 0 12px 4px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-mobile-keyboard__action-buttons {
+	display: flex
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-mobile-keyboard__number-button-container {
+	display: flex;
+	padding-bottom: 12px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-mobile-keyboard__number-buttons {
+	flex: 3 1 0px;
+	display: flex;
+	margin-right: 4px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-mobile-keyboard__number-buttons:last-child {
+	flex: 4 1 0px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-mobile-keyboard__button {
+	background-color: #fa6201;
+	border-radius: 2px;
+	color: #fff;
+	font-weight: 700;
+	font-size: 14px;
+	height: 40px;
+	line-height: 40px;
+	vertical-align: top;
+	position: relative
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-mobile-keyboard__button-number {
+	margin-right: 4px;
+	overflow: visible;
+	flex: 1 1 0px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-mobile-keyboard__button-number:last-of-type {
+	margin-right: 0
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-mobile-keyboard__button-number.KambiBC-touch-feedback:before,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-mobile-keyboard__button-number.KambiBC-touch-feedback:hover:active:before,
+.KambiBC-util-no-touchevents #mod-KambiBC-betslip-container .mod-KambiBC-betslip-mobile-keyboard__button-number.KambiBC-touch-feedback:hover:before {
+	background-color: #fa6201;
+	width: 48px;
+	height: 60px;
+	line-height: 60px;
+	bottom: calc(100% + 17px);
+	display: inline-block;
+	content: attr(data-value);
+	font-weight: 400;
+	position: absolute;
+	text-align: center;
+	font-size: 30px;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
+	border-radius: 2px;
+	left: calc((48px - 100%)/-2)
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-mobile-keyboard__button-number.KambiBC-touch-feedback:hover:active[data-value="0"]:before,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-mobile-keyboard__button-number.KambiBC-touch-feedback[data-value="0"]:before,
+.KambiBC-util-no-touchevents #mod-KambiBC-betslip-container .mod-KambiBC-betslip-mobile-keyboard__button-number.KambiBC-touch-feedback:hover[data-value="0"]:before {
+	left: inherit;
+	right: 0
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-mobile-keyboard__button-number.KambiBC-touch-feedback:hover:active[data-value="1"]:before,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-mobile-keyboard__button-number.KambiBC-touch-feedback[data-value="1"]:before,
+.KambiBC-util-no-touchevents #mod-KambiBC-betslip-container .mod-KambiBC-betslip-mobile-keyboard__button-number.KambiBC-touch-feedback:hover[data-value="1"]:before {
+	left: 0
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-mobile-keyboard__button-ok {
+	flex: 4 1 0px;
+	margin-right: 4px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-mobile-keyboard__button-delete,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-mobile-keyboard__button-delimiter {
+	flex: 3 1 0px;
+	margin-right: 4px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-mobile-keyboard__button-delete__icon {
+	width: 22px;
+	height: 40px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-mobile-keyboard__button-delete__icon .KambiBC-icon-backspace__frame {
+	stroke: #fff
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-mobile-keyboard__button-delete__icon .KambiBC-icon-backspace__figure {
+	stroke: #fff;
+	fill: #fff
+}
+
+#mod-KambiBC-betslip-container.mod-KambiBC-betslip-container--pinned .mod-KambiBC-betslip-mobile-keyboard__button-delete,
+#mod-KambiBC-betslip-container.mod-KambiBC-betslip-container--pinned .mod-KambiBC-betslip-mobile-keyboard__button-delimiter,
+#mod-KambiBC-betslip-container.mod-KambiBC-betslip-container--pinned .mod-KambiBC-betslip-mobile-keyboard__button-ok,
+#mod-KambiBC-betslip-container.mod-KambiBC-betslip-container--pinned .mod-KambiBC-betslip-mobile-keyboard__number-buttons {
+	margin-right: 2px
+}
+
+#mod-KambiBC-betslip-container.mod-KambiBC-betslip-container--pinned .mod-KambiBC-betslip-mobile-keyboard {
+	padding-left: 2px
+}
+
+#mod-KambiBC-betslip-container.mod-KambiBC-betslip-container--pinned .mod-KambiBC-betslip-mobile-keyboard__button-number {
+	margin-right: 2px
+}
+
+#mod-KambiBC-betslip-container.mod-KambiBC-betslip-container--pinned .mod-KambiBC-betslip-mobile-keyboard__button-number:last-of-type {
+	margin-right: 0
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-touch-keyboard {
+	font-family: Roboto, Helvetica Neue, sans-serif;
+	background-color: #333;
+	padding: 16px;
+	border-radius: 2px;
+	box-shadow: 0 2px 4px 0 rgba(0, 0, 0, .5);
+	position: absolute;
+	width: 288px;
+	left: 0;
+	top: 0;
+	transition: all .1s ease-in
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-touch-keyboard .KambiBC-checkbox__container {
+	display: inline-block
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-touch-keyboard .KambiBC-checkbox {
+	margin-right: 12px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-touch-keyboard--expanded {
+	transition: all .3s ease-out;
+	left: -308px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-touch-keyboard__action-buttons {
+	display: flex
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-touch-keyboard__action-buttons .mod-KambiBC-betslip-touch-keyboard__button {
+	background-color: #d8d8d8;
+	color: #333
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-touch-keyboard__action-buttons .mod-KambiBC-betslip-touch-keyboard__button--disabled {
+	color: #8b8b8b
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-touch-keyboard__number-button-container {
+	display: flex;
+	flex-direction: column
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-touch-keyboard__number-buttons {
+	display: flex;
+	justify-content: center
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-touch-keyboard__button {
+	background-color: #fa6201;
+	border-radius: 2px;
+	color: #fff;
+	font-weight: 700;
+	font-size: 16px;
+	height: 40px;
+	line-height: 40px;
+	vertical-align: top;
+	position: relative;
+	margin: 4px;
+	width: 100%
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-touch-keyboard__button--disabled {
+	color: hsla(0, 0%, 100%, .3)
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-touch-keyboard__button-number {
+	overflow: visible;
+	width: 100%;
+	font-size: 20px;
+	flex: 1 1 auto
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-touch-keyboard__button-allin,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-touch-keyboard__button-ok {
+	text-transform: uppercase
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-touch-keyboard__button-delete,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-touch-keyboard__button-delimiter,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-touch-keyboard__button-ok {
+	flex: 1 1 auto
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-touch-keyboard__button-delete__icon {
+	width: 22px;
+	height: 40px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-touch-keyboard__button-delete__icon .KambiBC-icon-backspace__frame {
+	stroke: #fff
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-touch-keyboard__button-delete__icon .KambiBC-icon-backspace__figure {
+	stroke: #fff;
+	fill: #fff
+}
+
+#mod-KambiBC-betslip-container.mod-KambiBC-betslip-container--pinned .mod-KambiBC-betslip-touch-keyboard__button {
+	margin: 4px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-touch-keyboard__checkbox-container {
+	padding-top: 10px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-touch-keyboard__checkbox-container .KambiBC-checkbox {
+	background: transparent
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-touch-keyboard__checkbox-container .KambiBC-checkbox--disabled {
+	background: #555;
+	border-color: #555
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-touch-keyboard__checkbox-label {
+	color: #fff;
+	font-size: 14px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-touch-keyboard__checkbox-label--disabled {
+	color: hsla(0, 0%, 100%, .3)
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-links--navigation {
+	font-family: Roboto, Helvetica Neue, sans-serif;
+	font-size: 14px;
+	text-align: center;
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+	line-height: 20px;
+	display: block;
+	color: #aaa;
+	cursor: pointer
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-links--navigation .mod-KambiBC-betslip-links--link-navigation {
+	padding-top: 13px;
+	display: block;
+	line-height: 19px;
+	transition: color .2s ease-out
+}
+
+.KambiBC-util-no-touchevents #mod-KambiBC-betslip-container .mod-KambiBC-betslip-links--navigation .mod-KambiBC-betslip-links--link-navigation:hover {
+	color: #ddd
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-links--navigation .mod-KambiBC-betslip-links--link-navigation.KambiBC-touch-feedback,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-links--navigation .mod-KambiBC-betslip-links--link-navigation.KambiBC-touch-feedback:hover:active,
+.KambiBC-util-no-touchevents #mod-KambiBC-betslip-container .mod-KambiBC-betslip-links--navigation .mod-KambiBC-betslip-links--link-navigation.KambiBC-touch-feedback:hover {
+	color: #fff
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-links--customer {
+	margin: 0;
+	padding: 0 0 16px;
+	list-style: none;
+	text-align: center
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-links--customer.mod-KambiBC-betslip-links--divider {
+	padding-top: 17px;
+	border-top: 1px dotted #5d5d5d;
+	margin-top: 18px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-links--customer li:first-child .mod-KambiBC-betslip-links--link-customer {
+	padding-top: 0
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-links--link-customer {
+	padding-top: 13px;
+	font-size: 12px;
+	font-weight: 400;
+	text-align: center;
+	line-height: 16px;
+	text-decoration: none;
+	display: block;
+	color: #aaa;
+	cursor: pointer;
+	transition: color .2s ease-out
+}
+
+.KambiBC-util-no-touchevents #mod-KambiBC-betslip-container .mod-KambiBC-betslip-links--link-customer:hover {
+	color: #ddd
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-links--link-customer.KambiBC-touch-feedback,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-links--link-customer.KambiBC-touch-feedback:hover:active,
+.KambiBC-util-no-touchevents #mod-KambiBC-betslip-container .mod-KambiBC-betslip-links--link-customer.KambiBC-touch-feedback:hover {
+	color: #fff
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-confirmation-feedback__currency,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip-confirmation-feedback__odds {
+	color: #fff;
+	float: right
+}
+
+#mod-KambiBC-betslip-container .KambiBC-outcome-bet-confirmation {
+	font-size: 14px;
+	padding: 12px 16px;
+	color: #fff
+}
+
+#mod-KambiBC-betslip-container .KambiBC-outcome-bet-confirmation__live-label {
+	display: none;
+	background: #d0021b;
+	color: #fff;
+	padding: 2px 3px;
+	border-radius: 2px;
+	font-size: 12px;
+	font-weight: 700;
+	line-height: 12px;
+	letter-spacing: .5px
+}
+
+#mod-KambiBC-betslip-container .KambiBC-outcome-bet-confirmation__live-label--visible {
+	display: inline-block;
+	margin-right: 3px
+}
+
+#mod-KambiBC-betslip-container .KambiBC-outcome-bet-confirmation__event-name {
+	font-size: 14px;
+	display: inline-block;
+	margin: 0
+}
+
+#mod-KambiBC-betslip-container .KambiBC-outcome-bet-confirmation__criteria {
+	margin-top: 4px;
+	margin-bottom: 4px
+}
+
+#mod-KambiBC-betslip-container .KambiBC-outcome-bet-confirmation__outcome-label {
+	flex: 1 1 auto;
+	margin: 0;
+	color: hsla(0, 0%, 100%, .7)
+}
+
+#mod-KambiBC-betslip-container .KambiBC-outcome-bet-confirmation__odds-container {
+	display: flex;
+	align-items: center
+}
+
+#mod-KambiBC-betslip-container .KambiBC-outcome-odds-bet-confirmation__odds {
+	color: #fff
+}
+
+#mod-KambiBC-betslip-container .KambiBC-dropdown {
+	position: relative
+}
+
+#mod-KambiBC-betslip-container .KambiBC-dropdown--empty {
+	display: none
+}
+
+#mod-KambiBC-betslip-container .KambiBC-dropdown__header {
+	display: flex;
+	border-radius: 2px;
+	height: 36px;
+	color: #888;
+	background-color: transparent;
+	cursor: pointer;
+	transition: all .2s ease-out
+}
+
+.KambiBC-util-no-touchevents #mod-KambiBC-betslip-container .KambiBC-dropdown__header:hover {
+	background-color: #404040;
+	color: #eee
+}
+
+.KambiBC-util-no-touchevents #mod-KambiBC-betslip-container .KambiBC-dropdown__header:hover:after {
+	border-top-color: #eee
+}
+
+.KambiBC-util-no-touchevents#mod-KambiBC-betslip-container .KambiBC-dropdown__header:hover {
+	background-color: #404040;
+	color: #eee
+}
+
+.KambiBC-util-no-touchevents#mod-KambiBC-betslip-container .KambiBC-dropdown__header:hover:after {
+	border-top-color: #eee
+}
+
+#mod-KambiBC-betslip-container .KambiBC-dropdown__header.KambiBC-touch-feedback,
+#mod-KambiBC-betslip-container .KambiBC-dropdown__header.KambiBC-touch-feedback:hover:active,
+.KambiBC-util-no-touchevents #mod-KambiBC-betslip-container .KambiBC-dropdown__header.KambiBC-touch-feedback:hover {
+	background-color: #333;
+	color: #ddd
+}
+
+#mod-KambiBC-betslip-container .KambiBC-dropdown__header.KambiBC-touch-feedback:after,
+#mod-KambiBC-betslip-container .KambiBC-dropdown__header.KambiBC-touch-feedback:hover:active:after,
+.KambiBC-util-no-touchevents #mod-KambiBC-betslip-container .KambiBC-dropdown__header.KambiBC-touch-feedback:hover:after {
+	border-top-color: #ddd
+}
+
+#mod-KambiBC-betslip-container .KambiBC-dropdown__header--arrow {
+	padding-right: 12px
+}
+
+#mod-KambiBC-betslip-container .KambiBC-dropdown__header--arrow:after {
+	content: "";
+	display: block;
+	position: absolute;
+	right: 0;
+	border: 4px solid transparent;
+	border-top-color: #888;
+	align-self: center;
+	position: static;
+	margin-top: 4px
+}
+
+#mod-KambiBC-betslip-container .KambiBC-dropdown__header-title {
+	flex: 1 1 auto;
+	align-self: center;
+	padding: 0 12px;
+	font-size: 14px
+}
+
+#mod-KambiBC-betslip-container .KambiBC-dropdown__header-title--dotted {
+	transform: rotate(-90deg);
+	font-size: 22px;
+	width: 30px;
+	height: 100%;
+	padding: 0;
+	text-align: center;
+	margin-right: 6px
+}
+
+#mod-KambiBC-betslip-container .KambiBC-dropdown__selections {
+	flex: 1 1 auto;
+	align-self: center;
+	font-size: 14px;
+	margin: 0;
+	padding: 0 12px
+}
+
+#mod-KambiBC-betslip-container .KambiBC-dropdown__selection {
+	text-overflow: ellipsis;
+	overflow: hidden;
+	white-space: nowrap;
+	display: block
+}
+
+#mod-KambiBC-betslip-container .KambiBC-dropdown__options {
+	position: absolute;
+	min-width: 280px;
+	list-style: none;
+	background-color: #fff;
+	border-radius: 2px;
+	padding: 0;
+	margin: 4px 4px 0;
+	box-shadow: 0 0 5px 0 rgba(0, 0, 0, .5);
+	overflow: hidden;
+	font-size: 16px;
+	z-index: 1
+}
+
+#mod-KambiBC-betslip-container .KambiBC-dropdown__option {
+	margin: 0;
+	padding: 17px 16px;
+	line-height: 20px;
+	cursor: pointer;
+	white-space: normal;
+	color: #333;
+	transition: background-color .15s ease-out
+}
+
+.KambiBC-util-no-touchevents#mod-KambiBC-betslip-container .KambiBC-dropdown__option:hover,
+.KambiBC-util-no-touchevents #mod-KambiBC-betslip-container .KambiBC-dropdown__option:hover {
+	background-color: #e6e6e6
+}
+
+#mod-KambiBC-betslip-container .KambiBC-dropdown__option.KambiBC-touch-feedback,
+#mod-KambiBC-betslip-container .KambiBC-dropdown__option.KambiBC-touch-feedback:hover:active,
+.KambiBC-util-no-touchevents #mod-KambiBC-betslip-container .KambiBC-dropdown__option.KambiBC-touch-feedback:hover {
+	background-color: #d9d9d9
+}
+
+#mod-KambiBC-betslip-container .KambiBC-dropdown__option--disabled {
+	cursor: default;
+	color: #999
+}
+
+#mod-KambiBC-betslip-container .KambiBC-dropdown__option--disabled.KambiBC-touch-feedback,
+#mod-KambiBC-betslip-container .KambiBC-dropdown__option--disabled.KambiBC-touch-feedback:hover:active,
+.KambiBC-util-no-touchevents #mod-KambiBC-betslip-container .KambiBC-dropdown__option--disabled.KambiBC-touch-feedback:hover,
+.KambiBC-util-no-touchevents#mod-KambiBC-betslip-container .KambiBC-dropdown__option--disabled:hover,
+.KambiBC-util-no-touchevents #mod-KambiBC-betslip-container .KambiBC-dropdown__option--disabled:hover {
+	background-color: #fff
+}
+
+#mod-KambiBC-betslip-container .KambiBC-dropdown__option--selected {
+	color: #fa6201
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__odds-change-dropdown {
+	display: flex
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__odds-change-dropdown .KambiBC-dropdown--betslip-odds-action-dropdown {
+	margin: 0 auto
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__odds-change-dropdown .KambiBC-dropdown--betslip-odds-action-dropdown .KambiBC-dropdown__header {
+	color: #888;
+	background-color: transparent
+}
+
+.KambiBC-util-no-touchevents #mod-KambiBC-betslip-container .mod-KambiBC-betslip__odds-change-dropdown .KambiBC-dropdown--betslip-odds-action-dropdown .KambiBC-dropdown__header:hover {
+	background-color: #404040;
+	color: #eee
+}
+
+.KambiBC-util-no-touchevents #mod-KambiBC-betslip-container .mod-KambiBC-betslip__odds-change-dropdown .KambiBC-dropdown--betslip-odds-action-dropdown .KambiBC-dropdown__header:hover:after {
+	border-top-color: #eee
+}
+
+.KambiBC-util-no-touchevents#mod-KambiBC-betslip-container .mod-KambiBC-betslip__odds-change-dropdown .KambiBC-dropdown--betslip-odds-action-dropdown .KambiBC-dropdown__header:hover {
+	background-color: #404040;
+	color: #eee
+}
+
+.KambiBC-util-no-touchevents#mod-KambiBC-betslip-container .mod-KambiBC-betslip__odds-change-dropdown .KambiBC-dropdown--betslip-odds-action-dropdown .KambiBC-dropdown__header:hover:after {
+	border-top-color: #eee
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__odds-change-dropdown .KambiBC-dropdown--betslip-odds-action-dropdown .KambiBC-dropdown__header.KambiBC-touch-feedback,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__odds-change-dropdown .KambiBC-dropdown--betslip-odds-action-dropdown .KambiBC-dropdown__header.KambiBC-touch-feedback:hover:active,
+.KambiBC-util-no-touchevents #mod-KambiBC-betslip-container .mod-KambiBC-betslip__odds-change-dropdown .KambiBC-dropdown--betslip-odds-action-dropdown .KambiBC-dropdown__header.KambiBC-touch-feedback:hover {
+	background-color: #333;
+	color: #ddd
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__odds-change-dropdown .KambiBC-dropdown--betslip-odds-action-dropdown .KambiBC-dropdown__header.KambiBC-touch-feedback:after,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__odds-change-dropdown .KambiBC-dropdown--betslip-odds-action-dropdown .KambiBC-dropdown__header.KambiBC-touch-feedback:hover:active:after,
+.KambiBC-util-no-touchevents #mod-KambiBC-betslip-container .mod-KambiBC-betslip__odds-change-dropdown .KambiBC-dropdown--betslip-odds-action-dropdown .KambiBC-dropdown__header.KambiBC-touch-feedback:hover:after {
+	border-top-color: #ddd
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__odds-change-dropdown .KambiBC-dropdown--betslip-odds-action-dropdown .KambiBC-dropdown__header--arrow {
+	padding-right: 12px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__odds-change-dropdown .KambiBC-dropdown--betslip-odds-action-dropdown .KambiBC-dropdown__header--arrow:after {
+	content: "";
+	display: block;
+	position: absolute;
+	right: 0;
+	border: 4px solid transparent;
+	border-top-color: #888;
+	align-self: center;
+	position: static;
+	margin-top: 4px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__odds-change-dropdown .KambiBC-dropdown__selection {
+	text-align: center
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__odds-change-dropdown .KambiBC-dropdown__selections {
+	font-size: 12px
+}
+
+#mod-KambiBC-betslip-container .KambiBC-dropdown__options--betslip-odds-action-dropdown {
+	left: 50%!important;
+	transform: translateX(-50%)
+}
+
+#mod-KambiBC-betslip-container .KambiBC-dropdown__options--betslip-odds-action-dropdown .KambiBC-dropdown__option--disabled {
+	color: #333;
+	border-bottom: 1px solid #ececec;
+	background-color: #f6f6f6;
+	font-size: 12px;
+	padding: 8px 16px
+}
+
+.KambiBC-util-no-touchevents#mod-KambiBC-betslip-container .KambiBC-dropdown__options--betslip-odds-action-dropdown .KambiBC-dropdown__option--disabled:hover {
+	background-color: #f6f6f6
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__validation-errors {
+	margin-top: 10px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__validation-error {
+	background: #eee;
+	display: flex;
+	border-right: 5px solid #dc0000;
+	overflow: hidden
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__validation-error__description {
+	flex: 1 1 auto;
+	padding: 8px 10px;
+	font-size: 12px;
+	line-height: 16px;
+	color: #222;
+	margin: 0
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__validation-error__close-btn {
+	cursor: pointer;
+	padding: 0;
+	border-right: 1px solid rgba(0, 0, 0, .15);
+	flex: 0 0 36px;
+	border-radius: 0
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__validation-error__close-btn:before {
+	font-family: FontAwesome;
+	font-weight: 400;
+	font-style: normal;
+	content: "\f00d";
+	speak: none;
+	text-transform: none;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	opacity: .16;
+	font-size: 23px;
+	color: #000;
+	transition: opacity .2s ease-out
+}
+
+.KambiBC-util-no-touchevents#mod-KambiBC-betslip-container .mod-KambiBC-betslip__validation-error__close-btn:hover:before {
+	opacity: .26
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__validation-error__close-btn.KambiBC-touch-feedback:before,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__validation-error__close-btn.KambiBC-touch-feedback:hover:active:before,
+.KambiBC-util-no-touchevents #mod-KambiBC-betslip-container .mod-KambiBC-betslip__validation-error__close-btn.KambiBC-touch-feedback:hover:before {
+	opacity: .36
+}
+
+#mod-KambiBC-betslip-container .KambiBC-tabs {
+	position: relative
+}
+
+#mod-KambiBC-betslip-container .KambiBC-tabs[data-eq-state~=wide] .KambiBC-tabs__tabs {
+	width: auto
+}
+
+#mod-KambiBC-betslip-container .KambiBC-tabs[data-eq-state~=wide] .KambiBC-tabs__tab {
+	flex: 0 0 auto;
+	text-align: left
+}
+
+#mod-KambiBC-betslip-container .KambiBC-tabs__tabs-wrapper {
+	margin-bottom: 12px
+}
+
+#mod-KambiBC-betslip-container .KambiBC-tabs__tabs-wrapper.KambiBC-tabs__tabs--variation-icon-tabs .KambiBC-tabs__tabs {
+	line-height: 30px;
+	width: 100%;
+	background-color: #202020;
+	color: #898989;
+	padding: 10px 8px
+}
+
+#mod-KambiBC-betslip-container .KambiBC-tabs__tabs-wrapper.KambiBC-tabs__tabs--variation-icon-tabs .KambiBC-tabs__tabs .KambiBC-tabs__tab {
+	padding: 0;
+	margin: 0 8px;
+	display: flex;
+	align-items: center;
+	justify-content: center
+}
+
+#mod-KambiBC-betslip-container .KambiBC-tabs__tabs-wrapper.KambiBC-tabs__tabs--variation-icon-tabs .KambiBC-tabs__tabs .KambiBC-tabs__tab_title {
+	display: flex
+}
+
+#mod-KambiBC-betslip-container .KambiBC-tabs__tabs-wrapper.KambiBC-tabs__tabs--variation-icon-tabs .KambiBC-component-icon__fill {
+	fill: #999
+}
+
+#mod-KambiBC-betslip-container .KambiBC-tabs__tabs-wrapper.KambiBC-tabs__tabs--variation-icon-tabs .KambiBC-tabs__tab--selected:after {
+	background: transparent
+}
+
+#mod-KambiBC-betslip-container .KambiBC-tabs__tabs-wrapper.KambiBC-tabs__tabs--variation-icon-tabs .KambiBC-tabs__tab--selected .KambiBC-component-icon__fill {
+	fill: #fff
+}
+
+#mod-KambiBC-betslip-container .KambiBC-tabs__tabs-wrapper.KambiBC-tabs__tabs-wrapper--center {
+	text-align: center
+}
+
+#mod-KambiBC-betslip-container .KambiBC-tabs__tabs-wrapper.KambiBC-tabs__tabs-wrapper--left {
+	text-align: left
+}
+
+#mod-KambiBC-betslip-container .KambiBC-tabs__tabs-wrapper.KambiBC-tabs__tabs-wrapper--right {
+	text-align: right
+}
+
+#mod-KambiBC-betslip-container .KambiBC-tabs__tabs {
+	list-style: none;
+	display: inline-flex;
+	margin: 0;
+	padding-left: 0;
+	position: relative;
+	line-height: 40px
+}
+
+#mod-KambiBC-betslip-container .KambiBC-tabs__tab {
+	position: relative;
+	padding: 0 12px;
+	margin: 0;
+	font-size: 13px;
+	font-weight: 400;
+	color: #898989;
+	white-space: nowrap;
+	overflow: visible;
+	flex-shrink: 0;
+	outline: none
+}
+
+#mod-KambiBC-betslip-container .KambiBC-tabs__tab:hover {
+	color: #fff;
+	cursor: pointer
+}
+
+#mod-KambiBC-betslip-container .KambiBC-tabs__tab--selected {
+	color: #fff
+}
+
+#mod-KambiBC-betslip-container .KambiBC-tabs__tab--selected:after {
+	content: "";
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+	left: 0;
+	height: 2px;
+	background: #fa6201
+}
+
+#mod-KambiBC-betslip-container .KambiBC-tabs__tab--disabled {
+	text-decoration: line-through;
+	cursor: default
+}
+
+#mod-KambiBC-betslip-container .KambiBC-tabs__tab_title {
+	position: relative
+}
+
+#mod-KambiBC-betslip-container .KambiBC-tabs__tab-icon-wrapper {
+	position: absolute;
+	left: 0;
+	top: 50%;
+	z-index: 1;
+	display: flex;
+	justify-content: center;
+	line-height: 1px;
+	width: 100%;
+	transform: translateX(calc(50% + 6px))
+}
+
+#mod-KambiBC-betslip-container .KambiBC-tabs__custom-tab-icon {
+	width: 24px;
+	height: 24px;
+	overflow: hidden;
+	display: inline-block
+}
+
+#mod-KambiBC-betslip-container .KambiBC-event-page-component .KambiBC-tabs .KambiBC-scroller-wrapper,
+#mod-KambiBC-betslip-container .KambiBC-filter-tabs .KambiBC-tabs .KambiBC-scroller-wrapper,
+#mod-KambiBC-betslip-container .KambiBC-racing .KambiBC-tabs .KambiBC-scroller-wrapper,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__tabs .KambiBC-tabs .KambiBC-scroller-wrapper {
+	left: auto;
+	width: auto
+}
+
+#mod-KambiBC-betslip-container .KambiBC-event-page-component .KambiBC-tabs .KambiBC-scroller__arrow-left,
+#mod-KambiBC-betslip-container .KambiBC-event-page-component .KambiBC-tabs .KambiBC-scroller__arrow-right,
+#mod-KambiBC-betslip-container .KambiBC-filter-tabs .KambiBC-tabs .KambiBC-scroller__arrow-left,
+#mod-KambiBC-betslip-container .KambiBC-filter-tabs .KambiBC-tabs .KambiBC-scroller__arrow-right,
+#mod-KambiBC-betslip-container .KambiBC-racing .KambiBC-tabs .KambiBC-scroller__arrow-left,
+#mod-KambiBC-betslip-container .KambiBC-racing .KambiBC-tabs .KambiBC-scroller__arrow-right,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__tabs .KambiBC-tabs .KambiBC-scroller__arrow-left,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__tabs .KambiBC-tabs .KambiBC-scroller__arrow-right {
+	box-shadow: none;
+	top: 1px;
+	bottom: 2px;
+	height: auto
+}
+
+#mod-KambiBC-betslip-container .KambiBC-event-page-component .KambiBC-tabs .KambiBC-scroller__arrow-left,
+#mod-KambiBC-betslip-container .KambiBC-filter-tabs .KambiBC-tabs .KambiBC-scroller__arrow-left,
+#mod-KambiBC-betslip-container .KambiBC-racing .KambiBC-tabs .KambiBC-scroller__arrow-left,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__tabs .KambiBC-tabs .KambiBC-scroller__arrow-left {
+	background: linear-gradient(90deg, #333, rgba(51, 51, 51, .7) 70%, rgba(51, 51, 51, .5) 85%, rgba(51, 51, 51, 0));
+	justify-content: flex-start;
+	padding-left: 3px
+}
+
+#mod-KambiBC-betslip-container .KambiBC-event-page-component .KambiBC-tabs .KambiBC-scroller__arrow-right,
+#mod-KambiBC-betslip-container .KambiBC-filter-tabs .KambiBC-tabs .KambiBC-scroller__arrow-right,
+#mod-KambiBC-betslip-container .KambiBC-racing .KambiBC-tabs .KambiBC-scroller__arrow-right,
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__tabs .KambiBC-tabs .KambiBC-scroller__arrow-right {
+	background: linear-gradient(270deg, #333, rgba(51, 51, 51, .7) 70%, rgba(51, 51, 51, .5) 85%, rgba(51, 51, 51, 0));
+	justify-content: flex-end;
+	padding-right: 3px
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__tabs .KambiBC-tabs .KambiBC-scroller__arrow-left {
+	color: red;
+	background: linear-gradient(90deg, #010101, rgba(1, 1, 1, .7) 70%, rgba(1, 1, 1, .5) 85%, rgba(1, 1, 1, 0))
+}
+
+#mod-KambiBC-betslip-container .mod-KambiBC-betslip__tabs .KambiBC-tabs .KambiBC-scroller__arrow-right {
+	color: red;
+	background: linear-gradient(270deg, #010101, rgba(1, 1, 1, .7) 70%, rgba(1, 1, 1, .5) 85%, rgba(1, 1, 1, 0))
+}
+
+#mod-KambiBC-betslip-container .KambiBC-scroller {
+	position: relative;
+	width: 100%;
+	overflow: hidden;
+	-ms-overflow-style: none
+}
+
+#mod-KambiBC-betslip-container .KambiBC-scroller-wrapper {
+	overflow-x: auto;
+	white-space: nowrap;
+	display: block;
+	position: relative;
+	left: 20px;
+	width: calc(100% - 40px);
+	-ms-overflow-style: none;
+	margin-bottom: -12px;
+	padding-bottom: 12px
+}
+
+#mod-KambiBC-betslip-container .KambiBC-scroller-wrapper::-webkit-scrollbar {
+	display: none
+}
+
+#mod-KambiBC-betslip-container .KambiBC-scroller.KambiBC-scroller--arrows-over-content .KambiBC-scroller-wrapper {
+	left: 0;
+	width: 100%
+}
+
+#mod-KambiBC-betslip-container .KambiBC-scroller__arrow {
+	width: 30px;
+	padding: 0;
+	background: transparent;
+	border: none;
+	height: 100%;
+	color: #898989;
+	position: absolute;
+	top: 0;
+	z-index: 10;
+	display: flex;
+	justify-content: center;
+	align-items: center
+}
+
+#mod-KambiBC-betslip-container .KambiBC-scroller__arrow>svg {
+	stroke: #919191;
+	stroke-width: 2.5;
+	width: 9px
+}
+
+#mod-KambiBC-betslip-container .KambiBC-scroller__arrow.KambiBC-scroller__arrow-left {
+	box-shadow: inset 20px 0 15px -7px rgba(0, 0, 0, .1);
+	left: 0
+}
+
+#mod-KambiBC-betslip-container .KambiBC-scroller.KambiBC-scroller--bg-shadow .KambiBC-scroller__arrow.KambiBC-scroller__arrow-left {
+	box-shadow: inset 20px 0 15px -7px #333;
+	justify-content: flex-start
+}
+
+#mod-KambiBC-betslip-container .KambiBC-scroller__arrow.KambiBC-scroller__arrow-right {
+	box-shadow: inset -20px 0 15px -7px rgba(0, 0, 0, .1);
+	right: 0;
+	margin-left: auto
+}
+
+#mod-KambiBC-betslip-container .KambiBC-scroller.KambiBC-scroller--bg-shadow .KambiBC-scroller__arrow.KambiBC-scroller__arrow-right {
+	box-shadow: inset -20px 0 15px -7px #333;
+	justify-content: flex-end
+}

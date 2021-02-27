@@ -83,7 +83,7 @@ p.rights {
 .bet-button:hover, .bet-button:active{
     border-color: #64b000;
     color: white;
-    background-color: #64b000;
+    background-color: #64b000 !important;
 }
 .twobox{
     grid-template-columns: repeat(2, 1fr);

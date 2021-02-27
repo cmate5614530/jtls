@@ -1122,8 +1122,7 @@
             });
             // $(this).nextUntil('tr.header').slideToggle(100, function() {});
         });
-    </script>
-    <script>
+
         function betCalculate() {
 
             var potentialArr = [];
@@ -1169,9 +1168,7 @@
             $('.mod-KambiBC-betslip-summary__total-odds-value').text(totalStake);
             $('#totalamnt').val(parseFloat(totalPotential).toFixed(2));
         }
-    </script>
 
-    <script>
         function openCity(evt, cityName) {
             var i, tabcontent, tablinks,kambili;
             tabcontent = document.getElementsByClassName("tabcontent");
@@ -1190,14 +1187,12 @@
 
         // Get the element with id="defaultOpen" and click on it
         document.getElementById("defaultOpen").click();
-    </script>
-    <script>
+
         $('.KambiBC-tabs__tabs').on('click', 'li', function() {
             $('.KambiBC-tabs__tabs li.KambiBC-tabs__tab--selected').removeClass('KambiBC-tabs__tab--selected');
             $(this).addClass('KambiBC-tabs__tab--selected');
         });
-    </script>
-    <script>
+
         $("#min_max").click(function(){
 
             $(".mod-KambiBC-betslip__header-btn").toggleClass("rotate");
@@ -1206,9 +1201,7 @@
         $(".mod-KambiBC-betslip__header").click(function () {
             $("#min_max").click();
         })
-    </script>
 
-    <script>
         // clear ul list and close popup
         $("#betslip_clear-btn").click(function(){
             $('#betsliplist li:not(:first-child)').remove();
@@ -1220,19 +1213,13 @@
             $(".place-link").css('background-color', '#eaecee');
         });
 
-        $(".item-amount").change(function () {
-            console.log('--------------')
-            var returnAmount = 0;
-            if($(this).data('wager-type') == 'ML'){
-                if($(this).data('wager-count') > 0){
-                    returnAmount = (100 + $(this).data('wager-count'))*$(this).val()/100;
-                    alert('return amount is'+returnAmount)
-                }
-            }
-        })
-        function betCalculator(wagerId){
-            console.log('----', wagerId, $(this).data('wager-type'))
+        // delete bet slip list item
+        function betslip_delete(wagerId, teamName, wagerType){
+            $('.place-link[data-wager-id="'+wagerId+'"][data-wager-type="'+wagerType+'"][data-team-name="'+teamName+'"]').css('background-color','#eaecee');
+            betslip_array = betslip_array.filter(it=> it.wagerId !== wagerId || it.teamName !== teamName || it.wagerType !== wagerType);
+            betCalculate();
         }
+
         // add list in ul with data
         $(".place-link").click(function(){
             if ($('#betslipModal').hasClass("show-betslip")==true){
@@ -1270,34 +1257,13 @@
             var idLength = $("[id^=betslipdesc]").length;
             var className = teamName.replace(/\s/g,'');
             var idLength = idLength+''+className;
-            //console.log(idLength);
-
-            // var list = '<li class="mod-KambiBC-betslip__outcome mod-KambiBC-betslip__outcome--has-stake-input '+className+'" id="betslipdesc'+idLength+'" data-wager-type="'+wagerType+'">'
-            //     +  template + '</li>';
-
-            // // check if alrady selected list is there if yes then not add
-            // //  console.log('---str---', str);
-            // if(str.indexOf(teamName) == -1) {
-            //     $("#betsliplist").append(list);
-            // } else {
-            //     $("."+className).remove();
-            // }
-
-
-            // //console.log(str.indexOf(teamName));
-
-            // $('#betslipdesc'+idLength+' .modal-sport-wager').html(teamName);
-            // $('#betslipdesc'+idLength+' .modal-sport-wager-count').html(vager);
-            // $('#betslipdesc'+idLength+' .modal-sport-confrontation').html(confrontation);
-            // // $('#betslipdesc'+idLength+' .modal-sport-live-count').html('[' + score + ']');
-            // $('#betslipdesc'+idLength+' .mod-KambiBC-betslip-outcome__criteria').html(wagerType);
 
             var html = '';
             //var i = 0;
             //for(i = 0; i < betslip_array.length; i++){
                 html = '<li class="mod-KambiBC-betslip__outcome mod-KambiBC-betslip__outcome--has-stake-input" id="betslip'+ wagerId +'">'+
                             '<div class="mod-KambiBC-betslip__outcome__content-wrapper betappend">'+
-                                '<button class="mod-KambiBC-betslip-outcome__close-btn" onclick="betslip_delete('+ wagerId +');">'+
+                                '<button class="mod-KambiBC-betslip-outcome__close-btn" onclick="$(this).closest(\'li\').remove(); betslip_delete('+ wagerId + ', \''+teamName+'\', \''+wagerType +'\');">'+
                                     '<span class="mod-KambiBC-betslip-outcome__close-btn-text">Close'+
                                     '</span>'+
                                 '</button>'+
@@ -1325,7 +1291,7 @@
                                         '<div class="mod-KambiBC-betslip-outcome__stake-input-container">'+
                                             '<div class="mod-KambiBC-betslip-outcome__stake-input">'+
                                                 '<div class="mod-KambiBC-stake-input__container">'+
-                                                    '<input autocomplete="off" class="mod-KambiBC-stake-input mod-KambiBC-js-stake-input" maxlength="7" placeholder="$0.00" type="number" onchange="betCalculate()">'+
+                                                    '<input autocomplete="off" class="mod-KambiBC-stake-input mod-KambiBC-js-stake-input" min="0" maxlength="7" placeholder="$0.00" type="number" onchange="betCalculate()">'+
                                                 '</div>'+
                                             '</div>'+
                                         '</div>'+
@@ -1352,15 +1318,6 @@
                 betslip_array.push(item);
                 $("#betsliplist").append(html);
             }
-            
-
-            // let check_duplicated_wagerId = betslip_array.filter(it=>it.wagerId === wagerId && it.wagerType === wagerType);
-            // if(check_duplicated_wagerId.length>0){
-            //     console.log('To bet on same wagerId/wagerType is not allowed.')
-            // }else{
-            //     betslip_array.push(item);
-            //     $("#betsliplist").append(html);    
-            // }
             
 console.log('teamName, confrontation, vager, wagerType', teamName, confrontation, vager, wagerType)
 console.log('---betslip_array---', betslip_array);

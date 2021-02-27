@@ -2,7 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be5ecea7-976e-4dbe-8f38-73c0f901a966" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/2a95f76f3e63edc478a3c3773673f8edb25788bf.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/4d88baa572c01a771769a37a67eb3e5a7101688a.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/ad0604cf89d44ed20ba71366c7482c01dbc47ac9.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/cd6e2d1954bb2edc5c0d4e5af9aaeba81f9a560e.php" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -217,7 +222,12 @@
       <workItem from="1614235115043" duration="2274000" />
       <workItem from="1614278457115" duration="10143000" />
       <workItem from="1614302680194" duration="7255000" />
-      <workItem from="1614321615789" duration="7667000" />
+      <workItem from="1614321615789" duration="8076000" />
+      <workItem from="1614342344128" duration="3228000" />
+      <workItem from="1614366295276" duration="3868000" />
+      <workItem from="1614390006630" duration="1859000" />
+      <workItem from="1614409554089" duration="4849000" />
+      <workItem from="1614421250249" duration="1697000" />
     </task>
     <servers />
   </component>
@@ -225,10 +235,10 @@
     <option name="version" value="1" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="552" y="180" key="#Deployment" timestamp="1613771137338">
+    <state x="552" y="180" key="#Deployment" timestamp="1614423050076">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="552" y="180" key="#Deployment/0.0.1920.1040@0.0.1920.1040" timestamp="1613771137338" />
+    <state x="552" y="180" key="#Deployment/0.0.1920.1040@0.0.1920.1040" timestamp="1614423050076" />
     <state x="690" y="276" key="#com.jetbrains.php.actions.copyPaste.importReferences.PhpImportReferencesDialog" timestamp="1613492615650">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -237,10 +247,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="443" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1612816413938" />
-    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1614326629145">
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1614423317378">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614326629145" />
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614423317378" />
     <state x="740" y="276" key="FileChooserDialogImpl" timestamp="1612517937908">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

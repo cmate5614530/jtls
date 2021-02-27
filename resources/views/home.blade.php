@@ -751,7 +751,7 @@
                         </header>
                         <div class="mod-KambiBC-betslip__content tabs-custom" style="">
                             <div class="mod-KambiBC-betslip__tabs">
-                                <div class="KambiBC-tabs" data-tabs="true" style="display: none;">
+                                <div class="KambiBC-tabs" data-tabs="true">
                                     <div class="KambiBC-tabs__tabs-wrapper KambiBC-tabs__tabs-wrapper--center">
                                         <div class="KambiBC-scroller">
                                             <div class="KambiBC-scroller-wrapper">
@@ -1006,9 +1006,8 @@
 
     </div>
     <script>
-
+        betslip_array = [];
         $(document).ready(function () {
-            betslip_array = {};
 
             $('#all').addClass('active');
             $('#football').removeClass('active');
@@ -1251,25 +1250,29 @@
                 confrontation = $(this).data('confrontation'),
                 vager = $(this).data('wager-count'),
                 wagerCount = $(this).data('wager-count');
-                score = $(this).data('score');
+                //score = $(this).data('score');
             var wagerType=$(this).data('wager-type');
             var wagerId=$(this).data('wager-id');
+            var odds = $(this).data('wager-count');
+
             var amount=0;
-
-            if(betslip_array == {}){
-
-                var item={
+            var item={
                     wagerId: wagerId,
                     wagerType: wagerType,
                     teamName: teamName,
-                    confrontation: confrontation
+                    confrontation: confrontation,
+                    odds: odds
                 }
-                betslip_array.push(item);
+
+            let check_duplicated_wagerId = betslip_array.filter(it=>it.wagerId === wagerId && it.wagerType === wagerType);
+            if(check_duplicated_wagerId.length>0){
+                console.log('To bet on same wagerId/wagerType is not allowed.')
             }else{
-
+                betslip_array.push(item);
             }
-
-console.log('teamName, confrontation, vager, score, wagerType', teamName, confrontation, vager, score, wagerType)
+            
+console.log('teamName, confrontation, vager, wagerType', check_duplicated_wagerId,teamName, confrontation, vager, wagerType)
+console.log('---betslip_array---', betslip_array);
             var html = '<div class="bet-item" style="padding: 14px;" >'
             html +=         '<span>'+teamName+'</span><span> @&nbsp'+ wagerType + ' ( ' + wagerCount +')</span><br>'
             html +=         '<span>'+confrontation+'</span><br>';
@@ -1303,7 +1306,7 @@ console.log('teamName, confrontation, vager, score, wagerType', teamName, confro
                 +  template + '</li>';
 
             // check if alrady selected list is there if yes then not add
-            console.log('---str---', str);
+            //console.log('---str---', str);
             if(str.indexOf(teamName) == -1) {
                 $("#betsliplist").append(list);
             } else {
@@ -1316,7 +1319,7 @@ console.log('teamName, confrontation, vager, score, wagerType', teamName, confro
             $('#betslipdesc'+idLength+' .modal-sport-wager').html(teamName);
             $('#betslipdesc'+idLength+' .modal-sport-wager-count').html(vager);
             $('#betslipdesc'+idLength+' .modal-sport-confrontation').html(confrontation);
-            $('#betslipdesc'+idLength+' .modal-sport-live-count').html('[' + score + ']');
+            // $('#betslipdesc'+idLength+' .modal-sport-live-count').html('[' + score + ']');
             $('#betslipdesc'+idLength+' .mod-KambiBC-betslip-outcome__criteria').html(wagerType);
 
 

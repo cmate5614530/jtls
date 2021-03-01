@@ -9,7 +9,7 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <link rel="icon" href="{{asset('/images/mgm-sans.png')}}" type="image/x-icon">
+    <link rel="icon" href="{{asset('/images/myicon.png')}}" type="image/x-icon">
     <!-- Stylesheets-->
     <link href="https://fonts.googleapis.com/css2?family=Rowdies:wght@300;400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Kanit:300,400,500,500i,600%7CRoboto:400,900">

@@ -1,12 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="be5ecea7-976e-4dbe-8f38-73c0f901a966" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/css/mod-KambiBC-betslip-container.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/mod-KambiBC-betslip-container.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/d02f39c756c6c19f1aa2fe89af951dc507634a61.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/d02f39c756c6c19f1aa2fe89af951dc507634a61.php" afterDir="false" />
-    </list>
+    <list default="true" id="be5ecea7-976e-4dbe-8f38-73c0f901a966" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -227,6 +222,7 @@
       <workItem from="1614409554089" duration="4849000" />
       <workItem from="1614421250249" duration="1697000" />
       <workItem from="1614513991275" duration="283000" />
+      <workItem from="1614575242698" duration="75000" />
     </task>
     <servers />
   </component>

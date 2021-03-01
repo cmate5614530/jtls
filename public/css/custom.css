@@ -145,3 +145,13 @@ p.rights {
     color: white;
     background-color: #64b000;
 }
+.tablinks:disabled{
+    color:#151515 !important;
+}
+.tablinks:disabled:hover{
+    cursor: not-allowed !important;
+}
+.tablinks.KambiBC-tabs__tab{
+    background-color: black;
+    border: none;
+}

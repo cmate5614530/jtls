@@ -757,17 +757,17 @@
                                             <div class="KambiBC-scroller-wrapper">
                                                 <ul theme="[object Object]" style=""
                                                     class="nav-tabs KambiBC-tabs__tabs KambiBC-tabs__container KambiBC-tabs__centerer KambiBC-tabs__centerer--enabled" role="tablist">
-                                                    <li class="KambiBC-tabs__tab KambiBC-tabs__tab--selected" >
-                                                        <span class="KambiBC-tabs__tab_title">
-                                                          <button class="tablinks" onclick="openCity(event, 'tabs-1')" id="defaultOpen">Singles</button>
-                                                        </span>
-                                                    </li>
+                                                    <!-- <li class="KambiBC-tabs__tab KambiBC-tabs__tab--selected" >
+                                                        <span class="KambiBC-tabs__tab_title"> -->
+                                                          <button class="tablinks KambiBC-tabs__tab KambiBC-tabs__tab--selected" onclick="openCity(event, 'tabs-1')" id="defaultOpen">Singles</button>
+                                                        <!-- </span>
+                                                    </li> -->
 
-                                                    <li class="KambiBC-tabs__tab " >
-                                                        <span class="KambiBC-tabs__tab_title">
-                                                            <button class="tablinks " id="tabs-2" onclick="openCity(event, 'tabs-2')">Multiples</button>
-                                                        </span>
-                                                    </li>
+                                                    <!-- <li class="KambiBC-tabs__tab " >
+                                                        <span class="KambiBC-tabs__tab_title"> -->
+                                                            <button class="tablinks KambiBC-tabs__tab" id="tabs-2" onclick="openCity(event, 'tabs-2')">Multiples</button>
+                                                        <!-- </span>
+                                                    </li> -->
 
                                                 </ul>
                                             </div>
@@ -1146,8 +1146,8 @@
         // Get the element with id="defaultOpen" and click on it
         document.getElementById("defaultOpen").click();
 
-        $('.KambiBC-tabs__tabs').on('click', 'li', function() {
-            $('.KambiBC-tabs__tabs li.KambiBC-tabs__tab--selected').removeClass('KambiBC-tabs__tab--selected');
+        $('.KambiBC-tabs__tabs').on('click', 'button', function() {
+            $('.KambiBC-tabs__tabs button.KambiBC-tabs__tab--selected').removeClass('KambiBC-tabs__tab--selected');
             $(this).addClass('KambiBC-tabs__tab--selected');
         });
 

@@ -7,7 +7,7 @@
                 <div class="container">
                     <div class="swiper-slide-caption">
                         <h1 data-caption-animate="fadeInUp" data-caption-delay="100">Safe <br> Betting</h1>
-                        <h4 data-caption-animate="fadeInUp" data-caption-delay="200">With 100% Risk-Free Guarantee</h4><a class="button button-gray-outline" data-caption-animate="fadeInUp" data-caption-delay="300" href="#">Get started</a>
+                        <h4 data-caption-animate="fadeInUp" data-caption-delay="200">With 100% Risk-Free Guarantee</h4><a class="button button-gray-outline" data-caption-animate="fadeInUp" data-caption-delay="300" href="{{Route('home')}}">Get started</a>
                     </div>
                 </div>
             </div>
@@ -15,7 +15,7 @@
                 <div class="container">
                     <div class="swiper-slide-caption">
                         <h1 data-caption-animate="fadeInUp" data-caption-delay="100">Easy Bets</h1>
-                        <h4 data-caption-animate="fadeInUp" data-caption-delay="200">With the lowest commissions</h4><a class="button button-gray-outline" data-caption-animate="fadeInUp" data-caption-delay="300" href="#">Join Us</a>
+                        <h4 data-caption-animate="fadeInUp" data-caption-delay="200">With the lowest commissions</h4><a class="button button-gray-outline" data-caption-animate="fadeInUp" data-caption-delay="300" href="{{Route('home')}}">Join Us</a>
                     </div>
                 </div>
             </div>
@@ -635,7 +635,7 @@
                                                             >
                                                                 <span>u<?php echo explode('Under ', $player_rebounds[$j]['betName'])[1];?></span>
                                                                 <small><?php echo $player_rebounds[$j]['betPrice'];?></small>
-                                                            </buttton>
+                                                            </button>
                                                         </td>
 
                                                         <?php

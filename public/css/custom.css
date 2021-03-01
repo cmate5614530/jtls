@@ -91,6 +91,8 @@ p.rights {
     position: relative;
     height: 100%;
     padding: 0px 1px;
+    margin-left: -12px;
+    width: 112%;
 }
 .threebox{
     grid-template-columns: repeat(3, 1fr);
@@ -154,4 +156,11 @@ p.rights {
 .tablinks.KambiBC-tabs__tab{
     background-color: black;
     border: none;
+}
+.table td{
+    vertical-align: middle !important;
+}
+.player-props-btn{
+    width: 90px;
+    height: 35px;
 }

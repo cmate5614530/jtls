@@ -291,11 +291,13 @@
                                 <div class="sport-table-tr">
                                     <div class="row sport-row align-items-left row-15">
                                         <div class="col-sm-1 col-md-1 col-lg-1">
-                                            <div class="sport-table-icon">
-                                                {{--                <div class="sprite sprite-sport-icon-07"></div>--}}
+                                            <div class="sport-table-icon">                      
                                                 <div>
                                                     <ul class="list-inline list-inline-xs">
-                                                        <li><button class="button button-xs button-red-outline player-props" data-id="<?php echo $item->id;?>">+</button></li>
+                                                        <li style="display:inline-flex;">
+                                                            <button style="padding:6px 8px !important;margin-left:-8px;" class="button button-xs button-red-outline player-props" data-id="<?php echo $item->id;?>">+</button>
+                                                            <p style="color:black;margin-top:3px !important;">&nbsp;&nbsp;#<?php echo $item->id;?></p>
+                                                        </li>
                                                     </ul>
                                                 </div>
                                             </div>
@@ -304,7 +306,6 @@
                                         <div class="col-sm-1 col-md-1 col-lg-1 sport-table-title-item sport-table-title-item-left sport-table-title">
                                             <div class="sport-table-title">
                                                 <div class="sport-table-title-item sport-table-title-item-left">
-                                                    <span class="sport-table-title-team"><span>#<?php echo $item->id;?></span></span>
                                                     <span class="sport-table-title-team"><span><?php echo gmdate("m/d H:i",$item->commence_time);?></span></span>
                                                 </div>
                                             </div>
@@ -312,8 +313,8 @@
                                         <div class="col-sm-1 col-md-1 col-lg-1">
                                             <div class="sport-table-title">
                                                 <div class="sport-table-title-item sport-table-title-item-left">
-                                                    <span class="sport-table-title-team"><span>2004</span></span>
-                                                    <span class="sport-table-title-team"><span>2018</span></span>
+                                                    <span class="sport-table-title-team"><span><?php echo $item->team1_id;?></span></span>
+                                                    <span class="sport-table-title-team"><span><?php echo $item->team2_id;?></span></span>
                                                 </div>
                                             </div>
                                         </div>
@@ -478,12 +479,36 @@
                                                         && strpos($player_assists[$i]['betName'], 'Over') !== false && strpos($player_assists[$i]['betType'],'- Assists') !== false){
                                                         ?>
                                                         <td><?php echo explode(' - Assists',$player_assists[$i]['betType'])[0];?></td>
-                                                        <td><span>o<?php echo explode('Over ', $player_assists[$i]['betName'])[1];?></span><small><?php echo $player_assists[$i]['betPrice'];?></small></td>
+                                                        <td>
+                                                            <button class="place-link bet-button player-props-btn" 
+                                                                data-clicked="0" 
+                                                                data-wager-id="<?php echo $item->id;?>" 
+                                                                data-wager-type="Assists"
+                                                                data-team-name="<?php echo explode(' - Assists',$player_assists[$i]['betType'])[0];?>"
+                                                                data-confrontation="<?php echo $item->team1.' vs '.$item->team2;?>"
+                                                                data-wager-count="o<?php echo explode('Over ', $player_assists[$i]['betName'])[1];?>&nbsp;&nbsp;<?php echo $player_assists[$i]['betPrice'];?>"
+                                                                >
+                                                                <span>o<?php echo explode('Over ', $player_assists[$i]['betName'])[1];?></span>
+                                                                <small><?php echo $player_assists[$i]['betPrice'];?></small>
+                                                            </button>
+                                                        </td>
                                                         <?php
                                                         for($j=$i+1; $j<sizeof($player_assists);$j++){
                                                         if(str_replace('Over','Under',$player_assists[$i]['betName']) == $player_assists[$j]['betName'] && $player_assists[$j]['betType'] == $player_assists[$i]['betType']){
                                                         ?>
-                                                        <td><span>u<?php echo explode('Under ', $player_assists[$j]['betName'])[1];?></span><small><?php echo $player_assists[$j]['betPrice'];?></small></td>
+                                                        <td>
+                                                            <button class="place-link bet-button player-props-btn"
+                                                                data-clicked="0" 
+                                                                data-wager-id="<?php echo $item->id;?>" 
+                                                                data-wager-type="Assists"
+                                                                data-team-name="<?php echo explode(' - Assists',$player_assists[$i]['betType'])[0];?>"
+                                                                data-confrontation="<?php echo $item->team1.' vs '.$item->team2;?>"
+                                                                data-wager-count="u<?php echo explode('Under ', $player_assists[$j]['betName'])[1];?>&nbsp;&nbsp;<?php echo $player_assists[$j]['betPrice'];?>"
+                                                            >
+                                                                <span>u<?php echo explode('Under ', $player_assists[$j]['betName'])[1];?></span>
+                                                                <small><?php echo $player_assists[$j]['betPrice'];?></small>
+                                                            </button>
+                                                        </td>
 
                                                         <?php
 
@@ -518,12 +543,36 @@
                                                         && strpos($player_points[$i]['betName'], 'Over') !== false && strpos($player_points[$i]['betType'],'- Points') !== false){
                                                         ?>
                                                         <td><?php echo explode(' - Points',$player_points[$i]['betType'])[0];?></td>
-                                                        <td><span>o<?php echo explode('Over ', $player_points[$i]['betName'])[1];?></span><small><?php echo $player_points[$i]['betPrice'];?></small></td>
+                                                        <td>
+                                                            <button class="place-link bet-button player-props-btn"
+                                                                data-clicked="0" 
+                                                                data-wager-id="<?php echo $item->id;?>" 
+                                                                data-wager-type="Points"
+                                                                data-team-name="<?php echo explode(' - Points',$player_points[$i]['betType'])[0];?>"
+                                                                data-confrontation="<?php echo $item->team1.' vs '.$item->team2;?>"
+                                                                data-wager-count="o<?php echo explode('Over ', $player_points[$i]['betName'])[1];?>&nbsp;&nbsp;<?php echo $player_points[$i]['betPrice'];?>"
+                                                            >
+                                                                <span>o<?php echo explode('Over ', $player_points[$i]['betName'])[1];?></span>
+                                                                <small><?php echo $player_points[$i]['betPrice'];?></small>
+                                                            </button>
+                                                        </td>
                                                         <?php
                                                         for($j=$i+1; $j<sizeof($player_points);$j++){
                                                         if(str_replace('Over','Under',$player_points[$i]['betName']) == $player_points[$j]['betName'] && $player_points[$j]['betType'] == $player_points[$i]['betType']){
                                                         ?>
-                                                        <td><span>u<?php echo explode('Under ', $player_points[$j]['betName'])[1];?></span><small><?php echo $player_points[$j]['betPrice'];?></small></td>
+                                                        <td>
+                                                            <button class="place-link bet-button player-props-btn"
+                                                                data-clicked="0" 
+                                                                data-wager-id="<?php echo $item->id;?>" 
+                                                                data-wager-type="Points"
+                                                                data-team-name="<?php echo explode(' - Points',$player_points[$i]['betType'])[0];?>"
+                                                                data-confrontation="<?php echo $item->team1.' vs '.$item->team2;?>"
+                                                                data-wager-count="u<?php echo explode('Under ', $player_points[$j]['betName'])[1];?>&nbsp;&nbsp;<?php echo $player_points[$j]['betPrice'];?>"
+                                                            >
+                                                                <span>u<?php echo explode('Under ', $player_points[$j]['betName'])[1];?></span>
+                                                                <small><?php echo $player_points[$j]['betPrice'];?></small>
+                                                            </button>
+                                                        </td>
 
                                                         <?php
 
@@ -558,12 +607,36 @@
                                                         && strpos($player_rebounds[$i]['betName'], 'Over') !== false  && strpos($player_rebounds[$i]['betType'],'- Rebounds') !== false){
                                                         ?>
                                                         <td><?php echo explode(' - Rebounds',$player_rebounds[$i]['betType'])[0];?></td>
-                                                        <td><span>o<?php echo explode('Over ', $player_rebounds[$i]['betName'])[1];?></span><small><?php echo $player_rebounds[$i]['betPrice'];?></small></td>
+                                                        <td>
+                                                            <button class="place-link bet-button player-props-btn"
+                                                                data-clicked="0" 
+                                                                data-wager-id="<?php echo $item->id;?>" 
+                                                                data-wager-type="Rebounds"
+                                                                data-team-name="<?php echo explode(' - Rebounds',$player_rebounds[$i]['betType'])[0];?>"
+                                                                data-confrontation="<?php echo $item->team1.' vs '.$item->team2;?>"
+                                                                data-wager-count="o<?php echo explode('Over ', $player_rebounds[$i]['betName'])[1];?>&nbsp;&nbsp;<?php echo $player_rebounds[$i]['betPrice'];?>"
+                                                            >
+                                                                <span>o<?php echo explode('Over ', $player_rebounds[$i]['betName'])[1];?></span>
+                                                                <small><?php echo $player_rebounds[$i]['betPrice'];?></small>
+                                                            </button>
+                                                        </td>
                                                         <?php
                                                         for($j=$i+1; $j<sizeof($player_rebounds);$j++){
                                                         if(str_replace('Over','Under',$player_rebounds[$i]['betName']) == $player_rebounds[$j]['betName'] && $player_rebounds[$j]['betType'] == $player_rebounds[$i]['betType']){
                                                         ?>
-                                                        <td><span>u<?php echo explode('Under ', $player_rebounds[$j]['betName'])[1];?></span><small><?php echo $player_rebounds[$j]['betPrice'];?></small></td>
+                                                        <td>
+                                                            <button class="place-link bet-button player-props-btn"
+                                                                data-clicked="0" 
+                                                                data-wager-id="<?php echo $item->id;?>" 
+                                                                data-wager-type="Rebounds"
+                                                                data-team-name="<?php echo explode(' - Rebounds',$player_rebounds[$i]['betType'])[0];?>"
+                                                                data-confrontation="<?php echo $item->team1.' vs '.$item->team2;?>"
+                                                                data-wager-count="u<?php echo explode('Under ', $player_rebounds[$j]['betName'])[1];?>&nbsp;&nbsp;<?php echo $player_rebounds[$j]['betPrice'];?>"
+                                                            >
+                                                                <span>u<?php echo explode('Under ', $player_rebounds[$j]['betName'])[1];?></span>
+                                                                <small><?php echo $player_rebounds[$j]['betPrice'];?></small>
+                                                            </buttton>
+                                                        </td>
 
                                                         <?php
 

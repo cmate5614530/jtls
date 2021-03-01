@@ -1,5 +1,4 @@
-@extends('layouts.app')
-@section('content')
+<?php $__env->startSection('content'); ?>
     <!-- Swiper-->
     <section class="section swiper-container swiper-slider swiper-classic bg-gray-2" data-loop="true" data-autoplay="4000" data-simulate-touch="false" data-slide-effect="fade">
         <div class="swiper-wrapper">
@@ -132,7 +131,7 @@
                                         <span class="sprite sprite-sport-icon-01"></span>
                                     </span>
                                     <span class="isotope-filters-list-text">All sports</span>
-                                    {{--                                    <span class="isotope-filters-list-count">29</span>--}}
+                                    
                                 </button>
                             </li>
                             <li class="isotope-filters-list-item">
@@ -204,10 +203,10 @@
                                 <p>NFL</p>
                             </div>
                             <div class="sport-table">
-                                @include('table_header')
+                                <?php echo $__env->make('table_header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                                 <?php if(sizeof($odds_americanfootball_nfl)){
                                 foreach ($odds_americanfootball_nfl as $item){?>
-                                @include('table_body')
+                                <?php echo $__env->make('table_body', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                                 <?php }}?>
                             </div>
                             <br>
@@ -215,10 +214,10 @@
                                 <p>NCAAF</p>
                             </div>
                             <div class="sport-table">
-                                @include('table_header')
+                                <?php echo $__env->make('table_header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                                 <?php if(sizeof($odds_americanfootball_ncaaf)){
                                 foreach ($odds_americanfootball_ncaaf as $item){?>
-                                @include('table_body')
+                                <?php echo $__env->make('table_body', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                                 <?php }}?>
                             </div>
                         </div>
@@ -664,10 +663,10 @@
                                 <p>NCAAB</p>
                             </div>
                             <div class="sport-table">
-                                @include('table_header')
+                                <?php echo $__env->make('table_header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                                 <?php if(sizeof($odds_basketball_ncaab)){
                                 foreach ($odds_basketball_ncaab as $item){?>
-                                @include('table_body')
+                                <?php echo $__env->make('table_body', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                                 <?php }}?>
                             </div>
                         </div>
@@ -684,10 +683,10 @@
                                 <p>MLB</p>
                             </div>
                             <div class="sport-table">
-                                @include('table_header')
+                                <?php echo $__env->make('table_header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                                 <?php if(sizeof($odds_baseball_mlb)){
                                 foreach ($odds_baseball_mlb as $item){?>
-                                @include('table_body')
+                                <?php echo $__env->make('table_body', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                                 <?php }}?>
                             </div>
                             <br/>
@@ -705,10 +704,10 @@
                                 <p>EPL</p>
                             </div>
                             <div class="sport-table">
-                                @include('table_header')
+                                <?php echo $__env->make('table_header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                                 <?php if(sizeof($odds_soccer_epl)){
                                 foreach ($odds_soccer_epl as $item){?>
-                                @include('table_body_soccer')
+                                <?php echo $__env->make('table_body_soccer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                                 <?php }}?>
                             </div>
                             <br>
@@ -716,10 +715,10 @@
                                 <p>UEFA Champions</p>
                             </div>
                             <div class="sport-table">
-                                @include('table_header')
+                                <?php echo $__env->make('table_header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                                 <?php if(sizeof($odds_soccer_uefa_champs_league)){
                                 foreach ($odds_soccer_uefa_champs_league as $item){?>
-                                @include('table_body_soccer')
+                                <?php echo $__env->make('table_body_soccer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                                 <?php }}?>
                             </div>
                             <br>
@@ -727,10 +726,10 @@
                                 <p>UEFA Europa</p>
                             </div>
                             <div class="sport-table">
-                                @include('table_header')
+                                <?php echo $__env->make('table_header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                                 <?php if(sizeof($odds_soccer_uefa_europa_league)){
                                 foreach ($odds_soccer_uefa_europa_league as $item){?>
-                                @include('table_body_soccer')
+                                <?php echo $__env->make('table_body_soccer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                                 <?php }}?>
                             </div>
                             <br>
@@ -738,10 +737,10 @@
                                 <p>La Liga - Spain</p>
                             </div>
                             <div class="sport-table">
-                                @include('table_header')
+                                <?php echo $__env->make('table_header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                                 <?php if(sizeof($odds_soccer_spain_la_liga)){
                                 foreach ($odds_soccer_spain_la_liga as $item){?>
-                                @include('table_body_soccer')
+                                <?php echo $__env->make('table_body_soccer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                                 <?php }}?>
                             </div>
                             <br>
@@ -749,10 +748,10 @@
                                 <p>Serie A - Italy</p>
                             </div>
                             <div class="sport-table">
-                                @include('table_header')
+                                <?php echo $__env->make('table_header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                                 <?php if(sizeof($odds_soccer_italy_serie_a)){
                                 foreach ($odds_soccer_italy_serie_a as $item){?>
-                                @include('table_body_soccer')
+                                <?php echo $__env->make('table_body_soccer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                                 <?php }}?>
                             </div>
                             <br>
@@ -760,10 +759,10 @@
                                 <p>Bundesliga - Germany</p>
                             </div>
                             <div class="sport-table">
-                                @include('table_header')
+                                <?php echo $__env->make('table_header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                                 <?php if(sizeof($odds_soccer_germany_bundesliga)){
                                 foreach ($odds_soccer_germany_bundesliga as $item){?>
-                                @include('table_body_soccer')
+                                <?php echo $__env->make('table_body_soccer', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                                 <?php }}?>
                             </div>
                             <br>
@@ -782,10 +781,10 @@
                                 <p>NHL</p>
                             </div>
                             <div class="sport-table">
-                                @include('table_header')
+                                <?php echo $__env->make('table_header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                                 <?php if(sizeof($odds_icehockey_nhl)){
                                 foreach($odds_icehockey_nhl as $item){?>
-                                @include('table_body')
+                                <?php echo $__env->make('table_body', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                                 <?php }}?>
                             </div>
                         </div>
@@ -914,6 +913,8 @@
         });
 
     </script>
-@endsection
+<?php $__env->stopSection(); ?>
 
 
+
+<?php echo $__env->make('layouts.app', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH F:\Laravel\Laravel_blade\bet\resources\views/main.blade.php ENDPATH**/ ?>

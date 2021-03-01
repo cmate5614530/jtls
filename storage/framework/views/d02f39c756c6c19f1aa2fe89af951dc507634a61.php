@@ -759,13 +759,12 @@
                                                     <li class="KambiBC-tabs__tab KambiBC-tabs__tab--selected" >
                                                         <span class="KambiBC-tabs__tab_title">
                                                           <button class="tablinks" onclick="openCity(event, 'tabs-1')" id="defaultOpen">Singles</button>
-                                                            <!-- <a href="#tabs-1" data-toggle="tab">Singles</a> --></span>
+                                                        </span>
                                                     </li>
 
                                                     <li class="KambiBC-tabs__tab " >
                                                         <span class="KambiBC-tabs__tab_title">
-                                                          <!-- <a href="#tabs-2" data-toggle="tab"></a> -->
-                                                        <button class="tablinks" onclick="openCity(event, 'tabs-2')">Multiples</button>
+                                                            <button class="tablinks " id="tabs-2" onclick="openCity(event, 'tabs-2')">Multiples</button>
                                                         </span>
                                                     </li>
 
@@ -780,9 +779,6 @@
                                 <button class="mod-KambiBC-betslip__clear-btn" id="betslip_clear-btn" type="button">Clear betslip</button>
                             </div>
                             <div class="mod-KambiBC-betslip__scrollable-content tab-content" >
-                                <!--Tab Pane 1 -->
-
-                                <div class="tabcontent   active" id="tabs-1">
                                     <div class="mod-KambiBC-betslip__tab-content">
                                         <ul class="mod-KambiBC-betslip__outcome-list" id="betsliplist">
                                             <li class="mod-KambiBC-betslip__outcome mod-KambiBC-betslip__outcome--has-stake-input" id="betslipdesc" style="display: none;">
@@ -792,8 +788,6 @@
                                                         <section class="mod-KambiBC-betslip-outcome__description">
                                                             <div class="mod-KambiBC-betslip-outcome__outcome-info">
                                                                 <div>
-                                                                    <!-- <div class="mod-KambiBC-betslip-outcome__live-label-container"><span class="mod-KambiBC-betslip-outcome__live-label mod-KambiBC-betslip-outcome__live-label--visible">LIVE</span>&nbsp;</div>
-                                                                    <span class="mod-KambiBC-betslip-outcome__outcome-label">Draw</span> -->
                                                                     <span class="mod-KambiBC-betslip-outcome__outcome-label modal-sport-wager" id="betname">Full time</span>
                                                                 </div>
                                                                 <div>
@@ -801,10 +795,7 @@
 
                                                                 </div>
                                                             </div>
-                                                            <!-- <a class="mod-KambiBC-betslip-outcome__event-link" data-source="betslip" href="#event/live/1006459827" rel="external">Charlton Athletic - Reading</a> -->
                                                             <p class="modal-sport-confrontation" id="matchname"></p>
-
-
                                                         </section>
                                                         <section class="mod-KambiBC-betslip-outcome__stake-container">
                                                             <div class="mod-KambiBC-betslip-outcome__odds-container">
@@ -836,166 +827,71 @@
                                         </ul>
                                         <div class="mod-KambiBC-betslip__validation-errors">
                                         </div>
-                                        <ul class="mod-KambiBC-betslip__system-stake-input-list">
-                                            <li class="mod-KambiBC-betslip__system-stake-input">
-                                                <div class="mod-KambiBC-betslip-system-mobile-keyboard"></div>
-                                                <section class="mod-KambiBC-betslip-system-details"></section>
-                                            </li>
-                                        </ul>
+                                        
                                         <ul class="mod-KambiBC-betslip__system-package-stake-input-list"></ul>
-                                        <form method="post" id="form1" name="form1" enctype="multipart/form-data">
-                                            <div class="mod-KambiBC-betslip__summary">
-                                                <div class="mod-KambiBC-betslip-summary__row">
-                                                    <div class="mod-KambiBC-betslip-summary__label">Total Stakes:</div>
-                                                    <!-- <div class="mod-KambiBC-betslip-summary__value"><span class="mod-KambiBC-betslip-summary__total-odds-value" id="totalstakes"></span></div> -->
-                                                    <input type="text" name="total_stakes" id="totalstakes" style="border: none;background-color: #222222;color: #ffff;text-align:right" readonly>
-                                                </div>
-                                                <div class="mod-KambiBC-betslip-summary__place-bet-content">
-                                                    <div class="mod-KambiBC-betslip-summary__info">
-                                                        <div class="mod-KambiBC-betslip-summary__row mod-KambiBC-betslip-summary__payout">
-                                                            <div class="mod-KambiBC-betslip-summary__label">Potential Returns:</div>
-                                                            <!-- <div class="mod-KambiBC-betslip-summary__value">€<span class="mod-KambiBC-js-betslip-summary__potential-payout-value" id="totalamnt">0.00</span></div> -->
-                                                            <input type="text" name="total_potential" id="totalamnt" style="border: none;    background-color: #222222;color: #ffff;" readonly>
-
-                                                            <input type="hidden" name="oddsname" id="oddsname" style="border: none;    background-color: #222222;color: #ffff;" readonly>
-
-                                                            <input type="hidden" name="matchname1" id="matchname1" style="border: none;    background-color: #222222;color: #ffff;" readonly>
-
-                                                            <input type="hidden" name="fodds" id="fodds" style="border: none;    background-color: #222222;color: #ffff;" readonly>
-                                                            <input type="hidden" name="stakes" id="fodds" style="border: none;    background-color: #222222;color: #ffff;" readonly>
+                                            <!-- Single bet slip -->
+                                            <div id="div_single_bet">
+                                                <div class="mod-KambiBC-betslip__summary">
+                                                    <div class="mod-KambiBC-betslip-summary__row">
+                                                        <div class="mod-KambiBC-betslip-summary__label">Total Stakes:</div>
+                                                        <input type="text" name="total_stakes" id="totalstakes" style="border: none;background-color: #222222;color: #ffff;text-align:right" readonly>
+                                                    </div>
+                                                    <div class="mod-KambiBC-betslip-summary__place-bet-content">
+                                                        <div class="mod-KambiBC-betslip-summary__info">
+                                                            <div class="mod-KambiBC-betslip-summary__row mod-KambiBC-betslip-summary__payout">
+                                                                <div class="mod-KambiBC-betslip-summary__label">Potential Returns:</div>
+                                                                <input type="text" name="total_potential" id="totalamnt" style="border: none;    background-color: #222222;color: #ffff;" readonly>
+                                                            </div>
+                                                        </div>
+                                                        <div class="mod-KambiBC-betslip__place-bet-button-wrapper">
+                                                            <button type="button" name="place_bet" id="place_bet" class="mod-KambiBC-betslip__place-bet-btn" data-touch-feedback="true">Place bet</button>
                                                         </div>
                                                     </div>
-                                                    <div class="mod-KambiBC-betslip__place-bet-button-wrapper"><button type="submit" name="place_bet" id="place_bet" class="mod-KambiBC-betslip__place-bet-btn" data-touch-feedback="true">Place bet</button></div>
                                                 </div>
                                             </div>
-                                        </form>
+                                            <!-- Single bet slip end -->
+
+                                            <!-- Multiple bet slip -->
+                                            <div id="div_multiple_bet" style="display:none;">
+                                                <ul class="mod-KambiBC-betslip__system-stake-input-list">
+                                                    <li class="mod-KambiBC-betslip__system-stake-input" style="padding: unset;">
+                                                        <div class="mod-KambiBC-betslip-system-stake-wrapper">
+                                                            <label class="mod-KambiBC-betslip-system-stake-label" for="mod-KambiBC-betslip-stake-input-combination">Total:</label>
+                                                            <div class="mod-KambiBC-betslip-system-stake-input">
+                                                                <div class="mod-KambiBC-stake-input__container">
+                                                                    <input autocomplete="off" 
+                                                                        class="mod-KambiBC-stake-input mod-KambiBC-js-stake-input multiple-bet-price" 
+                                                                        id="mod-KambiBC-betslip-stake-input-combination" 
+                                                                        maxlength="7" 
+                                                                        pattern="^[0-9]*[.,]{0,1}[0-9]{0,2}$" 
+                                                                        placeholder="$0.00" type="text"
+                                                                        onchange="multiBetCalculate()">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </li>
+                                                </ul>
+                                                <ul class="mod-KambiBC-betslip__system-package-stake-input-list"></ul>
+                                                <div class="mod-KambiBC-betslip__summary">
+                                                    <div class="mod-KambiBC-betslip-summary__place-bet-content">
+                                                        <div class="mod-KambiBC-betslip-summary__info">
+                                                            <div class="mod-KambiBC-betslip-summary__row mod-KambiBC-betslip-summary__payout">
+                                                                <div class="mod-KambiBC-betslip-summary__label">Potential Returns:</div>
+                                                                <div class="mod-KambiBC-betslip-summary__value">
+                                                                    
+                                                                    <input type="text" name="total_potential_multi" id="multiTotalPrice" style="border: none;    background-color: #222222;color: #ffff;" readonly>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="mod-KambiBC-betslip__place-bet-button-wrapper">
+                                                            <button class="mod-KambiBC-betslip__place-bet-btn" data-touch-feedback="true" disabled="" type="button">Place bet</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!-- Multiple bet slip end -->
+                                            <br>
                                     </div>
-                                </div>
-
-                                <!--End Tab Pane 1-->
-                                <!--Tab Pane 2 -->
-                                <div class="tabcontent   " id="tabs-2">
-                                    <div class="mod-KambiBC-betslip__tab-content">
-                                        <ul class="mod-KambiBC-betslip__outcome-list">
-
-                                            <li class="mod-KambiBC-betslip__outcome mod-KambiBC-betslip__outcome--closed">
-                                                <div class="mod-KambiBC-betslip__outcome__content-wrapper ">
-                                                    <button class="mod-KambiBC-betslip-outcome__close-btn" data-touch-feedback="true"><span class="mod-KambiBC-betslip-outcome__close-btn-text">Close</span></button>
-                                                    <div class="mod-KambiBC-betslip-outcome__content">
-                                                        <section class="mod-KambiBC-betslip-outcome__description">
-                                                            <div class="mod-KambiBC-betslip-outcome__outcome-info">
-                                                                <div>
-                                                                    <div class="mod-KambiBC-betslip-outcome__live-label-container"><span class="mod-KambiBC-betslip-outcome__live-label mod-KambiBC-betslip-outcome__live-label--visible">LIVE</span>&nbsp;</div>
-                                                                    <span class="mod-KambiBC-betslip-outcome__outcome-label">Toronto Awaba FC</span>
-                                                                </div>
-                                                                <div>
-                                                                    <p class="mod-KambiBC-betslip-outcome__criteria">Full Time</p>
-                                                                </div>
-                                                            </div>
-                                                            <a class="mod-KambiBC-betslip-outcome__event-link" data-source="betslip" href="#event/live/1006528806" rel="external">Singleton Strikers FC - Toronto Awaba FC</a>
-                                                        </section>
-                                                        <section class="mod-KambiBC-betslip-outcome__stake-container">
-                                                            <div class="mod-KambiBC-betslip-outcome__odds-container">
-                                                                <div class="mod-KambiBC-betslip-outcome__actions-dialouge-container">
-                                                                    <div class="mod-KambiBC-betslip-outcome-item__actions-dialogue" data-touch-feedback="true">
-                                                                        <span class="mod-KambiBC-betslip-outcome-item__actions-dialogue__progress"></span>
-                                                                        <div class="mod-KambiBC-betslip-outcome-item__actions-dialogue__change-text"></div>
-                                                                    </div>
-                                                                </div>
-                                                                <span class="mod-KambiBC-betslip-outcome__odds">Closed</span><span class="mod-KambiBC-betslip-outcome__boosted-odds"></span>
-                                                            </div>
-                                                            <div class="mod-KambiBC-betslip-outcome__stake-input-container">
-                                                                <div class="mod-KambiBC-betslip-outcome__stake-label mod-KambiBC-js-betslip-outcome__stake-label"></div>
-                                                                <div class="mod-KambiBC-betslip-outcome__stake-input"></div>
-                                                            </div>
-                                                        </section>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li class="mod-KambiBC-betslip__outcome">
-                                                <div class="mod-KambiBC-betslip__outcome__content-wrapper ">
-                                                    <button class="mod-KambiBC-betslip-outcome__close-btn" data-touch-feedback="true"><span class="mod-KambiBC-betslip-outcome__close-btn-text">Close</span></button>
-                                                    <div class="mod-KambiBC-betslip-outcome__content">
-                                                        <section class="mod-KambiBC-betslip-outcome__description">
-                                                            <div class="mod-KambiBC-betslip-outcome__outcome-info">
-                                                                <div>
-                                                                    <div class="mod-KambiBC-betslip-outcome__live-label-container"><span class="mod-KambiBC-betslip-outcome__live-label mod-KambiBC-betslip-outcome__live-label--visible">LIVE</span>&nbsp;</div>
-                                                                    <span class="mod-KambiBC-betslip-outcome__outcome-label">Northern Rangers</span>
-                                                                </div>
-                                                                <div>
-                                                                    <p class="mod-KambiBC-betslip-outcome__criteria">Full Time</p>
-                                                                </div>
-                                                            </div>
-                                                            <a class="mod-KambiBC-betslip-outcome__event-link" data-source="betslip" href="#event/live/1006528805" rel="external">Glenorchy Knights - Northern Rangers</a>
-                                                        </section>
-                                                        <section class="mod-KambiBC-betslip-outcome__stake-container">
-                                                            <div class="mod-KambiBC-betslip-outcome__odds-container">
-                                                                <div class="mod-KambiBC-betslip-outcome__actions-dialouge-container">
-                                                                    <div class="mod-KambiBC-betslip-outcome-item__actions-dialogue" data-touch-feedback="true">
-                                                                        <span class="mod-KambiBC-betslip-outcome-item__actions-dialogue__progress"></span>
-                                                                        <div class="mod-KambiBC-betslip-outcome-item__actions-dialogue__change-text"></div>
-                                                                    </div>
-                                                                </div>
-                                                            </div>
-                                                            <div class="mod-KambiBC-betslip-outcome__stake-input-container">
-                                                                <div class="mod-KambiBC-betslip-outcome__stake-label mod-KambiBC-js-betslip-outcome__stake-label"></div>
-                                                                <div class="mod-KambiBC-betslip-outcome__stake-input"></div>
-                                                            </div>
-                                                        </section>
-                                                    </div>
-                                                </div>
-                                            </li>
-
-
-                                        </ul>
-                                        <div class="mod-KambiBC-betslip__validation-errors">
-                                            <div class="mod-KambiBC-betslip__validation-error">
-                                                <button class="mod-KambiBC-betslip__validation-error__close-btn"></button>
-                                                <p class="mod-KambiBC-betslip__validation-error__description">Sorry, the selected outcomes cannot be combined</p>
-                                            </div>
-                                        </div>
-                                        <ul class="mod-KambiBC-betslip__system-stake-input-list">
-                                            <li class="mod-KambiBC-betslip__system-stake-input">
-                                                <div class="mod-KambiBC-betslip-system-stake-wrapper">
-                                                    <label class="mod-KambiBC-betslip-system-stake-label" for="mod-KambiBC-betslip-stake-input-combination">Sevenfold</label><span class="mod-KambiBC-betslip-system-stake-combination-count"></span>
-                                                    <div class="mod-KambiBC-betslip-system-stake-input">
-                                                        <div class="mod-KambiBC-stake-input__container"><input autocomplete="off" class="mod-KambiBC-stake-input mod-KambiBC-js-stake-input" id="mod-KambiBC-betslip-stake-input-combination" maxlength="7" pattern="^[0-9]*[.,]{0,1}[0-9]{0,2}$" placeholder="€0.00" type="text" value=""></div>
-                                                    </div>
-                                                    <div class="mod-KambiBC-betslip-each-way"></div>
-                                                </div>
-                                                <div class="mod-KambiBC-betslip-system-mobile-keyboard"></div>
-                                                <section class="mod-KambiBC-betslip-system-details"></section>
-                                            </li>
-                                        </ul>
-                                        <ul class="mod-KambiBC-betslip__system-package-stake-input-list"></ul>
-                                        <div class="mod-KambiBC-betslip__summary">
-                                            <div class="mod-KambiBC-betslip-summary__row">
-                                                <div class="mod-KambiBC-betslip-summary__label">Total Stakes:</div>
-                                                <div class="mod-KambiBC-betslip-summary__value"><span class="mod-KambiBC-betslip-summary__total-odds-value" id="totalstakes"></span></div>
-                                            </div>
-                                            <div class="mod-KambiBC-betslip-summary__place-bet-content">
-                                                <div class="mod-KambiBC-betslip-summary__info">
-                                                    <div class="mod-KambiBC-betslip-summary__row mod-KambiBC-betslip-summary__payout">
-                                                        <div class="mod-KambiBC-betslip-summary__label">Potential Returns:</div>
-                                                        <div class="mod-KambiBC-betslip-summary__value"><span class="mod-KambiBC-js-betslip-summary__potential-payout-value">€0.00</span></div>
-                                                    </div>
-                                                </div>
-                                                <div class="mod-KambiBC-betslip__place-bet-button-wrapper"><button class="mod-KambiBC-betslip__place-bet-btn KambiBC-disabled" data-touch-feedback="true" disabled="" type="button">Place bet</button></div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <!--End Tab Pane 2-->
-
-                                <div class="mod-KambiBC-betslip__links-wrapper">
-                                    <div class="mod-KambiBC-betslip-links">
-                                        <ul class="mod-KambiBC-betslip-links--navigation"></ul>
-                                        <ul class="mod-KambiBC-betslip-links--customer ">
-                                            <li><a class="mod-KambiBC-betslip-links--link-customer" data-touch-feedback="true" href="http://888-external-en.custhelp.com/app/answers/detail/a_id/5743/prod/?NativeExternal=true" target="_self">*Maximum payout limits apply</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-                                <div class="KambiBC-widgets-layout KambiBC-has-widgets"></div>
                             </div>
                         </div>
                     </div>
@@ -1168,20 +1064,82 @@
             $('#totalamnt').val(parseFloat(totalPotential).toFixed(2));
         }
 
-        function openCity(evt, cityName) {
-            var i, tabcontent, tablinks,kambili;
-            tabcontent = document.getElementsByClassName("tabcontent");
-            for (i = 0; i < tabcontent.length; i++) {
-                tabcontent[i].style.display = "none";
+        function multiBetCalculate(){
+            var potentialArr = [];
+
+            var totalPotential = parseFloat($("#mod-KambiBC-betslip-stake-input-combination").val());
+            $('.modal-sport-wager-count').each(function(){
+                var amount = 0;
+                if($(this).text()!=='' && $(this).text()!=='-' && $(this).text().split(/\s/).length > 1){
+                    amount = parseFloat($(this).text().split(/\s/)[2]);
+                }else if($(this).text()!=='' && $(this).text()!=='-' && $(this).text().split(/\s/).length == 1){
+                    amount = parseFloat($(this).text().split(/\s/)[0]);
+                }
+                var tmp = 0;
+                if(amount > 0){
+                    tmp = 1 + amount/100;
+                }else{
+                    tmp = 1 - 100/amount;
+                }
+                potentialArr.push(parseFloat(tmp).toFixed(2));
+
+            });
+            for(var i = 1; i < potentialArr.length; i++){
+                totalPotential *= potentialArr[i];
             }
+            
+            $('#multiTotalPrice').val(parseFloat(totalPotential).toFixed(2));
+        }
+
+        function openCity(evt, cityName) {
+            // var i, tabcontent, tablinks,kambili;
+            // tabcontent = document.getElementsByClassName("tabcontent");
+            // for (i = 0; i < tabcontent.length; i++) {
+            //     tabcontent[i].style.display = "none";
+            // }
             tablinks = document.getElementsByClassName("tablinks");
             for (i = 0; i < tablinks.length; i++) {
                 tablinks[i].className = tablinks[i].className.replace(" active", "");
             }
 
 
-            document.getElementById(cityName).style.display = "block";
+            // document.getElementById(cityName).style.display = "block";
             evt.currentTarget.className += " active";
+            
+            if(cityName=='tabs-1'){
+                console.log("----------single_bet----");
+                $("#div_multiple_bet").css('display','none');
+                $(".single-bet-price").css('display', 'block');
+                $("#div_single_bet").css('display','block');
+                check_if_multiplebet_possible();
+                
+            }else{
+                console.log("---------multiple_bet----");
+                $('#mod-KambiBC-betslip-stake-input-combination').val('');
+                $('#multiTotalPrice').val('');
+                $("#div_multiple_bet").css('display','block');
+                $(".single-bet-price").css('display', 'none');
+                $("#div_single_bet").css('display','none');
+            }
+        }
+
+        function check_if_multiplebet_possible(){
+            //check if multiple bet(parlay) is possible, and enable the button.
+            var betslip_id_duplicated = 0;
+            for(var i=0; i<betslip_array.length; i++){
+                for(var j=i+1; j<betslip_array.length; j++){
+                    if(betslip_array[i].wagerId == betslip_array[j].wagerId){
+                        betslip_id_duplicated += 1;
+                        break;
+                    }
+                }
+                if(betslip_id_duplicated>0) break;
+            }
+            if(betslip_id_duplicated>0 || betslip_array.length==1 || betslip_array.length>8){
+                $('#tabs-2').attr('disabled','disabled');
+            }else{
+                $('#tabs-2').removeAttr('disabled','disabled');
+            }
         }
 
         // Get the element with id="defaultOpen" and click on it
@@ -1205,11 +1163,12 @@
         $("#betslip_clear-btn").click(function(){
             $('#betsliplist li:not(:first-child)').remove();
             $("#betslipModal").removeClass("show-betslip");
-            $('.mod-KambiBC-betslip-summary__total-odds-value').text('');
-            $('#totalamnt').text('');
-
+            //$('.mod-KambiBC-betslip-summary__total-odds-value').text('');
+            $('#totalamnt').val('');
+            $('#totalstakes').val('')    ;
             betslip_array = [];
             $(".place-link").css('background-color', '#eaecee');
+            check_if_multiplebet_possible();
         });
 
         // delete bet slip list item
@@ -1217,6 +1176,8 @@
             $('.place-link[data-wager-id="'+wagerId+'"][data-wager-type="'+wagerType+'"][data-team-name="'+teamName+'"]').css('background-color','#eaecee');
             betslip_array = betslip_array.filter(it=> it.wagerId !== wagerId || it.teamName !== teamName || it.wagerType !== wagerType);
             betCalculate();
+            
+            document.getElementById("defaultOpen").click();
         }
 
         // add list in ul with data
@@ -1226,14 +1187,13 @@
                 $("#betslipModal").addClass("show-betslip");
             }
 
-
-            var template = $("#betslipdesc").clone().removeAttr("id").html();
+            document.getElementById("defaultOpen").click();
+            
+            // var template = $("#betslipdesc").clone().removeAttr("id").html();
 
             var teamName = $(this).data('team-name'),
                 confrontation = $(this).data('confrontation'),
-                vager = $(this).data('wager-count'),
                 wagerCount = $(this).data('wager-count');
-                //score = $(this).data('score');
             var wagerType=$(this).data('wager-type');
             var wagerId=$(this).data('wager-id');
             var odds = $(this).data('wager-count');
@@ -1290,7 +1250,7 @@
                                         '<div class="mod-KambiBC-betslip-outcome__stake-input-container">'+
                                             '<div class="mod-KambiBC-betslip-outcome__stake-input">'+
                                                 '<div class="mod-KambiBC-stake-input__container">'+
-                                                    '<input autocomplete="off" class="mod-KambiBC-stake-input mod-KambiBC-js-stake-input" min="0" maxlength="7" placeholder="$0.00" type="number" onchange="betCalculate()">'+
+                                                    '<input autocomplete="off" class="mod-KambiBC-stake-input mod-KambiBC-js-stake-input single-bet-price" min="0" maxlength="7" placeholder="$0.00" type="number" onchange="betCalculate()">'+
                                                 '</div>'+
                                             '</div>'+
                                         '</div>'+
@@ -1318,9 +1278,9 @@
                 $("#betsliplist").append(html);
             }
             
-console.log('teamName, confrontation, vager, wagerType', teamName, confrontation, vager, wagerType)
 console.log('---betslip_array---', betslip_array);
             
+            check_if_multiplebet_possible();
 
             $("#place_bet").click(function(){
                 var menueng = [];

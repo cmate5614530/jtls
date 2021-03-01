@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be5ecea7-976e-4dbe-8f38-73c0f901a966" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/2a95f76f3e63edc478a3c3773673f8edb25788bf.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/4d88baa572c01a771769a37a67eb3e5a7101688a.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/ad0604cf89d44ed20ba71366c7482c01dbc47ac9.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/cd6e2d1954bb2edc5c0d4e5af9aaeba81f9a560e.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/css/mod-KambiBC-betslip-container.css" beforeDir="false" afterPath="$PROJECT_DIR$/public/css/mod-KambiBC-betslip-container.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/storage/framework/views/d02f39c756c6c19f1aa2fe89af951dc507634a61.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/d02f39c756c6c19f1aa2fe89af951dc507634a61.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -228,6 +226,7 @@
       <workItem from="1614390006630" duration="1859000" />
       <workItem from="1614409554089" duration="4849000" />
       <workItem from="1614421250249" duration="1697000" />
+      <workItem from="1614513991275" duration="283000" />
     </task>
     <servers />
   </component>
@@ -247,10 +246,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state width="443" height="466" key="DebuggerActiveHint/0.0.1920.1040@0.0.1920.1040" timestamp="1612816413938" />
-    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1614423317378">
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog" timestamp="1614514228060">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614423317378" />
+    <state x="92" y="92" width="1736" height="856" key="DiffContextDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1614514228060" />
     <state x="740" y="276" key="FileChooserDialogImpl" timestamp="1612517937908">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

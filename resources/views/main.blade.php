@@ -458,199 +458,267 @@
                                         </div>
                                         <div class="col-sm-12 col-md-12 col-lg-12 player-props-table" id="<?php echo $item->id;?>">
 
-                                                <table class="table table-striped" style="color: black; line-height: 0.6;">
-                                                    <thead>
-                                                    <tr>
-                                                        <th scope="col">Assists</th>
-                                                        <th scope="col">Over</th>
-                                                        <th scope="col">Under</th>
-                                                    </tr>
-                                                    </thead>
-                                                    <tbody>
+                                            <table class="table table-striped" style="color: black; line-height: 0.6;">
+                                                <thead>
+                                                <tr>
+                                                    <th scope="col">Assists</th>
+                                                    <th scope="col">Over</th>
+                                                    <th scope="col">Under</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <?php
+                                                $betType_before = '';
+                                                $assists = array();
+                                                for($i=0; $i<sizeof($player_assists); $i++){
+                                                    $my_flag='1';
+                                                    for($j=$i+2; $j<sizeof($player_assists); $j+=2){
+                                                        if($player_assists[$i]['betType'] == $player_assists[$j]['betType'] ){
+                                                            $my_flag='0';
+                                                            break;
+                                                        }
+                                                    }
+                                                    if($my_flag == '1'){
+                                                        array_push($assists, $player_assists[$i]);
+                                                    }
+                                                }
+                                                for($i=0; $i<sizeof($assists); $i+=2){
+                                                ?>
+                                                <tr>
                                                     <?php
-                                                    $betType_before = '';
-                                                    for($i=0; $i<sizeof($player_assists); $i+=2){
-                                                    ?>
-                                                    <tr>
-                                                        <?php
 
-                                                        if($player_assists[$i]['betType'] !== $betType_before && strpos($player_assists[$i]['homeTeam'], $item->home_team) !== false
-                                                        && strpos($player_assists[$i]['awayTeam'], $item->away_team) !== false
-                                                        && strpos($player_assists[$i]['betName'], 'Over') !== false && strpos($player_assists[$i]['betType'],'- Assists') !== false){
-                                                        ?>
-                                                        <td><?php echo explode(' - Assists',$player_assists[$i]['betType'])[0];?></td>
-                                                        <td>
-                                                            <button class="place-link bet-button player-props-btn" 
-                                                                data-clicked="0" 
-                                                                data-wager-id="<?php echo $item->id;?>" 
+                                                    if($assists[$i]['betType'] !== $betType_before && strpos($assists[$i]['homeTeam'], $item->home_team) !== false
+                                                    && strpos($assists[$i]['awayTeam'], $item->away_team) !== false
+                                                    && strpos($assists[$i]['betName'], 'Over') !== false && strpos($assists[$i]['betType'],'- Assists') !== false){
+                                                    ?>
+                                                    <td><?php echo explode(' - Assists',$assists[$i]['betType'])[0];?></td>
+                                                    <td>
+                                                        <button class="place-link bet-button player-props-btn"
+                                                                data-clicked="0"
+                                                                data-wager-id="<?php echo $item->id;?>"
                                                                 data-wager-type="Assists"
-                                                                data-team-name="<?php echo explode(' - Assists',$player_assists[$i]['betType'])[0];?>"
+                                                                data-team-name="<?php echo explode(' - Assists',$assists[$i]['betType'])[0];?>"
                                                                 data-confrontation="<?php echo $item->team1.' vs '.$item->team2;?>"
-                                                                data-wager-count="o<?php echo explode('Over ', $player_assists[$i]['betName'])[1];?>&nbsp;&nbsp;<?php echo $player_assists[$i]['betPrice'];?>"
-                                                                >
-                                                                <span>o<?php echo explode('Over ', $player_assists[$i]['betName'])[1];?></span>
-                                                                <small><?php echo $player_assists[$i]['betPrice'];?></small>
-                                                            </button>
-                                                        </td>
+                                                                data-wager-count="o<?php echo explode('Over ', $assists[$i]['betName'])[1];?>&nbsp;&nbsp;<?php echo $assists[$i]['betPrice'];?>"
+                                                        >
+                                                            <span>o<?php echo explode('Over ', $assists[$i]['betName'])[1];?></span>
+                                                            <small><?php echo $assists[$i]['betPrice'];?></small>
+                                                        </button>
+                                                    </td>
+                                                    <?php
+                                                    for($j=$i+1; $j<sizeof($assists);$j++){
+                                                        if(str_replace('Over','Under',$assists[$i]['betName']) == $assists[$j]['betName'] && $assists[$j]['betType'] == $assists[$i]['betType']){
+                                                            $under_assists = $assists[$j];
+                                                            break;
+                                                        }
+                                                    }
+                                                    ?>
+                                                    <td>
                                                         <?php
-                                                        for($j=$i+1; $j<sizeof($player_assists);$j++){
-                                                        if(str_replace('Over','Under',$player_assists[$i]['betName']) == $player_assists[$j]['betName'] && $player_assists[$j]['betType'] == $player_assists[$i]['betType']){
+                                                        if(isset($under_assists)){
                                                         ?>
-                                                        <td>
-                                                            <button class="place-link bet-button player-props-btn"
-                                                                data-clicked="0" 
-                                                                data-wager-id="<?php echo $item->id;?>" 
+
+                                                        <button class="place-link bet-button player-props-btn"
+                                                                data-clicked="0"
+                                                                data-wager-id="<?php echo $item->id;?>"
                                                                 data-wager-type="Assists"
-                                                                data-team-name="<?php echo explode(' - Assists',$player_assists[$i]['betType'])[0];?>"
+                                                                data-team-name="<?php echo explode(' - Assists',$assists[$i]['betType'])[0];?>"
                                                                 data-confrontation="<?php echo $item->team1.' vs '.$item->team2;?>"
-                                                                data-wager-count="u<?php echo explode('Under ', $player_assists[$j]['betName'])[1];?>&nbsp;&nbsp;<?php echo $player_assists[$j]['betPrice'];?>"
-                                                            >
-                                                                <span>u<?php echo explode('Under ', $player_assists[$j]['betName'])[1];?></span>
-                                                                <small><?php echo $player_assists[$j]['betPrice'];?></small>
-                                                            </button>
-                                                        </td>
+                                                                data-wager-count="u<?php echo explode('Under ', $under_assists['betName'])[1];?>&nbsp;&nbsp;<?php echo $under_assists['betPrice'];?>"
+                                                        >
+                                                            <span>u<?php echo explode('Under ', $under_assists['betName'])[1];?></span>
+                                                            <small><?php echo $under_assists['betPrice'];?></small>
+                                                        </button>
+
 
                                                         <?php
 
                                                         }
-                                                        }
-                                                        $betType_before = $player_assists[$i]['betType'];
-                                                        }
                                                         ?>
-                                                    </tr>
+                                                    </td>
                                                     <?php
+                                                    $betType_before = $assists[$i]['betType'];
                                                     }
                                                     ?>
-                                                    </tbody>
+                                                </tr>
+                                                <?php
+                                                }
+                                                ?>
+                                                </tbody>
 
-                                                    <thead>
-                                                    <tr>
-                                                        <th scope="col">Points</th>
-                                                        <th scope="col">Over</th>
-                                                        <th scope="col">Under</th>
-                                                    </tr>
-                                                    </thead>
-                                                    <tbody>
+                                                <thead>
+                                                <tr>
+                                                    <th scope="col">Points</th>
+                                                    <th scope="col">Over</th>
+                                                    <th scope="col">Under</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <?php
+                                                $betType_before = '';
+                                                $points = array();
+                                                for($i=0; $i<sizeof($player_points); $i++){
+                                                    $my_flag='1';
+                                                    for($j=$i+2; $j<sizeof($player_points); $j+=2){
+                                                        if($player_points[$i]['betType'] == $player_points[$j]['betType'] ){
+                                                            $my_flag='0';
+                                                            break;
+                                                        }
+                                                    }
+                                                    if($my_flag == '1'){
+                                                        array_push($points, $player_points[$i]);
+                                                    }
+                                                }
+                                                for($i=0; $i<sizeof($points); $i+=2){
+                                                ?>
+                                                <tr>
                                                     <?php
-                                                    $betType_before = '';
-                                                    for($i=0; $i<sizeof($player_points); $i+=2){
-                                                    ?>
-                                                    <tr>
-                                                        <?php
 
-                                                        if($player_points[$i]['betType'] !== $betType_before && strpos($player_points[$i]['homeTeam'], $item->home_team) !== false
-                                                        && strpos($player_points[$i]['awayTeam'], $item->away_team) !== false
-                                                        && strpos($player_points[$i]['betName'], 'Over') !== false && strpos($player_points[$i]['betType'],'- Points') !== false){
-                                                        ?>
-                                                        <td><?php echo explode(' - Points',$player_points[$i]['betType'])[0];?></td>
-                                                        <td>
-                                                            <button class="place-link bet-button player-props-btn"
-                                                                data-clicked="0" 
-                                                                data-wager-id="<?php echo $item->id;?>" 
+                                                    if($points[$i]['betType'] !== $betType_before && strpos($points[$i]['homeTeam'], $item->home_team) !== false
+                                                    && strpos($points[$i]['awayTeam'], $item->away_team) !== false
+                                                    && strpos($points[$i]['betName'], 'Over') !== false && strpos($points[$i]['betType'],'- Points') !== false){
+                                                    ?>
+                                                    <td><?php echo explode(' - Points',$points[$i]['betType'])[0];?></td>
+                                                    <td>
+                                                        <button class="place-link bet-button player-props-btn"
+                                                                data-clicked="0"
+                                                                data-wager-id="<?php echo $item->id;?>"
                                                                 data-wager-type="Points"
-                                                                data-team-name="<?php echo explode(' - Points',$player_points[$i]['betType'])[0];?>"
+                                                                data-team-name="<?php echo explode(' - Points',$points[$i]['betType'])[0];?>"
                                                                 data-confrontation="<?php echo $item->team1.' vs '.$item->team2;?>"
-                                                                data-wager-count="o<?php echo explode('Over ', $player_points[$i]['betName'])[1];?>&nbsp;&nbsp;<?php echo $player_points[$i]['betPrice'];?>"
-                                                            >
-                                                                <span>o<?php echo explode('Over ', $player_points[$i]['betName'])[1];?></span>
-                                                                <small><?php echo $player_points[$i]['betPrice'];?></small>
-                                                            </button>
-                                                        </td>
+                                                                data-wager-count="o<?php echo explode('Over ', $points[$i]['betName'])[1];?>&nbsp;&nbsp;<?php echo $points[$i]['betPrice'];?>"
+                                                        >
+                                                            <span>o<?php echo explode('Over ', $points[$i]['betName'])[1];?></span>
+                                                            <small><?php echo $points[$i]['betPrice'];?></small>
+                                                        </button>
+                                                    </td>
+                                                    <?php
+
+                                                    for($j=$i+1; $j<sizeof($points);$j++){
+                                                        if(str_replace('Over','Under',$points[$i]['betName']) == $points[$j]['betName'] && $points[$j]['betType'] == $points[$i]['betType']){
+                                                            $under_points = $points[$j];
+                                                            break;
+                                                        }
+                                                    }
+                                                    ?>
+                                                    <td>
                                                         <?php
-                                                        for($j=$i+1; $j<sizeof($player_points);$j++){
-                                                        if(str_replace('Over','Under',$player_points[$i]['betName']) == $player_points[$j]['betName'] && $player_points[$j]['betType'] == $player_points[$i]['betType']){
+                                                        if(isset($under_points)){
                                                         ?>
-                                                        <td>
-                                                            <button class="place-link bet-button player-props-btn"
-                                                                data-clicked="0" 
-                                                                data-wager-id="<?php echo $item->id;?>" 
+
+                                                        <button class="place-link bet-button player-props-btn"
+                                                                data-clicked="0"
+                                                                data-wager-id="<?php echo $item->id;?>"
                                                                 data-wager-type="Points"
-                                                                data-team-name="<?php echo explode(' - Points',$player_points[$i]['betType'])[0];?>"
+                                                                data-team-name="<?php echo explode(' - Points',$points[$i]['betType'])[0];?>"
                                                                 data-confrontation="<?php echo $item->team1.' vs '.$item->team2;?>"
-                                                                data-wager-count="u<?php echo explode('Under ', $player_points[$j]['betName'])[1];?>&nbsp;&nbsp;<?php echo $player_points[$j]['betPrice'];?>"
-                                                            >
-                                                                <span>u<?php echo explode('Under ', $player_points[$j]['betName'])[1];?></span>
-                                                                <small><?php echo $player_points[$j]['betPrice'];?></small>
-                                                            </button>
-                                                        </td>
+                                                                data-wager-count="u<?php echo explode('Under ', $points[$j]['betName'])[1];?>&nbsp;&nbsp;<?php echo $points[$j]['betPrice'];?>"
+                                                        >
+                                                            <span>u<?php echo explode('Under ', $points[$j]['betName'])[1];?></span>
+                                                            <small><?php echo $points[$j]['betPrice'];?></small>
+                                                        </button>
+
 
                                                         <?php
 
-                                                        }
-                                                        }
-                                                        $betType_before = $player_points[$i]['betType'];
-                                                        }
-                                                        ?>
-                                                    </tr>
+                                                        }?>
+                                                    </td>
                                                     <?php
+                                                    $betType_before = $points[$i]['betType'];
                                                     }
                                                     ?>
-                                                    </tbody>
+                                                </tr>
+                                                <?php
+                                                }
+                                                ?>
+                                                </tbody>
 
-                                                    <thead>
-                                                    <tr>
-                                                        <th scope="col">Rebounds</th>
-                                                        <th scope="col">Over</th>
-                                                        <th scope="col">Under</th>
-                                                    </tr>
-                                                    </thead>
-                                                    <tbody>
+                                                <thead>
+                                                <tr>
+                                                    <th scope="col">Rebounds</th>
+                                                    <th scope="col">Over</th>
+                                                    <th scope="col">Under</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+                                                <?php
+                                                $betType_before = '';
+                                                $rebounds = array();
+                                                for($i=0; $i<sizeof($player_rebounds); $i++){
+                                                    $my_flag='1';
+                                                    for($j=$i+2; $j<sizeof($player_rebounds); $j+=2){
+                                                        if($player_rebounds[$i]['betType'] == $player_rebounds[$j]['betType'] ){
+                                                            $my_flag='0';
+                                                            break;
+                                                        }
+                                                    }
+                                                    if($my_flag == '1'){
+                                                        array_push($rebounds, $player_rebounds[$i]);
+                                                    }
+                                                }
+                                                for($i=0; $i<sizeof($rebounds); $i+=2){
+                                                ?>
+                                                <tr>
                                                     <?php
-                                                    $betType_before = '';
-                                                    for($i=0; $i<sizeof($player_rebounds); $i+=2){
+
+                                                    if($rebounds[$i]['betType'] !== $betType_before && strpos($rebounds[$i]['homeTeam'], $item->home_team) !== false
+                                                    && strpos($rebounds[$i]['awayTeam'], $item->away_team) !== false
+                                                    && strpos($rebounds[$i]['betName'], 'Over') !== false  && strpos($rebounds[$i]['betType'],'- Rebounds') !== false){
                                                     ?>
-                                                    <tr>
-                                                        <?php
-
-                                                        if($player_rebounds[$i]['betType'] !== $betType_before && strpos($player_rebounds[$i]['homeTeam'], $item->home_team) !== false
-                                                        && strpos($player_rebounds[$i]['awayTeam'], $item->away_team) !== false
-                                                        && strpos($player_rebounds[$i]['betName'], 'Over') !== false  && strpos($player_rebounds[$i]['betType'],'- Rebounds') !== false){
-                                                        ?>
-                                                        <td><?php echo explode(' - Rebounds',$player_rebounds[$i]['betType'])[0];?></td>
-                                                        <td>
-                                                            <button class="place-link bet-button player-props-btn"
-                                                                data-clicked="0" 
-                                                                data-wager-id="<?php echo $item->id;?>" 
+                                                    <td><?php echo explode(' - Rebounds',$rebounds[$i]['betType'])[0];?></td>
+                                                    <td>
+                                                        <button class="place-link bet-button player-props-btn"
+                                                                data-clicked="0"
+                                                                data-wager-id="<?php echo $item->id;?>"
                                                                 data-wager-type="Rebounds"
-                                                                data-team-name="<?php echo explode(' - Rebounds',$player_rebounds[$i]['betType'])[0];?>"
+                                                                data-team-name="<?php echo explode(' - Rebounds',$rebounds[$i]['betType'])[0];?>"
                                                                 data-confrontation="<?php echo $item->team1.' vs '.$item->team2;?>"
-                                                                data-wager-count="o<?php echo explode('Over ', $player_rebounds[$i]['betName'])[1];?>&nbsp;&nbsp;<?php echo $player_rebounds[$i]['betPrice'];?>"
-                                                            >
-                                                                <span>o<?php echo explode('Over ', $player_rebounds[$i]['betName'])[1];?></span>
-                                                                <small><?php echo $player_rebounds[$i]['betPrice'];?></small>
-                                                            </button>
-                                                        </td>
-                                                        <?php
-                                                        for($j=$i+1; $j<sizeof($player_rebounds);$j++){
-                                                        if(str_replace('Over','Under',$player_rebounds[$i]['betName']) == $player_rebounds[$j]['betName'] && $player_rebounds[$j]['betType'] == $player_rebounds[$i]['betType']){
-                                                        ?>
-                                                        <td>
-                                                            <button class="place-link bet-button player-props-btn"
-                                                                data-clicked="0" 
-                                                                data-wager-id="<?php echo $item->id;?>" 
-                                                                data-wager-type="Rebounds"
-                                                                data-team-name="<?php echo explode(' - Rebounds',$player_rebounds[$i]['betType'])[0];?>"
-                                                                data-confrontation="<?php echo $item->team1.' vs '.$item->team2;?>"
-                                                                data-wager-count="u<?php echo explode('Under ', $player_rebounds[$j]['betName'])[1];?>&nbsp;&nbsp;<?php echo $player_rebounds[$j]['betPrice'];?>"
-                                                            >
-                                                                <span>u<?php echo explode('Under ', $player_rebounds[$j]['betName'])[1];?></span>
-                                                                <small><?php echo $player_rebounds[$j]['betPrice'];?></small>
-                                                            </button>
-                                                        </td>
-
-                                                        <?php
-
-                                                        }
-                                                        }
-                                                        $betType_before = $player_rebounds[$i]['betType'];
-                                                        }
-                                                        ?>
-                                                    </tr>
+                                                                data-wager-count="o<?php echo explode('Over ', $rebounds[$i]['betName'])[1];?>&nbsp;&nbsp;<?php echo $rebounds[$i]['betPrice'];?>"
+                                                        >
+                                                            <span>o<?php echo explode('Over ', $rebounds[$i]['betName'])[1];?></span>
+                                                            <small><?php echo $rebounds[$i]['betPrice'];?></small>
+                                                        </button>
+                                                    </td>
                                                     <?php
+                                                    for($j=$i+1; $j<sizeof($rebounds);$j++){
+                                                        if(str_replace('Over','Under',$rebounds[$i]['betName']) == $rebounds[$j]['betName'] && $rebounds[$j]['betType'] == $rebounds[$i]['betType']){
+                                                            $under_rebounds = $rebounds[$j];
+                                                            break;
+                                                        }
                                                     }
                                                     ?>
-                                                    </tbody>
-                                                </table>
+                                                    <td>
+                                                        <?php
+                                                        if(isset($under_rebounds)){
+                                                        ?>
+
+                                                        <button class="place-link bet-button player-props-btn"
+                                                                data-clicked="0"
+                                                                data-wager-id="<?php echo $item->id;?>"
+                                                                data-wager-type="Rebounds"
+                                                                data-team-name="<?php echo explode(' - Rebounds',$rebounds[$i]['betType'])[0];?>"
+                                                                data-confrontation="<?php echo $item->team1.' vs '.$item->team2;?>"
+                                                                data-wager-count="u<?php echo explode('Under ', $rebounds[$j]['betName'])[1];?>&nbsp;&nbsp;<?php echo $rebounds[$j]['betPrice'];?>"
+                                                        >
+                                                            <span>u<?php echo explode('Under ', $rebounds[$j]['betName'])[1];?></span>
+                                                            <small><?php echo $rebounds[$j]['betPrice'];?></small>
+                                                        </button>
+
+
+                                                        <?php
+                                                        }
+                                                        ?>
+                                                    </td>
+                                                    <?php
+                                                    $betType_before = $rebounds[$i]['betType'];
+                                                    }
+                                                    ?>
+                                                </tr>
+                                                <?php
+                                                }
+                                                ?>
+                                                </tbody>
+                                            </table>
 
                                         </div>
                                     </div>

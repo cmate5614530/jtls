@@ -10,8 +10,8 @@
             <div class="sport-table-title">
                 <div class="sport-table-title-item sport-table-title-item-left">
 
-                    <span class="sport-table-title-team"><span><?php echo gmdate("m/d",$item->commence_time);?></span></span>
-                    <span class="sport-table-title-team"><span><?php echo gmdate("H:i",$item->commence_time);?></span></span>
+                    <span class="sport-table-title-team"><span><?php echo date("m/d",$item->commence_time-18000);?></span></span>
+                    <span class="sport-table-title-team"><span><?php echo date("H:i",$item->commence_time-18000);?></span></span>
                 </div>
             </div>
         </div>
@@ -85,8 +85,9 @@
                 if(json_decode($item->spreads)){
                     if(json_decode($item->spreads)->points[0] > 0) echo "+";
                     echo json_decode($item->spreads)->points[0]."&nbsp;&nbsp;";
-                    if(json_decode($item->spreads)->odds[0] > 0) echo "+";
-                    echo json_decode($item->spreads)->odds[0];
+                    // if(json_decode($item->spreads)->odds[0] > 0) echo "+";
+                    // echo json_decode($item->spreads)->odds[0];
+                    echo "-110";
                 }else{
                     echo "-";
                 }
@@ -94,8 +95,9 @@
                     if(json_decode($item->spreads)){
                         if(json_decode($item->spreads)->points[0] > 0) echo "+";
                         echo json_decode($item->spreads)->points[0]."&nbsp;&nbsp;";
-                        if(json_decode($item->spreads)->odds[0] > 0) echo "+";
-                        echo json_decode($item->spreads)->odds[0];
+                        // if(json_decode($item->spreads)->odds[0] > 0) echo "+";
+                        echo "-110";
+                        // echo json_decode($item->spreads)->odds[0];
                     }else{
                         echo "-";
                     }
@@ -105,8 +107,9 @@
                 if(json_decode($item->spreads)){
                     if(json_decode($item->spreads)->points[1] > 0) echo "+";
                     echo json_decode($item->spreads)->points[1]."&nbsp;&nbsp;";
-                    if(json_decode($item->spreads)->odds[1] > 0) echo "+";
-                    echo json_decode($item->spreads)->odds[1];
+                    // if(json_decode($item->spreads)->odds[1] > 0) echo "+";
+                    // echo json_decode($item->spreads)->odds[1];
+                    echo "-110";
                 }else{
                     echo "-";
                 }
@@ -114,8 +117,9 @@
                     if(json_decode($item->spreads)){
                         if(json_decode($item->spreads)->points[1] > 0) echo "+";
                         echo json_decode($item->spreads)->points[1]."&nbsp;&nbsp;";
-                        if(json_decode($item->spreads)->odds[1] > 0) echo "+";
-                        echo json_decode($item->spreads)->odds[1];
+                        // if(json_decode($item->spreads)->odds[1] > 0) echo "+";
+                        // echo json_decode($item->spreads)->odds[1];
+                        echo "-110";
                     }else{
                         echo "-";
                     }
@@ -129,21 +133,23 @@
                 <button class="place-link bet-button" data-clicked="0" data-wager-id="<?php echo $item->id;?>" data-wager-type="TL" data-team-name="<?php echo $item->team1;?>"
                         data-confrontation="<?php echo $item->team1.' vs '.$item->team2;?>" data-wager-count="<?php
                 if(json_decode($item->totals)){
-                    //echo json_decode($item->totals)->position[0] == 'over'?"o&nbsp;":"u&nbsp;";
-                    if(json_decode($item->totals)->points[0] > 0) echo "+";
+                    echo json_decode($item->totals)->position[0] == 'over'?"o":"u";
+                    //if(json_decode($item->totals)->points[0] > 0) echo "+";
                     echo json_decode($item->totals)->points[0]."&nbsp;&nbsp;";
-                    if(json_decode($item->totals)->odds[0] > 0) echo "+";
-                    echo json_decode($item->totals)->odds[0];
+                    echo "-110";
+                    // if(json_decode($item->totals)->odds[0] > 0) echo "+";
+                    // echo json_decode($item->totals)->odds[0];
                 }else{
                     echo "-";
                 }
                 ?>"><?php
                     if(json_decode($item->totals)){
-                        //echo json_decode($item->totals)->position[0]== 'over'?"o&nbsp;":"u&nbsp;";
-                        if(json_decode($item->totals)->points[0] > 0) echo "+";
+                        echo json_decode($item->totals)->position[0]== 'over'?"o":"u";
+                        //if(json_decode($item->totals)->points[0] > 0) echo "+";
                         echo json_decode($item->totals)->points[0]."&nbsp;&nbsp;";
-                        if(json_decode($item->totals)->odds[0] > 0) echo "+";
-                        echo json_decode($item->totals)->odds[0];
+                        echo "-110";
+                        // if(json_decode($item->totals)->odds[0] > 0) echo "+";
+                        // echo json_decode($item->totals)->odds[0];
                     }else{
                         echo "-";
                     }
@@ -151,21 +157,23 @@
                 <button class="place-link bet-button" data-clicked="0" data-wager-id="<?php echo $item->id;?>" data-wager-type="TL" data-team-name="<?php echo $item->team2;?>"
                         data-confrontation="<?php echo $item->team1.' vs '.$item->team2;?>" data-wager-count="<?php
                 if(json_decode($item->totals)){
-                    //echo json_decode($item->totals)->position[1]== 'over'?"o&nbsp;":"u&nbsp;";
-                    if(json_decode($item->totals)->points[1] > 0) echo "+";
+                    echo json_decode($item->totals)->position[1]== 'over'?"o":"u";
+                    //if(json_decode($item->totals)->points[1] > 0) echo "+";
                     echo json_decode($item->totals)->points[1]."&nbsp;&nbsp;";
-                    if(json_decode($item->totals)->odds[1] > 0) echo "+";
-                    echo json_decode($item->totals)->odds[1];
+                    echo "-110";
+                    // if(json_decode($item->totals)->odds[1] > 0) echo "+";
+                    // echo json_decode($item->totals)->odds[1];
                 }else{
                     echo "-";
                 }
                 ?>"><?php
                     if(json_decode($item->totals)){
-                        //echo json_decode($item->totals)->position[1]== 'over'?"o&nbsp;":"u&nbsp;";
-                        if(json_decode($item->totals)->points[1] > 0) echo "+";
+                        echo json_decode($item->totals)->position[1]== 'over'?"o":"u";
+                        //if(json_decode($item->totals)->points[1] > 0) echo "+";
                         echo json_decode($item->totals)->points[1]."&nbsp;&nbsp;";
-                        if(json_decode($item->totals)->odds[1] > 0) echo "+";
-                        echo json_decode($item->totals)->odds[1];
+                        echo "-110";
+                        // if(json_decode($item->totals)->odds[1] > 0) echo "+";
+                        // echo json_decode($item->totals)->odds[1];
                     }else{
                         echo "-";
                     }

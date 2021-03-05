@@ -48,4 +48,12 @@ class HomeController extends Controller
         }
         return view('home')->with('data', $data);
     }
+
+    public function user_dashboard(){
+        return view('user_dashboard');
+    }
+
+    public function admin_dashboard(){
+        print_r('-------admin_dashboard---');
+    }
 }

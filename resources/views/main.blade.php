@@ -7,7 +7,7 @@
                 <div class="container">
                     <div class="swiper-slide-caption">
                         <h1 data-caption-animate="fadeInUp" data-caption-delay="100">Safe <br> Betting</h1>
-                        <h4 data-caption-animate="fadeInUp" data-caption-delay="200">With 100% Risk-Free Guarantee</h4><a class="button button-gray-outline" data-caption-animate="fadeInUp" data-caption-delay="300" href="{{Route('home')}}">Get started</a>
+                        <h4 data-caption-animate="fadeInUp" data-caption-delay="200">With 100% Risk-Free Guarantee</h4><a class="button button-gray-outline" data-caption-animate="fadeInUp" data-caption-delay="300" href="{{Route('login')}}">Get started</a>
                     </div>
                 </div>
             </div>
@@ -15,7 +15,7 @@
                 <div class="container">
                     <div class="swiper-slide-caption">
                         <h1 data-caption-animate="fadeInUp" data-caption-delay="100">Easy Bets</h1>
-                        <h4 data-caption-animate="fadeInUp" data-caption-delay="200">With the lowest commissions</h4><a class="button button-gray-outline" data-caption-animate="fadeInUp" data-caption-delay="300" href="{{Route('home')}}">Join Us</a>
+                        <h4 data-caption-animate="fadeInUp" data-caption-delay="200">With the lowest commissions</h4><a class="button button-gray-outline" data-caption-animate="fadeInUp" data-caption-delay="300" href="{{Route('login')}}">Join Us</a>
                     </div>
                 </div>
             </div>
@@ -207,7 +207,7 @@
                                 @include('table_header')
                                 <?php if(sizeof($odds_americanfootball_nfl)){
                                 foreach ($odds_americanfootball_nfl as $item){?>
-                                @include('table_body') 
+                                @include('table_body')
                                 <?php }}?>
                             </div>
                             <br>

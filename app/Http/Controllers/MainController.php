@@ -10,32 +10,49 @@ use App\Odds_spreads;
 use App\Odds_totals;
 use App\Odds;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 
 class MainController extends Controller
 {
     //
     public function index(){
-        $data['sports'] = Sport::where('active',1)->get();
-        //$data['odds'] = Odds::where('commence_time','>',time())->get();
-        $teams = Teams::all();
+        if(Auth::user()){
+            if(Auth::user()->role == 'user'){
+                return Redirect::to('/user_home');
+            }elseif (Auth::user()->role == 'admin'){
+                return Redirect::to('/admin_dashboard');
+            }else{
+                return Redirect::to('/404-page');
+            }
+        }else{
+            $data['sports'] = Sport::where('active',1)->get();
+            //$data['odds'] = Odds::where('commence_time','>',time())->get();
+            $teams = Teams::all();
 
-        $data['odds'] = DB::table('odds')
-            ->select('odds.*','t1.id AS team1_id')
-            ->where('odds.commence_time','>',time())
-            ->join('teams AS t1','t1.team_name','=', 'odds.team1')
-            ->get();
+            $data['odds'] = DB::table('odds')
+                ->select('odds.*','t1.id AS team1_id')
+                ->where('odds.commence_time','>',time())
+                ->join('teams AS t1','t1.team_name','=', 'odds.team1')
+                ->get();
 
-        foreach($data['odds'] as $it){
-            $it->team2_id = '';
-            foreach($teams as $it1){
-                if($it->team2 == $it1->team_name){
-                    $it->team2_id = $it1->id;
-                    break;
+            foreach($data['odds'] as $it){
+                $it->team2_id = '';
+                foreach($teams as $it1){
+                    if($it->team2 == $it1->team_name){
+                        $it->team2_id = $it1->id;
+                        break;
+                    }
                 }
             }
+
+            return view('main')->with('data',$data);
         }
 
-        return view('main')->with('data',$data);
+    }
+
+    public function nopage(){
+        return view('404-page');
     }
 
     public function login(){

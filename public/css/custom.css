@@ -164,3 +164,18 @@ p.rights {
     width: 90px;
     height: 35px;
 }
+#confirm_submit_btn{
+    background-color:#64b000;
+    color: white;
+}
+#confirm_submit_btn:hover{
+    background-color: #0e9825;
+}
+#cancel_btn:hover{
+    background-color: #eaecee;
+}
+#client_empty_error{
+    color: red;
+    margin-top: 0;
+    display: none;
+}

@@ -206,7 +206,7 @@
                                 <?php echo $__env->make('table_header', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                                 <?php if(sizeof($odds_americanfootball_nfl)){
                                 foreach ($odds_americanfootball_nfl as $item){?>
-                                <?php echo $__env->make('table_body', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?> 
+                                <?php echo $__env->make('table_body', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                                 <?php }}?>
                             </div>
                             <br>
@@ -531,7 +531,7 @@
                                                             </div>
                                                         </div>
                                                         <div class="mod-KambiBC-betslip__place-bet-button-wrapper">
-                                                            <button class="mod-KambiBC-betslip__place-bet-btn" data-touch-feedback="true" disabled="" type="button">Place bet</button>
+                                                            <button class="mod-KambiBC-betslip__place-bet-btn" data-touch-feedback="true" id="place_bet1" type="button">Place bet</button>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -546,6 +546,33 @@
             </div>
         </div>
 
+    </div>
+    <div class="modal fade" id="confirm_modal" tabindex="-1" aria-labelledby="confirm_modal_lavel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="confirm_modal_lavel">Are you sure?</h5>
+
+                </div>
+                <div class="modal-body" style="margin-left: 50px; margin-right: 50px; color: black;">
+                    <label for="client">Client : </label>
+                    <input type="text" required autocomplete="off" id="client" name="client">
+                    <p id="client_empty_error">*This is required field.</p>
+                    <div id="confirm_modal_body"></div>
+
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="cancel_btn">Cancel</button>
+                    <button class="btn btn-success" id="confirm_submit_btn">Confirm</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+        <strong>Holy guacamole!</strong> You should check in on some of those fields below.
     </div>
     <script>
         betslip_array = [];
@@ -827,6 +854,8 @@
             document.getElementById("defaultOpen").click();
         }
 
+        var user_id = <?php echo Auth::user()->id;?>;
+        var bets = [], bets_amount = 0, bets_type = '';
         // add list in ul with data
         $(".place-link").click(function(){
             if ($('#betslipModal').hasClass("show-betslip")==true){
@@ -929,36 +958,119 @@ console.log('---betslip_array---', betslip_array);
 
             check_if_multiplebet_possible();
 
-            $("#place_bet").click(function(){
-                var menueng = [];
-                $('input[name="menueng[]"]').each( function() {
-                    menueng.push(this.value);
-                });
-
-                var oddsf = [];
-                $('.modal-sport-wager-count').each(function(){
-                    oddsf.push($(this).text());
-                });
-
-                var leaguename = [];
-                $('.modal-sport-confrontation').each(function(){
-                    leaguename.push($(this).text());
-                });
 
 
+        });
+        $("#place_bet").click(function(){
+            console.log('---single bet button---', betslip_array);
+            bets = [];
+            for(var k=0; k<betslip_array.length; k++){
+                var bet_amount = parseFloat($('#betsliplist li:nth-child('+(k+2)+') input').val());
+                console.log('----bet_amount--', bet_amount);
+                if(bet_amount > 0){
+                    bets.push({
+                       wagerId: betslip_array[k].wagerId,
+                       wagerType: betslip_array[k].wagerType,
+                       teamName: betslip_array[k].teamName,
+                       confrontation: betslip_array[k].confrontation,
+                       odds: betslip_array[k].odds,
+                       amount: bet_amount
+                    });
+                    bets_amount += bet_amount;
+                }
+            }
+            if(bets.length == 0){
+                alert('Please input at least one bet amount');
+            }else{
+                bets_type = 'single';
+                //confirm modal
+                var modal_content = '<div style="border-bottom: 1px solid #eaecee;">';
+                for(var m = 0; m< bets.length; m++){
+                    modal_content +='<div style="margin-top: 10px;" class="row">'+
+                                        '<div class="col-md-2">#'+ bets[m].wagerId + '</div>'+
+                                        '<div class="col-md-7">' + bets[m].teamName + '</div>'+
+                                        '<div class="col-md-3" style="text-align: right;">$' + bets[m].amount + '</div>'+
+                                    '</div><div class="row" style="margin-top: 0;">'+
+                                        '<div class="col-md-2"></div>'+
+                                        '<div class="col-md-6">' + bets[m].wagerType + '</div>'+
+                                        '<div class="col-md-4" style="text-align: right;">' + bets[m].odds + '</div>'+
+                                    '</div>';
+                }
+                modal_content +=    '</div><div style="text-align: right; margin-top: 15px;">' +
+                    'Total : $' + bets_amount + ' (' + bets_type + ')' +
+                    '</div>';
+                $('#confirm_modal_body').html(modal_content);
+                $('#confirm_modal').modal('show');
 
-                var sendName = JSON.stringify(str);
+            }
+        });
 
+        $("#place_bet1").click(function () {
+            console.log('--multiple_bet_button--');
+            bets = [];
+            bets_amount = parseFloat($('#mod-KambiBC-betslip-stake-input-combination').val());
+            if(bets_amount > 0 && betslip_array.length > 0){
+                bets_type = 'multiple';
+                //confirm modal
+                var modal_content = '<div style="border-bottom: 1px solid #eaecee;">';
+                for(var m = 0; m< betslip_array.length; m++){
+                    modal_content +='<div style="margin-top: 10px;" class="row">'+
+                        '<div class="col-md-2">#'+ betslip_array[m].wagerId + '</div>'+
+                        '<div class="col-md-7">' + betslip_array[m].teamName + '</div>'+
+                        '<div class="col-md-3" style="text-align: right;">' + '</div>'+
+                        '</div><div class="row" style="margin-top: 0;">'+
+                        '<div class="col-md-2"></div>'+
+                        '<div class="col-md-6">' + betslip_array[m].wagerType + '</div>'+
+                        '<div class="col-md-4" style="text-align: right;">' + betslip_array[m].odds + '</div>'+
+                        '</div>';
+                }
+                modal_content +=    '</div><div style="text-align: right; margin-top: 15px;">' +
+                                        'Total : $' + bets_amount + ' (' + bets_type + ')' +
+                                    '</div>';
+                $('#confirm_modal_body').html(modal_content);
+                $('#confirm_modal').modal('show');
+
+                bets = betslip_array;
+            }else if(betslip_array.length == 0){
+                alert('There is no bet slip');
+            }else{
+                alert('Please input bets amount');
+            }
+
+        });
+
+        $('#confirm_submit_btn').click(function () {
+            if(!$('#client').val()){
+                $('#client_empty_error').css('display','block');
+            }else{
+                $('#confirm_modal').modal('hide');
+console.log('--user_id--bets---bets_type--bets_amount--', user_id, bets, bets_type, bets_amount);
+                let _token   = $('meta[name="csrf-token"]').attr('content');
+                let client = $('#client').val();
                 $.ajax({
-                    url: "save.php",
+                    url: "place-bets",
                     type: "post",
-                    data: {name : sendName,menueng : menueng,oddsf : oddsf,leaguename : leaguename},
+                    data: {user_id : user_id, client : client, bets: bets, bets_type:bets_type, bets_amount: bets_amount, _token:_token},
                     success : function(data){
-                        alert(data);    /* alerts the response from php. */
+                        if(data == 'success'){
+
+                            alert('Successfully placed.');
+                            $("#betslip_clear-btn").click();
+                        }else{
+                            alert('Failed. Please try again.');    /* alerts the response from php. */
+                        }
                     }
                 });
 
-            });
+            }
+        });
+
+        $('#client').change(function () {
+            $('#client_empty_error').css('display','none');
+        });
+
+        $('#cancel_btn').click(function () {
+            $('#confirm_modal').modal('hide');
         });
     </script>
 <?php $__env->stopSection(); ?>

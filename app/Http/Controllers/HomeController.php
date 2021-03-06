@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Sport;
 use App\Odds;
 use App\Teams;
+use App\Bets;
 use Illuminate\Support\Facades\DB;
 
 class HomeController extends Controller
@@ -55,5 +56,29 @@ class HomeController extends Controller
 
     public function admin_dashboard(){
         print_r('-------admin_dashboard---');
+    }
+
+    public function save_bets(Request $request){
+
+        $this->validate($request, [
+            'user_id' => 'required',
+            'client' => 'required',
+            'bets' => 'required',
+            'bets_type' => 'required',
+            'bets_amount' => 'required'
+        ]);
+
+        try{
+            $bet = new Bets;
+            $bet->user_id = $request->input('user_id');
+            $bet->bets = json_encode($request->input('bets'));
+            $bet->client = $request->input('client');
+            $bet->bets_type = $request->input('bets_type');
+            $bet->bets_amount = $request->input('bets_amount');
+            $bet->save();
+            return 'success';
+        }catch (Exception $e){
+            return 'failed';
+        }
     }
 }

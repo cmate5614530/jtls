@@ -42,7 +42,7 @@ class HomeController extends Controller
             $it->team2_id = '';
             foreach($teams as $it1){
                 if($it->team2 == $it1->team_name){
-                    $it->team2_id = $it1->id;
+                    $it->team2_id    = $it1->id;
                     break;
                 }
             }
@@ -51,7 +51,7 @@ class HomeController extends Controller
     }
 
     public function user_dashboard(){
-        return view('user_dashboard');
+        return view('user.dashboard');
     }
 
     public function admin_dashboard(){

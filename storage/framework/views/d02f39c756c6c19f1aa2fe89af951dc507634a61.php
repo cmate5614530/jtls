@@ -568,12 +568,6 @@
             </div>
         </div>
     </div>
-    <div class="alert alert-warning alert-dismissible fade show" role="alert">
-        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-        </button>
-        <strong>Holy guacamole!</strong> You should check in on some of those fields below.
-    </div>
     <script>
         betslip_array = [];
         $(document).ready(function () {
@@ -1053,7 +1047,6 @@ console.log('--user_id--bets---bets_type--bets_amount--', user_id, bets, bets_ty
                     data: {user_id : user_id, client : client, bets: bets, bets_type:bets_type, bets_amount: bets_amount, _token:_token},
                     success : function(data){
                         if(data == 'success'){
-
                             alert('Successfully placed.');
                             $("#betslip_clear-btn").click();
                         }else{

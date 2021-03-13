@@ -19,10 +19,11 @@ Route::get('/404-page', 'MainController@nopage')->name('404-page');
 Auth::routes();
 
 Route::group(['middleware' => ['role:user']], function(){
-    Route::get('/user_home', 'HomeController@index')->name('user.home');
-    Route::get('/user_dashboard','HomeController@user_dashboard')->name('user.dashboard');
-
+    Route::get('/user-home', 'HomeController@index')->name('user.home');
+    Route::get('/user-dashboard','HomeController@user_dashboard')->name('user.dashboard');
+    Route::get('/user-bets-detail', 'HomeController@bets_detail')->name('user.betsdetail');
     Route::post('/place-bets', 'HomeController@save_bets');
+    Route::post('/user-get-bets', 'HomeController@get_bets')->name('user.getbets');
 });
 
-Route::get('/admin_dashboard','HomeController@admin_dashboard')->middleware('role:admin')->name('admin.dashboard');
+Route::get('/admin-dashboard','HomeController@admin_dashboard')->middleware('role:admin')->name('admin.dashboard');

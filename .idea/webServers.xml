@@ -2,7 +2,7 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="6e718346-7249-4f3d-a92d-24eb94730d25" name="108.167.181.135" url="http://18.223.136.81/">
+      <webServer id="6e718346-7249-4f3d-a92d-24eb94730d25" name="jtssports.net" url="http://18.223.136.81/">
         <fileTransfer host="18.223.136.81" port="22" accessType="SFTP">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />

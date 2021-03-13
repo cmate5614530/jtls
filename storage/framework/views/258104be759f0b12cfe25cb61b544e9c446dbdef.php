@@ -7,9 +7,6 @@
                     <a class="" href="index"><span class="logo footer-logo" style="">JTLSSPORTS.NET</span></a>
                 </div>
                 <div class="col-md-3 col-sm-6 d-flex col-8 lie-brand">
-                    <a class="brand" href="index"><img class="brand-logo-dark" src="images/footer.PNG" alt="" width="41" height="41"/>
-                        <img class="brand-logo-light" src="images/footer.png" alt="" width="41" height="41"/>
-                    </a>
                     <ul class="list-inline list-inline-sm lie">
                         <li>Curacao E-Gaming</li>
                         <li>Our License</li>

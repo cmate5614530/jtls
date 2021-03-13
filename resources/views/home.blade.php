@@ -959,6 +959,7 @@ console.log('---betslip_array---', betslip_array);
         $("#place_bet").click(function(){
             console.log('---single bet button---', betslip_array);
             bets = [];
+            bets_amount = 0;
             for(var k=0; k<betslip_array.length; k++){
                 var bet_amount = parseFloat($('#betsliplist li:nth-child('+(k+2)+') input').val());
                 console.log('----bet_amount--', bet_amount);
@@ -1047,9 +1048,14 @@ console.log('--user_id--bets---bets_type--bets_amount--', user_id, bets, bets_ty
                     type: "post",
                     data: {user_id : user_id, client : client, bets: bets, bets_type:bets_type, bets_amount: bets_amount, _token:_token},
                     success : function(data){
-                        if(data == 'success'){
-                            alert('Successfully placed.');
-                            $("#betslip_clear-btn").click();
+                        if(data){
+                            if(data.success == true){
+                                alert('Successfully placed.');
+                                $("#betslip_clear-btn").click();
+                            }else{
+                                alert('Something went wrong.');
+                            }
+
                         }else{
                             alert('Failed. Please try again.');    /* alerts the response from php. */
                         }

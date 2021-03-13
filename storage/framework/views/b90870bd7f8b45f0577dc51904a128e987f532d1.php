@@ -179,33 +179,13 @@
                     <!-- Sidebar Navigation -->
                     <ul class="sidebar-nav">
                         <li>
-                            <a href="<?php echo e(route('user.dashboard')); ?>" class=" active"><i class="gi gi-stopwatch sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Dashboard</span></a>
+                            <a href="<?php echo e(route('user.dashboard')); ?>" id="dashboard"><i class="gi gi-stopwatch sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Dashboard</span></a>
                         </li>
                         <li>
-                            <a href="<?php echo e(route('index')); ?>"><i class="gi gi-leaf sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Dashboard 2</span></a>
+                            <a href="<?php echo e(route('user.betsdetail')); ?>" id="betsdetail"><i class="gi gi-leaf sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Bets Detail</span></a>
                         </li>
                         <li>
-                            <a href="#" class="sidebar-nav-menu"><i class="fa fa-angle-left sidebar-nav-indicator sidebar-nav-mini-hide"></i><i class="gi gi-shopping_cart sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">eCommerce</span></a>
-                            <ul>
-                                <li>
-                                    <a href="page_ecom_dashboard.html">Dashboard</a>
-                                </li>
-                                <li>
-                                    <a href="page_ecom_orders.html">Orders</a>
-                                </li>
-                                <li>
-                                    <a href="page_ecom_order_view.html">Order View</a>
-                                </li>
-                                <li>
-                                    <a href="page_ecom_products.html">Products</a>
-                                </li>
-                                <li>
-                                    <a href="page_ecom_product_edit.html">Product Edit</a>
-                                </li>
-                                <li>
-                                    <a href="page_ecom_customer_view.html">Customer View</a>
-                                </li>
-                            </ul>
+                            <a href="<?php echo e(route('user.home')); ?>" id="betsdetail"><i class="gi gi-unshare sidebar-nav-icon"></i><span class="sidebar-nav-mini-hide">Back to Home</span></a>
                         </li>
 
                     </ul>
@@ -293,6 +273,10 @@
                             <li class="dropdown-header text-center">Account</li>
 
                             <li>
+                                <a href="<?php echo e(route('user.home')); ?>">
+                                    <?php echo e(__('Back To Home')); ?>
+
+                                </a>
                                 <a href="<?php echo e(route('logout')); ?>" onclick="event.preventDefault();
                                     document.getElementById('logout-form').submit();"><i class="fa fa-ban fa-fw pull-right"></i>
                                     <?php echo e(__('Logout')); ?>

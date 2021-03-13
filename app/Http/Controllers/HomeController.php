@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use Carbon\Carbon;
 use Illuminate\Http\Request;
 use App\Sport;
 use App\Odds;
 use App\Teams;
 use App\Bets;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
-
+use Illuminate\Support\Facades\Validator;
+use Illuminate\Support\Facades\Storage;
 class HomeController extends Controller
 {
     /**
@@ -60,14 +63,16 @@ class HomeController extends Controller
 
     public function save_bets(Request $request){
 
-        $this->validate($request, [
+        $validator = Validator::make($request->all(),[
             'user_id' => 'required',
             'client' => 'required',
             'bets' => 'required',
             'bets_type' => 'required',
             'bets_amount' => 'required'
         ]);
-
+        if($validator->fails()){
+            return redirect()->back();
+        }
         try{
             $bet = new Bets;
             $bet->user_id = $request->input('user_id');
@@ -76,9 +81,39 @@ class HomeController extends Controller
             $bet->bets_type = $request->input('bets_type');
             $bet->bets_amount = $request->input('bets_amount');
             $bet->save();
-            return 'success';
+            return response()->json([
+               'success'=>true
+            ]);
         }catch (Exception $e){
-            return 'failed';
+            return response()->json([
+               'success'=>false
+            ]);
+        }
+    }
+
+    public function get_bets(Request $request){
+        $validator = Validator::make($request->all(),[
+           'date'=>'required'
+        ]);
+        if($validator->fails()){
+            return redirect()->back();
+        }
+
+        $bets = Bets::where('user_id', Auth::user()->id)->whereDate('created_at','=',$request->input('date'))->get();
+        return response()->json([
+           'success'=>true,
+           'data'=>$bets
+        ]);
+    }
+
+    public function bets_detail(Request $request){
+        if($request->has('id')){
+
+            $data = Bets::where('id', $request->input('id'))->get();
+            return view('user.betsdetail')->with('data', $data);
+        }else{
+            $data = Bets::where('user_id', Auth::user()->id)->whereDate('created_at','=',Carbon::today())->get();
+            return view('user.betsdetail')->with('data', $data);
         }
     }
 }

@@ -19,9 +19,9 @@ class MainController extends Controller
     public function index(){
         if(Auth::user()){
             if(Auth::user()->role == 'user'){
-                return Redirect::to('/user_home');
+                return Redirect::to('/user-home');
             }elseif (Auth::user()->role == 'admin'){
-                return Redirect::to('/admin_dashboard');
+                return Redirect::to('/admin-dashboard');
             }else{
                 return Redirect::to('/404-page');
             }

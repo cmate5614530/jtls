@@ -38,6 +38,8 @@
                 if(json_decode($item->h2h)){
                     if(json_decode($item->h2h)[0] > 0) echo "+";
                     echo json_decode($item->h2h)[0];
+                }else{
+                    echo "-";
                 }
                 ?>"><?php
                     if(json_decode($item->h2h)){
@@ -50,13 +52,15 @@
                 <button class="place-link bet-button" data-clicked="0" data-wager-id="<?php echo $item->id;?>" data-wager-type="ML" data-team-name="Draw"
                         data-confrontation="<?php echo $item->team1.' vs '.$item->team2;?>" data-wager-count="<?php
                 if(json_decode($item->h2h)){
-                    if(json_decode($item->h2h)[1] > 0) echo "+";
-                    echo json_decode($item->h2h)[1];
+                    if(json_decode($item->h2h)[2] > 0) echo "+";
+                    echo json_decode($item->h2h)[2];
+                }else{
+                    echo "-";
                 }
                 ?>"><?php
                     if(json_decode($item->h2h)){
-                        if(json_decode($item->h2h)[1] > 0) echo "+";
-                        echo json_decode($item->h2h)[1];
+                        if(json_decode($item->h2h)[2] > 0) echo "+";
+                        echo json_decode($item->h2h)[2];
                     }else{
                         echo "-";
                     }
@@ -64,13 +68,15 @@
                 <button class="place-link bet-button" data-clicked="0" data-wager-id="<?php echo $item->id;?>" data-wager-type="ML" data-team-name="<?php echo $item->team2;?>"
                         data-confrontation="<?php echo $item->team1.' vs '.$item->team2;?>" data-wager-count="<?php
                 if(json_decode($item->h2h)){
-                    if(json_decode($item->h2h)[2] > 0) echo "+";
-                    echo json_decode($item->h2h)[2];
+                    if(json_decode($item->h2h)[1] > 0) echo "+";
+                    echo json_decode($item->h2h)[1];
+                }else{
+                    echo "-";
                 }
                 ?>"><?php
                     if(json_decode($item->h2h)){
-                        if(json_decode($item->h2h)[2] > 0) echo "+";
-                        echo json_decode($item->h2h)[2];
+                        if(json_decode($item->h2h)[1] > 0) echo "+";
+                        echo json_decode($item->h2h)[1];
                     }else{
                         echo "-";
                     }

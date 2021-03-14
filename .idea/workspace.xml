@@ -2,25 +2,22 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="be5ecea7-976e-4dbe-8f38-73c0f901a966" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/resources/views/user/betsdetail.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/deployment.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/deployment.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/webServers.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/webServers.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_provider/odds_h2h.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_provider/odds_spreads.php" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/data_provider/odds_totals.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/Auth/LoginController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/HomeController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Http/Controllers/MainController.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Controllers/MainController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Http/Middleware/RedirectIfAuthenticated.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/home.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/home.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/footer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/footer.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/layouts/header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/layouts/header.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/dashboard.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/dashboard.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/resources/views/user/layout.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/user/layout.blade.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/web.php" beforeDir="false" afterPath="$PROJECT_DIR$/routes/web.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/258104be759f0b12cfe25cb61b544e9c446dbdef.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/258104be759f0b12cfe25cb61b544e9c446dbdef.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/6f5ead330f0d422eb11e789294681387d5451fe1.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/6f5ead330f0d422eb11e789294681387d5451fe1.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/b90870bd7f8b45f0577dc51904a128e987f532d1.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/b90870bd7f8b45f0577dc51904a128e987f532d1.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/d02f39c756c6c19f1aa2fe89af951dc507634a61.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/d02f39c756c6c19f1aa2fe89af951dc507634a61.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/storage/framework/views/dd0a6559d4c5e3f071bb62ba22a512baa737c3d7.php" beforeDir="false" afterPath="$PROJECT_DIR$/storage/framework/views/dd0a6559d4c5e3f071bb62ba22a512baa737c3d7.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Odds.php" beforeDir="false" afterPath="$PROJECT_DIR$/app/Odds.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Odds_h2h.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Odds_spreads.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Odds_totals.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_provider/events.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_provider/odds.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/data_provider/teams.php" beforeDir="false" afterPath="$PROJECT_DIR$/data_provider/teams.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/table_body.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/table_body.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/table_body_nba.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/table_body_nba.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/table_body_soccer.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/table_body_soccer.blade.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/resources/views/table_header.blade.php" beforeDir="false" afterPath="$PROJECT_DIR$/resources/views/table_header.blade.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,19 +149,19 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../able" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/data_provider" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.keymap" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="F:\Laravel\Laravel_blade\bet\resources\views" />
-      <recent name="F:\Laravel\Laravel_blade\bet\data_provider" />
-    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="F:\Laravel\Laravel_blade\bet\resources\views\user" />
       <recent name="F:\Laravel\Laravel_blade\bet\resources\views" />
       <recent name="F:\Laravel\Laravel_blade\bet\resources\layouts" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Laravel\Laravel_blade\bet\data_provider" />
+      <recent name="F:\Laravel\Laravel_blade\bet\resources\views" />
     </key>
   </component>
   <component name="RunManager">
@@ -269,7 +266,9 @@
       <workItem from="1615558861084" duration="242000" />
       <workItem from="1615565972954" duration="8924000" />
       <workItem from="1615607175269" duration="3194000" />
-      <workItem from="1615617248688" duration="23662000" />
+      <workItem from="1615617248688" duration="24358000" />
+      <workItem from="1615662271004" duration="8784000" />
+      <workItem from="1615727213369" duration="988000" />
     </task>
     <servers />
   </component>
@@ -373,10 +372,10 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="461" y="165" key="SettingsEditor/0.0.1920.1040/-1920.5.1920.1040@0.0.1920.1040" timestamp="1615199166381" />
-    <state x="200" y="102" width="1669" height="702" key="find.popup" timestamp="1615607785318">
+    <state x="200" y="102" width="1669" height="702" key="find.popup" timestamp="1615668571759">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
-    <state x="200" y="102" width="1669" height="702" key="find.popup/0.0.1920.1040/-1920.5.1920.1040@0.0.1920.1040" timestamp="1615607785318" />
+    <state x="200" y="102" width="1669" height="702" key="find.popup/0.0.1920.1040/-1920.5.1920.1040@0.0.1920.1040" timestamp="1615668571759" />
     <state x="224" y="144" width="1669" height="702" key="find.popup/0.0.1920.1040@0.0.1920.1040" timestamp="1613738390887" />
     <state x="841" y="252" key="ftp.server.browser" timestamp="1613771134822">
       <screen x="0" y="0" width="1920" height="1040" />

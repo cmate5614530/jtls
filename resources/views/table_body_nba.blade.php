@@ -44,6 +44,8 @@
                                                 if(json_decode($item->h2h)){
                                                     if(json_decode($item->h2h)[0] > 0) echo "+";
                                                     echo json_decode($item->h2h)[0];
+                                                }else{
+                                                    echo "-";
                                                 }
                                                 ?>"><?php
                                                     if(json_decode($item->h2h)){
@@ -58,6 +60,8 @@
                                                 if(json_decode($item->h2h)){
                                                     if(json_decode($item->h2h)[1] > 0) echo "+";
                                                     echo json_decode($item->h2h)[1];
+                                                }else{
+                                                    echo "-";
                                                 }
                                                 ?>"><?php
                                                     if(json_decode($item->h2h)){

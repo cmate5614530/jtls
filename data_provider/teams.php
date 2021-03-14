@@ -26,4 +26,5 @@ if(mysqli_num_rows($result) > 0){
             $result = mysqli_query($connect, $sql);
         }
     }
+    print_r('Successfully finished(teams)');
 }

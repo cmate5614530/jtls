@@ -26,4 +26,7 @@ Route::group(['middleware' => ['role:user']], function(){
     Route::post('/user-get-bets', 'HomeController@get_bets')->name('user.getbets');
 });
 
-Route::get('/admin-dashboard','HomeController@admin_dashboard')->middleware('role:admin')->name('admin.dashboard');
+Route::group(['middleware' => ['role:admin']], function (){
+    Route::get('/dashboard','AdminController@index')->name('admin.dashboard');
+    Route::get('/users','AdminController@users')->name('admin.users');
+});

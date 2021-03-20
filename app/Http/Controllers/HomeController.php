@@ -57,9 +57,6 @@ class HomeController extends Controller
         return view('user.dashboard');
     }
 
-    public function admin_dashboard(){
-        print_r('-------admin_dashboard---');
-    }
 
     public function save_bets(Request $request){
 

@@ -99,18 +99,21 @@
 
     $cURLConnection = curl_init();
 
-    curl_setopt($cURLConnection, CURLOPT_URL, 'https://fanduel-sportsbook-props-basketball-nba.datafeeds.net/api/json/fanduel-sportsbook-props-regular-speed/v2/basketball/nba/player-assists?api-key=8bc2951fe2f4cf1b67b80127b93799cd');
+    //curl_setopt($cURLConnection, CURLOPT_URL, 'https://fanduel-sportsbook-props-basketball-nba.datafeeds.net/api/json/fanduel-sportsbook-props-regular-speed/v2/basketball/nba/player-assists?api-key=8bc2951fe2f4cf1b67b80127b93799cd');
+    curl_setopt($cURLConnection, CURLOPT_URL, 'https://fanduel-props.datafeeds.net/api/json/odds/v3/900/fanduel-props/basketball/nba/player-assists?api-key=8bc2951fe2f4cf1b67b80127b93799cd');
     curl_setopt($cURLConnection, CURLOPT_RETURNTRANSFER, true);
     $response = curl_exec($cURLConnection);
     $res = json_decode($response, true);
     $player_assists = $res['games'];
 
-    curl_setopt($cURLConnection, CURLOPT_URL, 'https://fanduel-sportsbook-props-basketball-nba.datafeeds.net/api/json/fanduel-sportsbook-props-regular-speed/v2/basketball/nba/player-points?api-key=8bc2951fe2f4cf1b67b80127b93799cd');
+    //curl_setopt($cURLConnection, CURLOPT_URL, 'https://fanduel-sportsbook-props-basketball-nba.datafeeds.net/api/json/fanduel-sportsbook-props-regular-speed/v2/basketball/nba/player-points?api-key=8bc2951fe2f4cf1b67b80127b93799cd');
+    curl_setopt($cURLConnection, CURLOPT_URL, 'https://fanduel-props.datafeeds.net/api/json/odds/v3/900/fanduel-props/basketball/nba/player-points?api-key=8bc2951fe2f4cf1b67b80127b93799cd');
     $response1 = curl_exec($cURLConnection);
     $res1 = json_decode($response1, true);
     $player_points = $res1['games'];
 
-    curl_setopt($cURLConnection, CURLOPT_URL, 'https://fanduel-sportsbook-props-basketball-nba.datafeeds.net/api/json/fanduel-sportsbook-props-regular-speed/v2/basketball/nba/player-rebounds?api-key=8bc2951fe2f4cf1b67b80127b93799cd');
+    //curl_setopt($cURLConnection, CURLOPT_URL, 'https://fanduel-sportsbook-props-basketball-nba.datafeeds.net/api/json/fanduel-sportsbook-props-regular-speed/v2/basketball/nba/player-rebounds?api-key=8bc2951fe2f4cf1b67b80127b93799cd');
+    curl_setopt($cURLConnection, CURLOPT_URL, 'https://fanduel-props.datafeeds.net/api/json/odds/v3/900/fanduel-props/basketball/nba/player-rebounds?api-key=8bc2951fe2f4cf1b67b80127b93799cd');
     $response2 = curl_exec($cURLConnection);
     $res2 = json_decode($response2, true);
     $player_rebounds = $res2['games'];

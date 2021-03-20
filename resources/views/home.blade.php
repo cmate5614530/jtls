@@ -99,18 +99,23 @@
 
     $cURLConnection = curl_init();
 
-    curl_setopt($cURLConnection, CURLOPT_URL, 'https://fanduel-sportsbook-props-basketball-nba.datafeeds.net/api/json/fanduel-sportsbook-props-regular-speed/v2/basketball/nba/player-assists?api-key=8bc2951fe2f4cf1b67b80127b93799cd');
+    //curl_setopt($cURLConnection, CURLOPT_URL, 'https://fanduel-sportsbook-props-basketball-nba.datafeeds.net/api/json/fanduel-sportsbook-props-regular-speed/v2/basketball/nba/player-assists?api-key=8bc2951fe2f4cf1b67b80127b93799cd');
+    curl_setopt($cURLConnection, CURLOPT_URL, 'https://fanduel-props.datafeeds.net/api/json/odds/v3/900/fanduel-props/basketball/nba/player-assists?api-key=8bc2951fe2f4cf1b67b80127b93799cd');
     curl_setopt($cURLConnection, CURLOPT_RETURNTRANSFER, true);
     $response = curl_exec($cURLConnection);
     $res = json_decode($response, true);
     $player_assists = $res['games'];
 
-    curl_setopt($cURLConnection, CURLOPT_URL, 'https://fanduel-sportsbook-props-basketball-nba.datafeeds.net/api/json/fanduel-sportsbook-props-regular-speed/v2/basketball/nba/player-points?api-key=8bc2951fe2f4cf1b67b80127b93799cd');
+    //curl_setopt($cURLConnection, CURLOPT_URL, 'https://fanduel-sportsbook-props-basketball-nba.datafeeds.net/api/json/fanduel-sportsbook-props-regular-speed/v2/basketball/nba/player-points?api-key=8bc2951fe2f4cf1b67b80127b93799cd');
+    curl_setopt($cURLConnection, CURLOPT_URL, 'https://fanduel-props.datafeeds.net/api/json/odds/v3/900/fanduel-props/basketball/nba/player-points?api-key=8bc2951fe2f4cf1b67b80127b93799cd');
+
     $response1 = curl_exec($cURLConnection);
     $res1 = json_decode($response1, true);
     $player_points = $res1['games'];
 
-    curl_setopt($cURLConnection, CURLOPT_URL, 'https://fanduel-sportsbook-props-basketball-nba.datafeeds.net/api/json/fanduel-sportsbook-props-regular-speed/v2/basketball/nba/player-rebounds?api-key=8bc2951fe2f4cf1b67b80127b93799cd');
+    //curl_setopt($cURLConnection, CURLOPT_URL, 'https://fanduel-sportsbook-props-basketball-nba.datafeeds.net/api/json/fanduel-sportsbook-props-regular-speed/v2/basketball/nba/player-rebounds?api-key=8bc2951fe2f4cf1b67b80127b93799cd');
+    curl_setopt($cURLConnection, CURLOPT_URL, 'https://fanduel-props.datafeeds.net/api/json/odds/v3/900/fanduel-props/basketball/nba/player-rebounds?api-key=8bc2951fe2f4cf1b67b80127b93799cd');
+
     $response2 = curl_exec($cURLConnection);
     $res2 = json_decode($response2, true);
     $player_rebounds = $res2['games'];
@@ -555,15 +560,16 @@
                     <h5 class="modal-title" id="confirm_modal_lavel">Are you sure?</h5>
 {{--                    <button type="button" class="btn btn-close" data-bs-dismiss="modal" aria-label="Close">x</button>--}}
                 </div>
-                <div class="modal-body" style="margin-left: 50px; margin-right: 50px; color: black;">
+                <div class="modal-body" style="margin-left: 50px; margin-right: 50px; color: black;" id="print_content">
                     <label for="client">Client : </label>
                     <input type="text" required autocomplete="off" id="client" name="client">
                     <p id="client_empty_error">*This is required field.</p>
-                    <div id="confirm_modal_body"></div>
+                    <div id="confirm_modal_body" style="margin-top: 25px;"></div>
 
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal" id="cancel_btn">Cancel</button>
+                    <button class="btn btn-danger" style="background-color: #856430; color: white;" id="print_btn" onclick="printDiv();">Print</button>
                     <button class="btn btn-success" id="confirm_submit_btn">Confirm</button>
                 </div>
             </div>
@@ -672,6 +678,7 @@
                 $('#soccer-content').css('display','none');
                 $('#hockey-content').css('display','block');
             });
+            var potential = 0, potential1 = 0;
         });
         $('.player-props').click(function() {
             $(this).text(function(_, value) {
@@ -731,6 +738,7 @@
 
             $('.mod-KambiBC-betslip-summary__total-odds-value').text(totalStake);
             $('#totalamnt').val(parseFloat(totalPotential).toFixed(2));
+            potential = parseFloat(totalPotential).toFixed(2);
         }
 
         function multiBetCalculate(){
@@ -758,6 +766,7 @@
             }
 
             $('#multiTotalPrice').val(parseFloat(totalPotential).toFixed(2));
+            potential1 = parseFloat(totalPotential).toFixed(2);
         }
 
         function openCity(evt, cityName) {
@@ -981,6 +990,7 @@ console.log('---betslip_array---', betslip_array);
                 bets_type = 'single';
                 //confirm modal
                 var modal_content = '<div style="border-bottom: 1px solid #eaecee;">';
+                var print_content = '<div style="border-bottom: 1px solid #eaecee;">';
                 for(var m = 0; m< bets.length; m++){
                     modal_content +='<div style="margin-top: 10px;" class="row">'+
                                         '<div class="col-md-2">#'+ bets[m].wagerId + '</div>'+
@@ -991,11 +1001,16 @@ console.log('---betslip_array---', betslip_array);
                                         '<div class="col-md-6">' + bets[m].wagerType + '</div>'+
                                         '<div class="col-md-4" style="text-align: right;">' + bets[m].odds + '</div>'+
                                     '</div>';
+                    print_content += '<div style="margin-top: 2px;">'+
+                        '<div style="display: inline;"><p>#'+betslip_array[m].wagerId+'&nbsp;&nbsp;'+betslip_array[m].teamName+'<span style="float: right;">$'+bets[m].amount+'</span></p>'+'</div>'+
+                        '<div style="display: inline;"><p style="margin-left:3.1rem;">'+betslip_array[m].wagerType+'<span style="float: right;">'+betslip_array[m].odds + '</span></p></div>'+
+                        '</div>';
                 }
-                modal_content +=    '</div><div style="text-align: right; margin-top: 15px;">' +
-                    'Total : $' + bets_amount + ' (' + bets_type + ')' +
+                print_content +=    '</div><div style="text-align: right; margin-top: 15px;">' +
+                    'Total Wager : $' + bets_amount + ' (' + bets_type + ')' + '<br>' +
+                    'Potential Payout : $' + potential +
                     '</div>';
-                $('#confirm_modal_body').html(modal_content);
+                $('#confirm_modal_body').html(print_content);
                 $('#confirm_modal').modal('show');
 
             }
@@ -1009,6 +1024,7 @@ console.log('---betslip_array---', betslip_array);
                 bets_type = 'multiple';
                 //confirm modal
                 var modal_content = '<div style="border-bottom: 1px solid #eaecee;">';
+                var print_content = '<div style="border-bottom: 1px solid #eaecee;">';
                 for(var m = 0; m< betslip_array.length; m++){
                     modal_content +='<div style="margin-top: 10px;" class="row">'+
                         '<div class="col-md-2">#'+ betslip_array[m].wagerId + '</div>'+
@@ -1019,11 +1035,16 @@ console.log('---betslip_array---', betslip_array);
                         '<div class="col-md-6">' + betslip_array[m].wagerType + '</div>'+
                         '<div class="col-md-4" style="text-align: right;">' + betslip_array[m].odds + '</div>'+
                         '</div>';
+                    print_content += '<div style="margin-top: 2px;">'+
+                        '<div style="display: inline;"><p>#'+betslip_array[m].wagerId+'&nbsp;&nbsp;'+betslip_array[m].teamName+'</p>'+'</div>'+
+                        '<div style="display: inline;"><p style="margin-left:3.1rem;">'+betslip_array[m].wagerType+'<span style="float: right;">'+betslip_array[m].odds + '</span></p></div>'+
+                        '</div>';
                 }
-                modal_content +=    '</div><div style="text-align: right; margin-top: 15px;">' +
-                                        'Total : $' + bets_amount + ' (' + bets_type + ')' +
+                print_content +=    '</div><div style="text-align: right; margin-top: 15px;">' +
+                                        'Total Wager : $' + bets_amount + ' (' + bets_type + ')' + '<br>' +
+                                        'Potential Payout : $' + potential1 +
                                     '</div>';
-                $('#confirm_modal_body').html(modal_content);
+                $('#confirm_modal_body').html(print_content);
                 $('#confirm_modal').modal('show');
 
                 bets = betslip_array;
@@ -1072,6 +1093,39 @@ console.log('--user_id--bets---bets_type--bets_amount--', user_id, bets, bets_ty
         $('#cancel_btn').click(function () {
             $('#confirm_modal').modal('hide');
         });
+
+
+        function printDiv()
+        {
+
+            var divToPrint=document.getElementById('confirm_modal_body');
+
+            var newWin=window.open('','Print-Window');
+
+            newWin.document.open();
+            var print ='<html>';
+            //print += '<head><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">';
+            //print += '<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js">'+'<\/script>';
+            //print += '<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"><\/script>';
+            //print += '</head>';
+            print += '<body onload="window.print()">';
+            print += '<p style="text-align: center;">Client : '+$('#client').val() + '</p>';
+            var d = new Date();
+            var da = d.getDate()<10 ? '0'+d.getDate().toString() : d.getDate().toString();
+            var mo = d.getMonth()<9 ? '0'+ (d.getMonth()+1).toString() : (d.getMonth()+1).toString();
+            var am = d.getHours()<12 ? 'AM':'PM';
+            var hr = d.getHours()==12 ? 12: d.getHours()%12;
+            var hrs = hr<10 ? '0'+hr.toString() : hr.toString();
+            var mi = d.getMinutes()<10 ? '0'+d.getMinutes() : d.getMinutes();
+            print += '<p style="text-align: center;">'+ da+'/'+mo+'/'+d.getFullYear()+'&nbsp;'+hrs+ ':'+mi+'&nbsp;'+am+'</p>';
+
+            newWin.document.write(print+ '<div>'+divToPrint.innerHTML+'</div>'+'</body></html>');
+
+            newWin.document.close();
+
+            setTimeout(function(){newWin.close();},1);
+
+        }
     </script>
 @endsection
 

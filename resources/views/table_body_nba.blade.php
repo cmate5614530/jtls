@@ -13,11 +13,11 @@
                                             </div>
                                         </div>
 
-                                        <div class="col-sm-1 col-md-1 col-lg-1 sport-table-title-item sport-table-title-item-left sport-table-title">
+                                        <div class="col-sm-1 col-md-1 col-lg-1 sport-table-title-item sport-table-title-item-left sport-table-title" style="padding:0; text-transform: uppercase;">
                                             <div class="sport-table-title">
                                                 <div class="sport-table-title-item sport-table-title-item-left">
                                                     <span class="sport-table-title-team"><span><?php echo date("m/d",$item->commence_time-18000);?></span></span>
-                                                    <span class="sport-table-title-team"><span><?php echo date("H:i",$item->commence_time-18000);?></span></span>
+                                                    <span class="sport-table-title-team"><span><?php echo date("h:i a",$item->commence_time-18000);?></span></span>
                                                 </div>
                                             </div>
                                         </div>
@@ -201,7 +201,7 @@
                                                                 break;
                                                             }
                                                         }
-                                                        if($my_flag == '1'){
+                                                        if($my_flag == '1' && strpos($player_assists[$i]['homeTeam'], $item->home_team) !== false && strpos($player_assists[$i]['awayTeam'], $item->away_team) !== false){
                                                             array_push($assists, $player_assists[$i]);
                                                         }
                                                     }
@@ -289,7 +289,7 @@
                                                                 break;
                                                             }
                                                         }
-                                                        if($my_flag == '1'){
+                                                        if($my_flag == '1' && strpos($player_points[$i]['homeTeam'], $item->home_team) !== false && strpos($player_points[$i]['awayTeam'], $item->away_team) !== false){
                                                             array_push($points, $player_points[$i]);
                                                         }
                                                     }
@@ -377,7 +377,7 @@
                                                                 break;
                                                             }
                                                         }
-                                                        if($my_flag == '1'){
+                                                        if($my_flag == '1' && strpos($player_rebounds[$i]['homeTeam'], $item->home_team) !== false && strpos($player_rebounds[$i]['awayTeam'], $item->away_team) !== false){
                                                             array_push($rebounds, $player_rebounds[$i]);
                                                         }
                                                     }

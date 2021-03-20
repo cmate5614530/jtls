@@ -28,7 +28,7 @@
         <div class="col-sm-2 col-md-2 col-lg-2">
             <div class="sport-table-title">
                 <div class="sport-table-title-item sport-table-title-item-left">
-                    <span class="sport-table-title-team"><span>M L</span></span>
+                    <span class="sport-table-title-team"><span>M L(1 [X] 2)</span></span>
                 </div>
             </div>
         </div>

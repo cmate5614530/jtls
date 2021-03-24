@@ -1,5 +1,4 @@
-<!-- jQuery -->
-<script src="{{asset('assets_admin/js/jquery-3.2.1.min.js')}}"></script>
+
 
 <!-- Bootstrap Core JS -->
 <script src="{{asset('assets_admin/js/popper.min.js')}}"></script>
@@ -7,7 +6,7 @@
 
 <!-- Slimscroll JS -->
 <script src="{{asset('assets_admin/plugins/slimscroll/jquery.slimscroll.min.js')}}"></script>
-@if(Route::is(['pagee']))
+@if(Route::is(['admin.dashboard']))
     <script src="{{asset('assets_admin/plugins/raphael/raphael.min.js')}}"></script>
     <script src="{{asset('assets_admin/plugins/morris/morris.min.js')}}"></script>
     <script src="{{asset('assets_admin/js/chart.morris.js')}}"></script>

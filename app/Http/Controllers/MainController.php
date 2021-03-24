@@ -18,7 +18,7 @@ class MainController extends Controller
             if(Auth::user()->role == 'user'){
                 return Redirect::to('/user-home');
             }elseif (Auth::user()->role == 'admin'){
-                return Redirect::to('/admin-dashboard');
+                return Redirect::to('/dashboard');
             }else{
                 return Redirect::to('/404-page');
             }
@@ -31,6 +31,7 @@ class MainController extends Controller
                 ->select('odds.*','t1.id AS team1_id')
                 ->where('odds.commence_time','>',time())
                 ->join('teams AS t1','t1.team_name','=', 'odds.team1')
+                ->orderBy('odds.id','ASC')
                 ->get();
 
             foreach($data['odds'] as $it){

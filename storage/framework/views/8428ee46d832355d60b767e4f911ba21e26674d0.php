@@ -1,5 +1,6 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
+<meta name="csrf-token" content="<?php echo e(csrf_token()); ?>">
 <title><?php echo e(config('app.name', 'Laravel')); ?></title>
 <link rel="icon" href="<?php echo e(asset('/images/myicon.png')); ?>" type="image/x-icon">
 <!-- Bootstrap CSS -->
@@ -28,4 +29,6 @@
 
 <!-- Main CSS -->
 <link rel="stylesheet" href="<?php echo e(asset('assets_admin/css/style.css')); ?>">
+<!-- jQuery -->
+<script src="<?php echo e(asset('assets_admin/js/jquery-3.2.1.min.js')); ?>"></script>
 <?php /**PATH F:\Laravel\Laravel_blade\bet\resources\views/layouts/partials/head_admin.blade.php ENDPATH**/ ?>

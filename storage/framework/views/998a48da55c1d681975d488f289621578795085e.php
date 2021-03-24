@@ -14,6 +14,26 @@
                     <a href="<?php echo e(route('admin.users')); ?>"><i class="fe fe-user"></i> <span>User List</span></a>
                 </li>
 
+                <li class="<?php echo e(Route::is('admin.bets') ? 'active' : ''); ?>">
+                    <a href="<?php echo e(route('admin.bets')); ?>"><i class="fe fe-activity"></i> <span>Bets</span></a>
+                </li>
+
+                <li class="<?php echo e(Route::is('admin.profile') ? 'active' : ''); ?>">
+                    <a href="<?php echo e(route('admin.profile')); ?>"><i class="fe fe-user-plus"></i> <span>Profile</span></a>
+                </li>
+
+                <li>
+                    <a href="<?php echo e(route('logout')); ?>"
+                       onclick="event.preventDefault();
+                                                     document.getElementById('logout-form1').submit();">
+                        <i class="fe fe-code"></i>
+                        <span>Logout</span>
+                    </a>
+
+                    <form id="logout-form1" action="<?php echo e(route('logout')); ?>" method="POST" style="display: none;">
+                        <?php echo csrf_field(); ?>
+                    </form>
+                </li>
             </ul>
         </div>
     </div>

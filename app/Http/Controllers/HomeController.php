@@ -39,6 +39,7 @@ class HomeController extends Controller
             ->select('odds.*','t1.id AS team1_id')
             ->where('odds.commence_time','>',time())
             ->join('teams AS t1','t1.team_name','=', 'odds.team1')
+            ->orderBy('odds.id','ASC')
             ->get();
 
         foreach($data['odds'] as $it){

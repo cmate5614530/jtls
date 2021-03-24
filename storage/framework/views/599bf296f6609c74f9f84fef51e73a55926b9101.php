@@ -1,5 +1,4 @@
-<!-- jQuery -->
-<script src="<?php echo e(asset('assets_admin/js/jquery-3.2.1.min.js')); ?>"></script>
+
 
 <!-- Bootstrap Core JS -->
 <script src="<?php echo e(asset('assets_admin/js/popper.min.js')); ?>"></script>
@@ -7,7 +6,7 @@
 
 <!-- Slimscroll JS -->
 <script src="<?php echo e(asset('assets_admin/plugins/slimscroll/jquery.slimscroll.min.js')); ?>"></script>
-<?php if(Route::is(['pagee'])): ?>
+<?php if(Route::is(['admin.dashboard'])): ?>
     <script src="<?php echo e(asset('assets_admin/plugins/raphael/raphael.min.js')); ?>"></script>
     <script src="<?php echo e(asset('assets_admin/plugins/morris/morris.min.js')); ?>"></script>
     <script src="<?php echo e(asset('assets_admin/js/chart.morris.js')); ?>"></script>

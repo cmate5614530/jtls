@@ -23,10 +23,10 @@ foreach($key_text_array as $item){
             $game_id = $it->id;
             $sport_key = $it->sport_key;
             $sport_nice = $it->sport_nice;
-            $home_team = $it->home_team;
-            $away_team = $it->teams[0]==$it->home_team ? $it->teams[1] : $it->teams[0];
-            $team1 = $it->teams[0];
-            $team2 = $it->teams[1];
+            $home_team = utf8_decode($it->home_team);
+            $away_team = $it->teams[0]==$it->home_team ? utf8_decode($it->teams[1]) : utf8_decode($it->teams[0]);
+            $team1 = utf8_decode($it->teams[0]);
+            $team2 = utf8_decode($it->teams[1]);
             $commence_time = $it->commence_time;
             $site_key = $it->sites_count>0 ? $it->sites[0]->site_key : null;
             $site_nice = $it->sites_count>0 ? $it->sites[0]->site_nice : null;
